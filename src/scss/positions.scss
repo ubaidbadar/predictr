@@ -1,0 +1,23 @@
+.absolute-middle, .fixed-middle {
+    @apply left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+.absolute-middle {
+    @apply absolute;
+}
+
+.fixed-middle {
+    @apply fixed;
+}
+
+.position-middle {
+    @apply top-1/2 -translate-y-1/2;
+}
+
+.position-center {
+    @apply left-1/2 -translate-x-1/2;
+}
+
+.fixed-full {
+    @apply fixed top-0 left-0 w-full h-full;
+}

@@ -1,0 +1,56 @@
+$left: 1em;
+
+.Input-Wrapper {
+    @apply relative flex leading-3 items-center border-2 text-light-3;
+
+    input {
+        background: none;
+        outline: none;
+        padding: calc($left - 2px);
+        @apply text-normal flex-1 min-w-0;
+    }
+
+    legend {
+        @apply max-w-0 h-0 transition-all invisible;
+        margin-left: $left
+    }
+
+    label {
+        @apply absolute top-1/2 -translate-y-1/2 transition-all;
+        left: $left;
+    }
+}
+
+
+.Input-Wrapper {
+    input {
+
+        &:focus,
+        &:not(:placeholder-shown) {
+            ~label {
+                margin-top: -($left * 1.5);
+                @apply scale-75;
+            }
+
+            ~legend {
+                @apply max-w-96;
+            }
+        }
+    }
+
+    &:has(input:focus) {
+        @apply text-primary-0;
+    }
+}
+
+.Input-Wrapper:has(.Input-Blur) form.submitted .Input-Wrapper {
+
+    &:has(input:invalid),
+    &:has(.invalid) {
+        @apply border-red-0;
+
+        label {
+            @apply text-red-0;
+        }
+    }
+}

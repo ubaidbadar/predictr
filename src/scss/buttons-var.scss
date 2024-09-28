@@ -1,0 +1,50 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    text-wrap: nowrap;
+}
+
+.btn-hover {
+    &:not(.loading):not(:disabled) {
+        @apply relative z-1 cursor-pointer;
+        position: relative;
+        &::before {
+            content: "";
+            @apply absolute left-0 top-0 right-0 bottom-0 rounded-inherit opacity-0 -z-1;
+            background-color: currentColor;
+        }
+
+        &:active, &.active {
+            &::before {
+                opacity: 0.1;
+            }
+        }
+    }
+    &:disabled {
+        @apply cursor-not-allowed bg-opacity-25;
+    }
+    &.loading {
+        @apply cursor-wait;
+        &::after {
+            content: "";
+            width: 1em;
+            height: 1em;
+            border: 2px solid;
+            border-top-color: transparent;
+            border-radius: 50%;
+            @apply animate-spin;
+        }
+    }
+}
+
+.desktop {
+    .btn-hover {
+        &:not(.loading):not(:disabled):not(:active):not(.active) {
+            &:hover::before {
+                opacity: 0.2;
+            }
+        }
+    }
+}

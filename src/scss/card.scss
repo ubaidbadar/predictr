@@ -1,0 +1,7 @@
+.card {
+    @apply p-4 bg-light-1 rounded-4;
+}
+
+.card-v2 {
+    @apply bg-surface bg-opacity-10 border-2 border-surface border-opacity-10 rounded-3 p-3 shadow-0;
+}

@@ -1,0 +1,50 @@
+.root {
+    @apply transition-all;
+    >div {
+        @apply min-w-full bg-cover;
+        >div {
+            @apply lg:m-12 m-8;
+        }
+    }
+}
+
+.btns {
+    >button {
+        &::after {
+            content: "";
+            width: 0.5em;
+            height: 0.5em;
+            border-radius: 1em;
+            @apply bg-surface bg-opacity-50 text-md;
+            transition: linear 0.2s width;
+        }
+        &:disabled {
+            &::after {
+                width: 1em;
+                @apply bg-opacity-100;
+            }
+        }
+        &:hover::after {
+            @apply bg-opacity-80;
+        }
+    }
+}
+
+
+/* Ellipse 223 */
+
+// position: absolute;
+// width: 116.19px;
+// height: 54.46px;
+// left: 8.67px;
+// top: -4px;
+
+// background: #FFFFFF;
+// filter: blur(65px);
+// transform: rotate(24.6deg);
+
+// /* Inside auto layout */
+// flex: none;
+// order: 2;
+// flex-grow: 0;
+// z-index: 2;

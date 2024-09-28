@@ -1,0 +1,41 @@
+.root {
+    position: relative;
+    input {
+        padding-left: 1.143em;
+        padding-right: 2.5em;
+        height: 2.5em;
+        background-color: #f5f5f5; // equivalent to bg-light-1
+        border-radius: 2em;
+        flex: 1;
+
+        &::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+            right: 0;
+            position: absolute;
+            appearance: none;
+            width: 2.25em;
+            height: 2.25em;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        // &:focus:not(:placeholder-shown),
+        // &:hover:not(:placeholder-shown) {
+        //     & + svg {
+        //         display: none;
+        //     }
+        //     & ~ span {
+        //         display: flex;
+        //     }
+        // }
+    }
+    >svg {
+        height: 1em;
+        width: 1em;
+    }
+
+    >svg, >span {
+        position: absolute !important;
+        right: 0.726em;
+    }
+}

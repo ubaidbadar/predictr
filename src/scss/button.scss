@@ -1,0 +1,27 @@
+@import './buttons-var.scss';
+
+
+.btn-icon {
+    width: 2.25em;
+    height: 2.25em;
+    border-radius: 50%;
+    @extend .btn, .btn-hover;
+    svg {
+        max-width: 1em;
+        max-height: 1.125em;
+    }
+    &.no-space {
+        margin: -0.625em;
+    }
+}
+
+.btn-primary {
+    @extend .btn, .btn-hover;
+    @apply bg-primary-0 px-[2em] gap-[1em] font-semibold h-[2.6874em] rounded-[.75em] text-surface;
+    &.bg-surface {
+        @apply text-normal;
+    }
+    &.bg-light-1 {
+        @apply text-primary-0;
+    }
+}

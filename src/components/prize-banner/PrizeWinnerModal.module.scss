@@ -1,0 +1,20 @@
+.table {
+    [class *= "UserAvatar"] {
+        font-size: 0.953rem;
+    }
+    tbody td:first-child {
+        color: var(--text);
+    }
+}
+
+.list tr{
+    &:nth-child(n+4) {
+        opacity: 0.5;
+    }
+    &:nth-child(4) {
+        border-top: 1px solid rgba($color: #000000, $alpha: 0.2);
+    }
+    td:last-child {
+        border-right: none;
+    }
+}
