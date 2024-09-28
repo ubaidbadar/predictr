@@ -1,10 +1,16 @@
 .Dialog {
     @extend .fixed-full, .flex-middle;
     @apply z-9 bg-normal bg-opacity-80;
-    animation: Dialog 0.1s forwards;
+    animation: Dialog 0.1s;
     >div {
         @apply bg-surface p-4;
-        animation: ScaleAnimation 0.3s forwards;
+        animation: ScaleAnimation 0.3s;
+    }
+    &.close {
+        @apply transition-opacity opacity-0 duration-300;
+        >div {
+            @apply transition-transform scale-0;
+        }
     }
 }
 
