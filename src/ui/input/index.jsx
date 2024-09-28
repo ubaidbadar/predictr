@@ -1,6 +1,6 @@
 import './styles.scss';
 
-export default function Input({ label, className, end, inputClass, ...props }) {
+export default function Input({ label, className, end, inputClass, errorText, ...props }) {
     return (
         <fieldset className={`Input-Wrapper ${className}`}>
             <input placeholder=' ' className={inputClass} {...props} onBlur={e => e.target.classList.add("Input-Blur")} />
@@ -11,6 +11,7 @@ export default function Input({ label, className, end, inputClass, ...props }) {
                 </>
             )}
             {end}
+            <small className="Error">{errorText}</small>
         </fieldset>
     )
 }

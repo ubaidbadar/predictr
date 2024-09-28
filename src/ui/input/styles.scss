@@ -1,7 +1,7 @@
 $left: 1em;
 
 .Input-Wrapper {
-    @apply relative flex leading-3 items-center border-2 text-light-3;
+    @apply relative flex flex-wrap leading-3 items-center border-2 text-light-3;
 
     input {
         background: none;
@@ -18,6 +18,9 @@ $left: 1em;
     label {
         @apply absolute top-1/2 -translate-y-1/2 transition-all;
         left: $left;
+    }
+    .Error {
+        @apply hidden;
     }
 }
 
@@ -51,6 +54,9 @@ $left: 1em;
 
         label {
             @apply text-red-0;
+        }
+        .Error {
+            @apply block;
         }
     }
 }

@@ -24,7 +24,7 @@ export default function Header(props) {
                 </>
             ) : (
                 <>
-                    <button className='btn-primary text-sm -mr-6 bg-light-1'>Login</button>
+                    <a href='#login' className='btn-primary text-sm -mr-6 bg-light-1'>Login</a>
                     <button className='btn-primary text-sm'>Join Predictr</button>
                 </>
             )}
