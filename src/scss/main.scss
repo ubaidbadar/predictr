@@ -23,7 +23,7 @@ input, button {
     @apply outline-none min-w-0;
 }
 .UserAvatar {
-    @apply w-[1em] h-[1em] rounded-[0.25em] bg-light-3 overflow-hidden inline-flex;
+    @apply w-[1em] h-[1em] min-w-[1em] rounded-[0.25em] bg-light-3 overflow-hidden inline-flex;
     img {
         @apply max-w-full max-h-full object-cover;
     }
