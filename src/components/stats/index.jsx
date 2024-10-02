@@ -1,33 +1,36 @@
 import FollowModal from "../../dialogs/follwers";
 import getProfile from "../../utility/getProfile";
 import Avatar from "../avatar";
+import Progress from './progress';
 
-export default function Stats(props) {
+export default function Stats({user, isLoggedIn}) {
     return (
         <div className="card">
             <div className="flex-center pb-4 mb-4 border-b border-light-4 gap-3">
-                <Avatar className="text-5xl" {...getProfile(props)} />
+                <Avatar className="text-5xl" {...getProfile(user)} />
                 <span className="flex-center gap-x-3 flex-wrap text-gray-0">
-                    <b className="w-full text-dark-0">{props.user.name}</b>
+                    <b className="w-full text-dark-0">{user.name}</b>
                     <FollowModal
-                        userId={props.user._id}
+                        userId={user._id}
                         title="Followers"
-                        isLoggedIn={props.isLoggedIn}
+                        isLoggedIn={isLoggedIn}
                         component={tools => (
                             <button onClick={tools.open} className="btn-text text-xs">
-                                <b>{props.followers}</b>followers
+                                <b>{user.stats.followers}</b>followers
                             </button>
                         )}
                     />
                     <FollowModal
                         title="Following"
-                        userId={props.user._id} isLoggedIn={props.isLoggedIn}
+                        userId={user._id} 
+                        isLoggedIn={isLoggedIn}
                         component={tools => (
-                            <button onClick={tools.open} className="btn-text text-xs"><b>{props.followings}</b>following</button>
+                            <button onClick={tools.open} className="btn-text text-xs"><b>{user.stats.followings}</b>following</button>
                         )}
                      />
                 </span>
             </div>
+            <Progress {...user.stats} />
         </div>
     )
 }

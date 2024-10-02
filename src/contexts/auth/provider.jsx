@@ -12,6 +12,7 @@ export default function AuthProvider({ children }) {
         const cb = async () => {
             try {
                 const user  = (await axios.get('/fetch_user_details')).data
+                if(user._id) user.stats = (await axios.get(`/fetch_user_stats/${user._id}`)).data
                 setState({ ...user, loading: false })
             }
             catch (err) {

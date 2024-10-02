@@ -1,0 +1,10 @@
+.root {
+    @apply grid text-gray-0 gap-2 text-right;
+    grid-template-columns: auto 1fr 1fr 1fr;
+    b {
+        @apply text-dark-0 font-semibold text-left;
+    }
+    small:first-child {
+        @apply text-left;
+    }
+}
