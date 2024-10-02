@@ -9,8 +9,13 @@ export default function Leaderboard() {
         <>
             <PrizeBanner />
             <div className="cont leaderboard">
-                <div>
-                    {board.isLoggedIn ? <Stats {...board} /> : (
+                <div className="grid gap-inherit">
+                    {board.isLoggedIn ? (
+                        <>
+                            <Stats {...board} />
+                            <button className="btn-primary">Predict</button>
+                        </>
+                    ) : (
                         <div className="card">
                             <h3>Join Predictr</h3>
                             <p className="text-gray-0 mt-1 mb-6">A community for all the day-traders to predict stocks and measure accuracy over the time.</p>

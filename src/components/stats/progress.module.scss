@@ -7,4 +7,7 @@
     small:first-child {
         @apply text-left;
     }
+    small {
+        @apply text-sm;
+    }
 }
