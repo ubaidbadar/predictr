@@ -15,15 +15,23 @@
     }
 }
 
-.btn-primary {
+.btn-primary, .btn-ghosted {
     @extend .btn, .btn-hover;
-    @apply bg-primary-0 px-[2em] gap-[1em] font-semibold h-[2.6874em] rounded-[.75em] text-surface;
+    @apply px-[2em] gap-[1em] font-semibold h-[2.6874em] rounded-[.75em];
+}
+
+.btn-primary {
+    @apply bg-primary-0 text-surface;
     &.bg-surface {
         @apply text-dark-0;
     }
     &.bg-light-1 {
         @apply text-primary-0;
     }
+}
+
+.btn-ghosted {
+    @apply text-primary-0;
 }
 
 .btn-text {
