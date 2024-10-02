@@ -1,5 +1,8 @@
 .card {
     @apply p-4 bg-light-1 rounded-4;
+    h3 {
+        @apply text-base text-dark-1 font-bold;
+    }
 }
 
 .card-v2 {

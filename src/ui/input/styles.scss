@@ -7,7 +7,7 @@ $left: 1em;
         background: none;
         outline: none;
         padding: calc($left - 2px);
-        @apply text-normal flex-1 min-w-0;
+        @apply text-dark-0 flex-1 min-w-0;
     }
 
     legend {

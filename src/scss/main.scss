@@ -30,7 +30,7 @@ input, button {
 }
 
 .leaderboard {
-    @apply grid gap-4;
+    @apply grid gap-4 text-sm;
     grid-template-columns: 16.75rem 33.5rem 16.75rem;
 }
 

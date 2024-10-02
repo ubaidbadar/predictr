@@ -1,6 +1,6 @@
 .Dialog {
     @extend .fixed-full, .flex-middle;
-    @apply z-9 bg-normal bg-opacity-80;
+    @apply z-9 text-dark-1 bg-opacity-80;
     animation: Dialog 0.1s;
     >div {
         @apply bg-surface p-4;

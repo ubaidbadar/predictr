@@ -11,7 +11,7 @@ const Pagination = ({ className, ...props }) => props.pageCount > 1 && (
             previousLabel={<button className='btn btn-icon'><ChevronBottom className='rotate-90' /></button>}
             nextLabel={<button className='btn btn-icon'><ChevronBottom className='rotate-270' /></button>}
             breakLabel={'..'}
-            pageLinkClassName="btn btn-text text-normal"
+            pageLinkClassName="btn btn-text text-dark-0"
             activeLinkClassName="active text-primary"
         />
     </div>

@@ -4,7 +4,7 @@ import Avatar from "../avatar";
 
 const User = ({ className = '', subtitle, isLoggedIn, ...props }) => (
     <Link to={isLoggedIn ? `/leaderboard/user/${props._id}` : { hash: 'login' }}
-        className={`${styles.root} text-normal ${className}`}
+        className={`${styles.root} text-dark-0 ${className}`}
         name={props.name}
         subtitle={subtitle}
     >

@@ -9,7 +9,14 @@ export default function Leaderboard() {
         <>
             <PrizeBanner />
             <div className="cont leaderboard">
-                <Stats {...board} {...stats.data} />
+                <div>
+                    {board.isLoggedIn ? <Stats {...board} {...stats.data} /> : (
+                        <div className="card">
+                            <h3>Join Predictr</h3>
+                            <p className="text-gray-0 mt-1 mb-6">A community for all the day-traders to predict stocks and measure accuracy over the time.</p>
+                        </div>
+                    )}
+                </div>
             </div>
         </>
     )

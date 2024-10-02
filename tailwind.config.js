@@ -14,7 +14,10 @@ module.exports = {
         "0": "#024BAC",
         "1": "#CCDFF7"
       },
-      normal: "#000000",
+      dark: {
+        0: "#000000",
+        1: "#151B26"
+      },
       secondary: {
         "0": "#FFC803"
       },

@@ -44,7 +44,7 @@ const withAlgoProductToolsLayout = (WrappedComponent, title, options = op) => {
             <>
                 <input type='checkbox' id={title} className={`d-none ${isResponsive ? title : ""}`} />
                 <div className={`${showProductPageTitleBar ? "" : "vh-page-header"} bg-surface-1 border-radius-inherit d-flex flex-column algo-tool-wrapper`}>
-                    <label className='position-fixed top-0 w-100 h-100 bg-normal z-index-6 opacity-6 tool-filter-item' htmlFor={title} />
+                    <label className='position-fixed top-0 w-100 h-100 text-dark-1 z-index-6 opacity-6 tool-filter-item' htmlFor={title} />
                     {showProductPageTitleBar && (
                         <ProductPageTitleBar goBack={goBack}
                             algo={props.algo}
@@ -56,7 +56,7 @@ const withAlgoProductToolsLayout = (WrappedComponent, title, options = op) => {
                         />
                     )}
                     {!showProductPageTitleBar && (
-                        <h6 className='m-0 text-normal text-capitalize p-3 pb-0 p-xl-5'>{title}</h6>
+                        <h6 className='m-0 text-dark-0 text-capitalize p-3 pb-0 p-xl-5'>{title}</h6>
                     )
                     }
                     <div className='d-lg-grid d-flex flex-column flex-1 algo-tool-wrapper-main position-relative overflow-auto'>
