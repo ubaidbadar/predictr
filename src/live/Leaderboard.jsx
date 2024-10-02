@@ -1,3 +1,4 @@
+import FAQs from "../components/faqs";
 import Google from "../components/google";
 import PrizeBanner from "../components/prize-banner";
 import Stats from "../components/stats";
@@ -23,6 +24,7 @@ export default function Leaderboard() {
                             <a href="#login" className="btn-ghosted w-full mt-1">Join with Email</a>
                         </div>
                     )}
+                    <FAQs />
                 </div>
             </div>
         </>
