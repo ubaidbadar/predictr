@@ -5,7 +5,7 @@
         font-size: 1rem;
         border-radius: 1rem;
         [class *= "UserAvatar"] {
-            font-size: 2.19rem;
+            @apply text-8xl;
         }
         >img {
             @apply h-10 -top-8;
@@ -24,7 +24,7 @@
         @apply -order-1;
     }
     [class *= "UserAvatar"] {
-        font-size: 1.425rem
+        @apply text-6xl;
     }
     >img {
         top: -1.4rem;

@@ -9,7 +9,7 @@ export default function Winner(props) {
     return (
         <Link className={`card-v2 px-0 ${styles.root}`} to="">
             <img src={`/cup-${props.index}.svg`} alt='' />
-            <Avatar profile_img="/avatar_1.png" />
+            <Avatar {...props} />
             <b className='-mb-[0.125rem]'>{props.name}</b>
             <p>{props.guess_accuracy.toFixed(2)}% Accuracy <br /> {props.total} Predictions</p>
             <strong className='text-green-1'>${prizes[props.index]}</strong>
