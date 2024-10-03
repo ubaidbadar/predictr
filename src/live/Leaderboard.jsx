@@ -8,7 +8,7 @@ export default function Leaderboard() {
     const board = useBoard();
     return (
         <>
-            <PrizeBanner />
+            <PrizeBanner {...board} />
             <div className="cont leaderboard">
                 <div className="grid gap-inherit">
                     {board.isLoggedIn ? (

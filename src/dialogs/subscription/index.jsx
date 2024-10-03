@@ -54,7 +54,7 @@ export default function SetUpSubscription({ user, ...props }) {
             }}
             Root={Form}
             title={`${premium ? "Update" : "Setup"} Subscription`}
-            component={tools => <button id='Setup Subscription Open' onClick={tools.open} >Rehan</button>}
+            component={tools => <button id='Setup Subscription Open' onClick={tools.open} />}
             footer={(props) => (
                 <div className='Modal-footer'>
                     <button className={`btn btn-primary ${props.className}`} disabled={props.disabled || !user.stripe_developer_acct}>Save</button>
