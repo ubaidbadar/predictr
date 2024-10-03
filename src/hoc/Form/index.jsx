@@ -1,12 +1,12 @@
-import React, { useEffect, useMemo, useRef, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import styles from './styles.module.scss';
 import getAxiosMessage from "../../utility/getAxiosMessage";
 
-const Form = ({ footer, onSubmit, children, hidePopUp, showPopUp, ...props }) => {
+const Form = ({ footer, onSubmit, children, other, ...props }) => {
     const [{ err, loading, isValid, message }, setState] = useState({ isValid: false });
     let timer = useMemo(() => setTimeout(() => { }, 200), []);
     const formRef = useRef();
-
+    
     const checkValid = () => {
         if (loading) return;
         clearTimeout(timer);
@@ -48,9 +48,8 @@ const Form = ({ footer, onSubmit, children, hidePopUp, showPopUp, ...props }) =>
                 onSuccess: message => setState({ message }),
                 onFailure: err => setState({ err: typeof err === 'string' ? err : getAxiosMessage(err) }),
                 formData,
+                other
             };
-            if (hidePopUp) p.hidePopUp = hidePopUp;
-            if (showPopUp) p.showPopUp = showPopUp;
             onSubmit(p)
         }
     }

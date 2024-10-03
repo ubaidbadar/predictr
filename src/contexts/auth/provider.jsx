@@ -5,6 +5,7 @@ import user from './state';
 import Spinner from '../../ui/spinner';
 import Header from "../../components/header";
 import Auth from "../../dialogs/auth";
+import SetUpSubscription from "../../dialogs/subscription";
 
 export default function AuthProvider({ children }) {
     const [state, setState] = useState(user), setAuth = auth => setState({ ...state, ...auth });
@@ -30,7 +31,7 @@ export default function AuthProvider({ children }) {
     }
     return (
         <>
-            {!value.isLoggedIn && <Auth setAuth={setAuth} />}
+            {value.isLoggedIn ? <SetUpSubscription {...value} /> : <Auth setAuth={setAuth} />}
             <AuthContext.Provider value={value}>
                 <Header {...value} />
                 {children}

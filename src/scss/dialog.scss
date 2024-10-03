@@ -2,7 +2,7 @@
     @extend .fixed-full, .flex-middle;
     @apply z-9 text-dark-1 bg-opacity-80;
     animation: Dialog 0.1s;
-    >div {
+    .Dialog-Main {
         @apply bg-surface p-4;
         animation: ScaleAnimation 0.3s;
     }
