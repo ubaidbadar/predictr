@@ -18,7 +18,7 @@ export default function Stats({ user, isLoggedIn }) {
                             isLoggedIn={isLoggedIn}
                             component={tools => (
                                 <button onClick={tools.open} className="btn-text text-xs">
-                                    <b>{user.stats.followers}</b>followers
+                                    <b>{user.followers}</b>followers
                                 </button>
                             )}
                         />
@@ -27,14 +27,14 @@ export default function Stats({ user, isLoggedIn }) {
                             userId={user._id}
                             isLoggedIn={isLoggedIn}
                             component={tools => (
-                                <button onClick={tools.open} className="btn-text text-xs"><b>{user.stats.followings}</b>following</button>
+                                <button onClick={tools.open} className="btn-text text-xs"><b>{user.followings}</b>following</button>
                             )}
                         />
                     </span>
                 </div>
-                <Progress {...user.stats} />
+                <Progress {...user} />
             </div>
-            <Predictor {...user.stats.premium} />
+            <Predictor {...user.premium} />
         </>
     )
 }

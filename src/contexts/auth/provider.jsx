@@ -12,9 +12,12 @@ export default function AuthProvider({ children }) {
     useEffect(() => {
         const cb = async () => {
             try {
-                const user  = (await axios.get('/fetch_user_details')).data
-                if(user._id) user.stats = (await axios.get(`/fetch_user_stats/${user._id}`)).data
-                setState({ ...user, loading: false })
+                const user = (await axios.get('/fetch_user_details')).data
+                if (user._id) {
+                    const { premium = {}, ...stats } = (await axios.get(`/fetch_user_stats/${user._id}`)).data
+                    setState({ ...user, premium, ...stats, loading: false });
+                }
+                else setState({ ...state, loading: false })
             }
             catch (err) {
                 console.log(err)
