@@ -1,13 +1,13 @@
 import React from 'react';
-import InputField from '../../../ui-v2/InputField/InputField';
-import Model from '../../../ui-v2/Modal/Model';
+import InputField from '../../ui/input';
+import Model from '../../ui/modal/modal';
 import styles from './Form.module.scss';
 import NestedFields from './NestedFields';
 import moment from 'moment/moment';
 import ScoringSystemModal from '../ScoringSystemModal/ScoringSystemModal';
 import InfoIconV2 from '../../../icons-v2/InfoIconV2';
 import ChevronBottom from '../../../icons-v2/ChevronBottom';
-import Switch from '../../../ui-v2/Switch';
+import Switch from '../../ui/Switch';
 
 const Select = ({ setStatus, name, form, value }) => (
     <button type='button'

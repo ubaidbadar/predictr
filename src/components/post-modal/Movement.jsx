@@ -1,7 +1,6 @@
-import React from 'react';
-import BoxField from '../../../ui-v2/BoxField/BoxField';
-import InputField from '../../../ui-v2/InputField/InputField';
-import Model from '../../../ui-v2/Modal/Model';
+import BoxField from '../../ui/boxfield';
+import InputField from '../../ui/input';
+import Model from '../../ui/modal/modal';
 
 const Movement = ({ onChange, form, back, getTitle }) => {
     const perc = form.estimated_change_percent;
@@ -13,9 +12,9 @@ const Movement = ({ onChange, form, back, getTitle }) => {
         name: 'estimated_direction'
     });
     return (
-        <Model show={true}
+        <Model
             className='no-animation'
-            closeHandler={back}
+            close={back}
             actions={() => (
                 <button onClick={back}
                     className='btn btn-primary'
