@@ -3,11 +3,11 @@ import InputField from '../../ui/input';
 import Model from '../../ui/modal/modal';
 import styles from './Form.module.scss';
 import NestedFields from './NestedFields';
-import moment from 'moment/moment';
-import ScoringSystemModal from '../ScoringSystemModal/ScoringSystemModal';
-import InfoIconV2 from '../../../icons-v2/InfoIconV2';
-import ChevronBottom from '../../../icons-v2/ChevronBottom';
-import Switch from '../../ui/Switch';
+import moment from 'moment-timezone';
+import ScoringSystemModal from '../scoring-system';
+import ChevronBottom from '../../icons-v2/chevron';
+import Switch from '../../ui/switch';
+import Info from '../../icons-v2/info';
 
 const Select = ({ setStatus, name, form, value }) => (
     <button type='button'
@@ -34,7 +34,7 @@ const Form = props => {
                                 onClick={showPopUp}
                                 className='btn btn-text text-accent-4'
                             >
-                                <InfoIconV2 />Scoring system
+                                <Info />Scoring system
                             </button>
                         )}
                     />
