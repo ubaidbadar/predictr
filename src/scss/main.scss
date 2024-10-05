@@ -39,6 +39,11 @@ input, button {
     @apply flex flex-col;
 }
 
+.icon {
+    font-family: "Font Awesome 5 Free"; font-weight: 900;
+    @apply not-italic;
+}
+
 @media (max-width: 2500px) {
     html {
         font-size: 18px;

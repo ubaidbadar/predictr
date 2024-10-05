@@ -4,7 +4,7 @@ import ModalV2 from '../../ui/modal';
 // import CheckCircle from '../../../icons-v2/CheckCircle';
 import SubscribeHeader from '../../components/subscription/header';
 import SubscribeFooter from '../../components/subscription/footer';
-import Form from '../../hoc/Form';
+import Form from '../../hoc/form';
 import axios from 'axios';
 import ConnectStripe from '../../components/connext-stripe';
 import copy from '../../lib/copy';

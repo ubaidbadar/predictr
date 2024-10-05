@@ -1,0 +1,72 @@
+#toastr {
+    @apply fixed top-20 right-4 z-[100] w-64 text-sm leading-2 grid gap-4;
+    
+    >div {
+        @apply px-4 pt-5 flex rounded-2 bg-surface shadow-0 h-24 gap-3 relative;
+        grid-template-columns: 1rem 15rem;
+        animation: linear 0.3s Toastr forwards;
+        animation-delay: 2.5s;
+
+        &::before {
+            @extend .icon;
+            color: currentColor;
+            @apply text-xl leading-1;
+        }
+
+        &.primary {
+            @apply text-green-0;
+
+            &::before {
+                content: "\f00c";
+            }
+        }
+
+        &.warn {
+            color: yellow;
+            &::before {
+                content: "\f06a";
+            }
+        }
+        
+        &.danger {
+            @apply text-red-0;
+            &::before {
+                content: "\f06a";
+            }
+        }
+
+        &::after {
+            content: '';
+            @apply absolute h-[0.15rem] bg-current left-0 right-0 bottom-5;
+            animation: linear 2.7s Bar-Animation forwards;
+        }
+    }
+}
+
+@keyframes Bar-Animation {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes Toastr {
+    0% {
+        margin-top: 0;
+        opacity: 1;
+        margin-bottom: 1rem;
+    }
+
+    80% {
+        margin-bottom: 1rem;
+    }
+
+    100% {
+        margin-top: -6rem;
+        opacity: 0;
+        margin-bottom: 0;
+    }
+}

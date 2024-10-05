@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
-import useStockSearch from '../../../hooks/useStockSearch';
-import Model from '../../../ui-v2/Modal/Model';
-import ToggleText from '../../../ui-v2/ToggleText/ToggleText';
-import SearchWrapper from '../../WatchList/SearchWrapper';
+import SearchWrapper from '../search/wrapper';
 import styles from './Search.module.scss';
-import AddStockModal from '../../AddStockModal/AddStockModal';
+import AddStockModal from '../add-stock-modal';
+import useStockSearch from '../../hooks/useStockSearch';
+import Modal from '../../ui/modal';
+import ToggleText from '../../ui/toggle-text';
 
 
 const Main = props => {
@@ -31,10 +31,10 @@ const Main = props => {
 }
 
 const Search = props => (
-    <Model
+    <Modal
         className={`no-animation ${styles.root}`}
         show={true}
-        closeHandler={props.back}
+        close={props.back}
         title={props.getTitle('Select a stock')}
     >
         <Main
@@ -50,7 +50,7 @@ const Search = props => (
                 })
             }
         />
-    </Model>
+    </Modal>
 )
 
 export default Search;

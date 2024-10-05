@@ -10,6 +10,7 @@ module.exports = {
       }
     },
     colors: {
+      current: "currentColor",
       primary: {
         "0": "#024BAC",
         "1": "#CCDFF7"

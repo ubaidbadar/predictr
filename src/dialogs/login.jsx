@@ -1,4 +1,4 @@
-import Form from "../hoc/Form";
+import Form from "../hoc/form";
 import Email from "../ui/email";
 import Modal from "../ui/modal";
 import Password from "../ui/password";

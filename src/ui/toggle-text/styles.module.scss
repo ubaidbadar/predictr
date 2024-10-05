@@ -1,0 +1,19 @@
+.root{
+    color: var(--accent-4);
+    cursor: pointer;
+    transition: linear 0.1s border-top;
+    >span{
+        border-top: 0.111em solid transparent;
+        border-bottom: 0.111em solid transparent;
+        padding: 0.111em 0;
+        display: inline-block;
+    }
+    &:hover{
+        color: var(--primary);        
+    }
+    &:active, input:checked ~ span{
+        border-bottom-color: currentColor;
+        color: var(--primary);
+        font-weight: 500;
+    }
+}

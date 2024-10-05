@@ -5,10 +5,10 @@ import Form from './Form';
 import Movement from './Movement';
 import Search from './Search';
 import axios from "axios";
-// import toastr from "toastr";
 import getAxiosMessage from '../../lib/getAxiosMessage';
 import Chevron from '../../icons-v2/chevron';
 import Pluse from '../../icons/plus';
+import toastr from '../../config/toastr';
 
 const Main = props => {
   const [status, setStatus] = useState({
@@ -36,7 +36,7 @@ const Main = props => {
       .then(res => {
         props.onCreatePost(res.data);
         props.closeHandler();
-        // toastr.success('Your post was successfully created!', 'Success')
+        toastr.success('Your post was successfully created!', 'Success')
       })
       .catch(err => {
         getAxiosMessage(err);
