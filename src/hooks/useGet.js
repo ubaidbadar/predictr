@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios";
-import getAxiosMessage from "../utility/getAxiosMessage";
+import getAxiosMessage from "../lib/getAxiosMessage";
 import Spinner from "../ui/spinner";
 
 const useGet = (api, params = {}, boolean = true, cb) => {

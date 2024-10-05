@@ -7,7 +7,7 @@ import SubscribeFooter from '../../components/subscription/footer';
 import Form from '../../hoc/Form';
 import axios from 'axios';
 import ConnectStripe from '../../components/connext-stripe';
-import copy from '../../utility/copy';
+import copy from '../../lib/copy';
 import useShow from '../../hooks/useShow';
 
 export default function SetUpSubscription({ user, ...props }) {

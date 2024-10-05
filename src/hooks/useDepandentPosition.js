@@ -1,5 +1,5 @@
 import React from "react"
-import dependentTagPositionHandler from "../utility/dependentTagPositionHandler";
+import dependentTagPositionHandler from "../lib/dependentTagPositionHandler";
 
 const useDepandentPosition = (isActive = true, deps = []) => {
     let unsubscribe = React.useMemo(() => null, []);

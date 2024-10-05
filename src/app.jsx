@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import Leaderboard from "./live/Leaderboard";
+import Home from "./live/home";
 
 export default function App() {
     return (
         <Routes>
-            <Route path="/" element={<Leaderboard />} />
+            <Route path="/" element={<Home />} />
         </Routes>
     )
 }

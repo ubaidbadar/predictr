@@ -1,5 +1,5 @@
 import FollowModal from "../../dialogs/follwers";
-import getProfile from "../../utility/getProfile";
+import getProfile from "../../lib/getProfile";
 import Avatar from "../avatar";
 import Predictor from "./predictor-card";
 import Progress from './progress';

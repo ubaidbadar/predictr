@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import styles from './styles.module.scss';
-import getAxiosMessage from "../../utility/getAxiosMessage";
+import getAxiosMessage from "../../lib/getAxiosMessage";
 
 const Form = ({ footer, onSubmit, children, other, ...props }) => {
     const [{ err, loading, isValid, message }, setState] = useState({ isValid: false });

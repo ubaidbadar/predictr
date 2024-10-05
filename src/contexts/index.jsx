@@ -3,7 +3,7 @@ import RefreshProvider from "./refresh/provider";
 import { SymbolContextProvider } from './SymbolContext';
 import AuthProvider from './auth/provider';
 import { BrowserRouter } from 'react-router-dom';
-import onResize from '../utility/onResize';
+import onResize from '../lib/onResize';
 
 export default function GlobalContext(props) {
 
