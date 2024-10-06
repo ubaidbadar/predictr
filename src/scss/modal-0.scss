@@ -1,0 +1,16 @@
+.Modal-0 {
+    .Dialog-Main {
+        @apply grid gap-4;
+    }
+    .Modal-Header {
+        @extend .flex-between;
+        @apply gap-inherit;
+        >.btn-close {
+            @apply rotate-45;
+            @extend .btn-icon, .no-space;
+        }
+        >h3 {
+            @apply text-xl font-medium;
+        }
+    }
+}
