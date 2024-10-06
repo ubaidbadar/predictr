@@ -14,10 +14,10 @@ function Main(props) {
             {results.map(item => (
                 <ToggleText
                     key={item._id}
-                    name={item.company_name}
                     value={item.ticker}
                     onChange={props.onSelect}
-                    title={<span ticker={item.ticker}>{item.company_name}</span>}
+                    subtitle={item.ticker}
+                    title={item.company_name}
                 />
             ))}
             <p className='mb-0 text-accent-4 d-flex gap-1 align-items-center'>

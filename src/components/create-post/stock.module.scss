@@ -1,9 +1,10 @@
 .main {
-    @apply grid;
+    @apply grid text-nowrap;
     >label:not(:first-child) {
-        display: flex;
-        padding: 0.5rem 0;
-        border-top: 1px solid var(--accent-6);
+        @apply flex items-center py-2 border-t-1;
+        &:hover + label {
+            @apply border-t-primary-0;
+        }
         span[ticker]{
             &::before {
                 content: attr(ticker);

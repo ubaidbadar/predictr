@@ -1,14 +1,15 @@
 import React from 'react';
 import styles from './styles.module.scss';
 
-const ToggleText = ({ title, type = 'radio', value, className = '', ...props }) => (
-    <label className={`${className} text-nowrap ${styles.root}`}>
+const ToggleText = ({ title, type = 'radio', about, value, className = '', ...props }) => (
+    <label about={about} className={`${className} ${styles.root}`}>
         <input
-            type={type} {...props}
-            className='d-none'
+            {...props}
+            type={type} 
+            className='hidden'
             value={value || title}
         />
-        <span>{title}</span>
+        {title}
     </label>
 )
 
