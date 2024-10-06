@@ -5,6 +5,9 @@
 :root {
     --app-height: 100dvh;
     --nav-height: 3.25rem;
+    --border-width-1: 2px;
+    --border-width-2: 4px;
+    --font-size: 20px;
 }
 
 .nav-height {
@@ -12,25 +15,29 @@
 }
 
 html {
-    font-size: 20px;
+    font-size: var(--font-size);
     @apply leading-5;
 }
 
 .h-dvh {
     height: var(--app-height);
 }
-input, button {
+
+input,
+button {
     @apply outline-none min-w-0;
 }
+
 .UserAvatar {
-    @apply w-[1em] h-[1em] min-w-[1em] rounded-[0.25em] bg-light-3 overflow-hidden inline-flex;
+    @apply w-[1em] h-[1em] min-w-[1em] text-3xl rounded-[0.25em] bg-light-3 overflow-hidden inline-flex;
+
     img {
         @apply max-w-full max-h-full object-cover;
     }
 }
 
 .leaderboard {
-    @apply grid gap-4 text-sm;
+    @apply grid gap-4 text-sm items-start py-4;
     grid-template-columns: 16.75rem 33.5rem 16.75rem;
 }
 
@@ -40,18 +47,23 @@ input, button {
 }
 
 .icon {
-    font-family: "Font Awesome 5 Free"; font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
     @apply not-italic;
 }
 
 @media (max-width: 2500px) {
-    html {
-        font-size: 18px;
+    :root {
+        --font-size: 18px;
+        --border-width-1: 2px;
+        --border-width-2: 3px;
     }
 }
 
 @media (max-width: 2000px) {
-    html {
-        font-size: 16px;
+    :root {
+        --font-size: 16px;
+        --border-width-1: 1px;
+        --border-width-2: 2px;
     }
 }

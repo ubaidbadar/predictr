@@ -9,7 +9,7 @@ export default function CreatePost(props) {
         <>
             {tools.status && (
                 <Modal>
-                    {tools.status && <PostModal {...tools} />}
+                    <PostModal {...tools} />
                 </Modal>
             )}
             <div onClick={props.guard} className={props.disabled ? 'cursor-danger' : ''}>

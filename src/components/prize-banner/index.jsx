@@ -40,7 +40,7 @@ const PrizeBanner = (props) => {
         return () => clearInterval(timer);
     }, [])
     return (
-        <div className='my-4 cont no-cont-sm overflow-hidden relative text-surface'>
+        <div className='mt-4 cont no-cont-sm overflow-hidden relative text-surface'>
             <div className={`relative flex ${styles.root}`} style={{ left: active ? '-100%' : '0' }}>
                 <div className={`flex-between flex-col md:flex-row bg-primary-0 rounded-4 ${styles.banner1}`}>
                     <div>

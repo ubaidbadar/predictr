@@ -9,6 +9,10 @@ module.exports = {
         inherit: "inherit"
       }
     },
+    borderWidth: {
+      1: 'var(--border-width-1)',
+      2: 'var(--border-width-2)'
+    },
     colors: {
       current: "currentColor",
       primary: {

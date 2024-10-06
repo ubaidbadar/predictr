@@ -1,4 +1,4 @@
-import CreatePost from "../../components/post-modal";
+import CreatePost from "../../components/create-post";
 
 export default function Main(props) {
     return (
