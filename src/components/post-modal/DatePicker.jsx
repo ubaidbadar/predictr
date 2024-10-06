@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import DP from "../../../ui-v2/DatePicker/DatePicker";
-import PickersUtilsProvider from "../../../ui-v2/PickersUtilsProvider/PickersUtilsProvider";
+import DP from "../../ui/date-picker";
 import Modal from "../../ui/modal";
 
 
@@ -25,7 +24,6 @@ const DatePicker = (props) => {
             title={props.getTitle('Date')}
         >
             <div className="mx-auto">
-                <PickersUtilsProvider>
                     <DP open={true}
                         variant='static'
                         value={date}
@@ -34,7 +32,6 @@ const DatePicker = (props) => {
                         maxDate={props.max_date}
                         shouldDisableDate={disableWeekends}
                     />
-                </PickersUtilsProvider>
 
             </div>
         </Modal>

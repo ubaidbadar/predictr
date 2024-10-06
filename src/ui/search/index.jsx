@@ -1,7 +1,7 @@
 import Magnifier from '../../icons/magnifier'
 import styles from './styles.module.scss'
 
-export default function Search({ className, ...props }) {
+export default function Search({ className, children, ...props }) {
     return (
         <label className={`${styles.root} flex-center ${className}`}>
             <input type="text" {...props} />

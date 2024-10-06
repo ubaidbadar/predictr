@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { Fragment, useEffect, useState } from "react"
 import AuthContext from "./context"
 import axios from "../../config/axios";
 import user from './state';
@@ -6,6 +6,7 @@ import Spinner from '../../ui/spinner';
 import Header from "../../components/header";
 import Auth from "../../dialogs/auth";
 import SetUpSubscription from "../../dialogs/subscription";
+import Pickers from "../pickers";
 
 export default function AuthProvider({ children }) {
     const [state, setState] = useState(user), setAuth = auth => setState({ ...state, ...auth });
@@ -32,13 +33,14 @@ export default function AuthProvider({ children }) {
         isLoggedIn: state._id ? true : false,
         loading: state.loading,
     }
+    const Root = value.isLoggedIn ? Fragment : Pickers
     return (
-        <>
+        <Root>
             {value.isLoggedIn ? <SetUpSubscription {...value} /> : <Auth setAuth={setAuth} />}
             <AuthContext.Provider value={value}>
                 <Header {...value} />
                 {children}
             </AuthContext.Provider>
-        </>
+        </Root>
     )
 }

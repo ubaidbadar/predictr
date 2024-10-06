@@ -120,7 +120,7 @@ const PostModal = props => {
   return (
     <div onClick={props.checkLogin} className={props.disabled ? 'cursor-danger' : ''}>
       <div className='p-3 card gap-2 d-flex align-items-center'>
-        {props.getUser()}
+        {/* <Avatar {...props} /> */}
         <p className='bg-surface-3 m-0 px-3 py-2 fs-mediam-sm flex-1 text-accent-4 border-radius-20' onClick={onOpen}>Would you like to make a prediction?</p>
       </div>
       <button id='create-post'

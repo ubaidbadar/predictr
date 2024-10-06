@@ -1,6 +1,6 @@
 import React from 'react';
 import InputField from '../../ui/input';
-import Model from '../../ui/modal/modal';
+import Model from '../../ui/modal';
 import styles from './Form.module.scss';
 import NestedFields from './NestedFields';
 import moment from 'moment-timezone';
@@ -23,7 +23,7 @@ const Select = ({ setStatus, name, form, value }) => (
 const Form = props => {
     const form = props.form;
     return (
-        <Model show={true}
+        <Model
             className={props.no_animation ? 'no-animation' : ''}
             actions={() => (
                 <>
