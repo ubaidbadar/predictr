@@ -7,10 +7,9 @@ import Search from './Search';
 import axios from "axios";
 import getAxiosMessage from '../../lib/getAxiosMessage';
 import Chevron from '../../icons-v2/chevron';
-import Pluse from '../../icons/plus';
 import toastr from '../../config/toastr';
 
-const Main = props => {
+const Post = props => {
   const [status, setStatus] = useState({
     form: {
       stock_symbol: '',
@@ -114,24 +113,5 @@ const Main = props => {
   )
 }
 
-const PostModal = props => {
-  const [isModal, setIsModal] = useState(false);
-  const onOpen = () => !props.disabled && setIsModal(true);
-  return (
-    <div onClick={props.checkLogin} className={props.disabled ? 'cursor-danger' : ''}>
-      <div className='p-3 card gap-2 d-flex align-items-center'>
-        {/* <Avatar {...props} /> */}
-        <p className='bg-surface-3 m-0 px-3 py-2 fs-mediam-sm flex-1 text-accent-4 border-radius-20' onClick={onOpen}>Would you like to make a prediction?</p>
-      </div>
-      <button id='create-post'
-        className='translate-middle-x start-50 bottom-0 btn btn-primary z-index-5 fw-normal pe-3 ps-4 position-fixed mb-4 d-lg-none'
-        onClick={onOpen}>
-        <Pluse className='smaller' />
-        <span className='my-4 d-block small'>Take a guess</span>
-      </button>
-      {props.isLoggedIn && isModal && <Main {...props} closeHandler={() => setIsModal(false)} />}
-    </div>
-  )
-}
 
-export default PostModal;
+export default Post;
