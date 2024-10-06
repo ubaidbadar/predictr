@@ -22,8 +22,9 @@ export default function Create(props) {
     });
 
     const [page, setPage] = useState(0), [loading, setLoading] = useState(false);
-    const Current = pages[page], newProps = {...form, setForm, setPage, back: () => setPage(0)}
+    const Current = pages[page], newProps = {...form, setForm: update => setForm({...form, ...update}), setPage, back: () => setPage(0)}
     newProps.title = <button className="btn-text text-gray-0" onClick={newProps.back}><Chevron className="rotate-90" /> Make a Prediction</button>;
+    
     return (
         <>
             <Current {...newProps} />

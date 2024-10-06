@@ -1,7 +1,7 @@
 import Pluse from '../../icons/plus';
 import styles from './make.module.scss';
 
-export default function MakePrediction({ setPage }) {
+export default function MakePrediction(props) {
     return (
         <>
             <div className='Modal-Header'>
@@ -10,11 +10,11 @@ export default function MakePrediction({ setPage }) {
             </div>
             <div className={styles.root}>
                 I think
-                <button type="button" onClick={() => setPage(1)}>stock</button>
+                <button type="button" onClick={() => props.setPage(1)}>{props.stock_name || 'stock'}</button>
                 will go
-                <button type="button" onClick={() => setPage(2)}>movement</button>
+                <button type="button" onClick={() => props.setPage(2)}>movement</button>
                 by
-                <button type="button" onClick={() => setPage(3)}>date</button>
+                <button type="button" onClick={() => props.setPage(3)}>date</button>
             </div>
         </>
     )

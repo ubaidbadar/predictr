@@ -21,7 +21,7 @@ const AddStockModal = ({ onFinished, defaultValue }) => {
             Root={Form}
             onSubmit={onSubmit}
             title='Add Stock'
-            component={({ showPopUp }) => <button className='btn btn-text' onClick={showPopUp}>try adding it</button>}
+            component={tools => <button className='btn btn-text' onClick={tools.open}>try adding it</button>}
             footer={isLoading => (
                 <div className='model-footer mt-2'>
                     <button className={`btn btn-primary me-auto ${isLoading ? 'progress-btn' : ''}`} disabled={isLoading}>Save</button>

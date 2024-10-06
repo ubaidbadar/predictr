@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Item from './Item';
+import Item from './search-item';
 import AddIcon from '../../icons-v2/AddIcon';
 import CheckIcon from '../../icons-v2/CheckIcon';
 
