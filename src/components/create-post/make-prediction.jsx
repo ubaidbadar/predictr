@@ -1,14 +1,11 @@
-import Pluse from '../../icons/plus';
+import ModalHeader from '../../ui/modal/header';
 import Switch from '../../ui/switch';
 import styles from './make.module.scss';
 
 export default function MakePrediction(props) {
     return (
         <>
-            <div className='Modal-Header'>
-                <h3>Make a Prediction</h3>
-                <button className='btn-close'><Pluse /></button>
-            </div>
+            <ModalHeader title="Make a Prediction" close={props.close} />
             <div className={styles.root}>
                 I think
                 <button type="button" onClick={() => props.setPage(1)}>{props.stock_name || 'stock'}</button>

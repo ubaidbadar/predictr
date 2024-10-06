@@ -1,5 +1,10 @@
-export default function BoxField() {
+import styles from './styles.module.scss';
+
+export default function BoxField({title, className, ...props}) {
     return (
-        <label></label>
+        <label className={`${styles.root} ${className}`}>
+            <input {...props} />
+            {title}
+        </label>
     )
 }
