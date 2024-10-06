@@ -1,4 +1,5 @@
 import Pluse from '../../icons/plus';
+import Switch from '../../ui/switch';
 import styles from './make.module.scss';
 
 export default function MakePrediction(props) {
@@ -16,6 +17,7 @@ export default function MakePrediction(props) {
                 by
                 <button type="button" onClick={() => props.setPage(3)}>date</button>
             </div>
+            <Switch title="Only for Subscribers?" />
         </>
     )
 }
