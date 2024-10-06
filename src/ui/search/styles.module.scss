@@ -7,34 +7,14 @@
         background-color: #f5f5f5; // equivalent to bg-light-1
         border-radius: 2em;
         flex: 1;
-
-        &::-webkit-search-cancel-button {
-            -webkit-appearance: none;
-            right: 0;
-            position: absolute;
-            appearance: none;
-            width: 2.25em;
-            height: 2.25em;
-            border-radius: 50%;
-            z-index: 2;
-        }
-
-        // &:focus:not(:placeholder-shown),
-        // &:hover:not(:placeholder-shown) {
-        //     & + svg {
-        //         display: none;
-        //     }
-        //     & ~ span {
-        //         display: flex;
-        //     }
-        // }
+        @apply border-1 border-light-0 rounded-[2em] flex-1 focus:border-primary-0;
     }
     >svg {
         height: 1em;
         width: 1em;
     }
 
-    >svg, >span {
+    input + * {
         position: absolute !important;
         right: 0.726em;
     }
