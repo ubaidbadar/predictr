@@ -6,7 +6,7 @@ export default function Movement(props) {
         <>
             <ModalHeader title="Movement" close={props.back} />   
             <div>
-                <BoxField title="Up" />
+                <BoxField label="Movement" placeholder="Movement" />
             </div>
         </>
     )
