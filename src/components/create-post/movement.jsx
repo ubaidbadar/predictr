@@ -1,11 +1,10 @@
 import BoxField from "../../ui/boxfield";
 import Input from "../../ui/input";
-import ModalHeader from "../../ui/modal/header";
 
 export default function Movement(props) {
     return (
         <>
-            <ModalHeader title="Movement" close={props.back} />
+            {props.getHeader('Movement')}
             <p className="leading-3">Trend</p>
             <div className="flex gap-5">
                 <BoxField checked={props.estimated_direction === 'Up'} onChange={props.onChange} name="estimated_direction" title="Up" type="radio" />

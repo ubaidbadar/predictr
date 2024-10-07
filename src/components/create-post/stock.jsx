@@ -1,5 +1,4 @@
 import useStockSearch from "../../hooks/useStockSearch";
-import ModalHeader from "../../ui/modal/header";
 import Search from "../../ui/search";
 import ToggleText from "../../ui/toggle-text";
 import AddStockModal from "../add-stock-modal";
@@ -10,7 +9,7 @@ function Main(props) {
     const { results, onAdd, ...sProps } = useStockSearch({ value: props.stock_symbol, api: "fetch_stock" });
     return (
         <div className={styles.main}>
-            <Search placeholder="Search" {...sProps} />
+            <Search placeholder="Search" className="mb-5" {...sProps} />
             {results.map(item => (
                 <ToggleText
                     key={item._id}
@@ -30,10 +29,7 @@ function Main(props) {
 export default function Stock(props) {
     return (
         <>
-            <ModalHeader
-                title={<>{props.title} / <span>Select a stock</span></>}
-                close={props.back}
-            />
+            {props.getHeader('Select a stock')}
             <Main {...props}
                 onSelect={e => {
                     props.setForm({stock_name: e.target.value});
