@@ -1,7 +1,6 @@
 .Modal-0 {
     .Dialog-Main {
-        @apply grid gap-4 w-[35rem] p-6 rounded-4;
-        @extend .cont;
+        @apply flex flex-col gap-4 md:w-[35rem] md:max-h-0 h-full w-full md:p-6 p-5 md:rounded-4;
     }
     .Modal-Header {
         @extend .flex-between;
@@ -13,5 +12,8 @@
         >h3 {
             @apply text-lg font-medium flex-between gap-[0.25em];
         }
+    }
+    .Modal-Footer {
+        @apply border-t-1 mt-auto md:mt-2 border-light-3 pt-5 flex justify-end;
     }
 }

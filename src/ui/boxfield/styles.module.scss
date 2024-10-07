@@ -4,7 +4,41 @@
     input {
         @apply hidden;
     }
-    &::after {
+    &::before {
         font-family: "Font Awesome 5 Free";
+        text-decoration: none !important;
     }
+    &::after {
+        content: attr(title);
+    }
+}
+
+.root:not(:has(:disabled)) {
+    &:has([type = "checkbox"]), &:has([type = "radio"]:not(:checked)) {
+        &:hover:not(:active) {
+            @apply cursor-pointer;
+            input ~ *, &::after {
+                @apply underline;
+            }
+        }
+    }
+}
+
+// checkbox
+.root:has(input[type = "checkbox"])::before{
+    content: "\f0c8";
+}
+
+.root:has(input[type = "checkbox"]:checked)::before {
+    content: '\f14a';
+    font-weight: 900;
+}
+
+.root:has(input[type = "radio"])::before{
+    content: "\f111";
+}
+
+.root:has(input[type = "radio"]:checked)::before {
+    content: '\f192';
+    font-weight: 900;
 }
