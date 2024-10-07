@@ -1,0 +1,11 @@
+.root {
+    @apply inline-flex gap-[0.5em] items-center select-none relative;
+    &::before {
+        content: "";
+        @apply w-[1em] h-[1em] border-2 rounded-[0.25em];
+    }
+    &::after {
+        content: "";
+        @apply w-[0.7em] border-b-2 mb-[0.1em] border-l-2 -rotate-45 h-[0.3em] absolute left-[0.125em];
+    }
+}

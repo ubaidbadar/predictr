@@ -3,7 +3,7 @@
     @apply z-9 bg-dark-1 bg-opacity-80;
     animation: Dialog 0.1s;
     .Dialog-Main {
-        @apply bg-surface p-4;
+        @apply bg-surface;
         animation: ScaleAnimation 0.3s;
     }
     &.close {
