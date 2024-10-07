@@ -4,6 +4,7 @@ import { SymbolContextProvider } from './SymbolContext';
 import AuthProvider from './auth/provider';
 import { BrowserRouter } from 'react-router-dom';
 import onResize from '../lib/onResize';
+import Pickers from './pickers';
 
 export default function GlobalContext(props) {
 
@@ -21,13 +22,15 @@ export default function GlobalContext(props) {
 
     return (
         <BrowserRouter>
-            <RefreshProvider>
-                <AuthProvider>
-                    <SymbolContextProvider>
-                        {props.children}
-                    </SymbolContextProvider>
-                </AuthProvider>
-            </RefreshProvider>
+            <Pickers>
+                <RefreshProvider>
+                    <AuthProvider>
+                        <SymbolContextProvider>
+                            {props.children}
+                        </SymbolContextProvider>
+                    </AuthProvider>
+                </RefreshProvider>
+            </Pickers>
         </BrowserRouter>
     );
 }

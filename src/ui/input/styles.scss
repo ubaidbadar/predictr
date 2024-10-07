@@ -3,11 +3,14 @@ $left: 1em;
 .Input-Wrapper {
     @apply relative flex flex-wrap leading-3 items-center border-2 text-light-3 rounded-[0.5em];
 
-    input {
+    input, textarea {
         background: none;
         outline: none;
         padding: calc($left - 2px);
         @apply text-dark-0 flex-1 min-w-0 z-1;
+    }
+    textarea {
+        resize: none;
     }
 
     legend {

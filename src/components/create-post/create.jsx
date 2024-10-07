@@ -5,6 +5,7 @@ import Chevron from "../../icons-v2/chevron";
 import Movement from "./movement";
 import DatePicker from "./date-picker";
 import ModalHeader from "../../ui/modal/header";
+import dayjs from "dayjs";
 
 const pages = {
     0: MakePrediction,
@@ -14,10 +15,11 @@ const pages = {
 }
 
 
+
 export default function Create(props) {
     const [form, setForm] = useState({
         stock_symbol: '',
-        guess_date: '',
+        guess_date: "",
         description: '',
         estimated_direction: 'Up',
         estimated_change_percent: '',
@@ -25,7 +27,7 @@ export default function Create(props) {
         onlyForSubscribers: props.premium ? true : false,
     });
 
-    const [page, setPage] = useState(2), [loading, setLoading] = useState(false);
+    const [page, setPage] = useState(0), [loading, setLoading] = useState(false);
     const Current = pages[page], newProps = { ...form, setForm: update => setForm({ ...form, ...update }), setPage, back: () => setPage(0) }
     newProps.getHeader = title => (
         <ModalHeader

@@ -1,0 +1,14 @@
+.MuiDateCalendar-root {
+    * {
+        font-family: inherit !important;
+    }
+    .Mui-selected {
+        @apply bg-primary-0 !important;
+    }
+    .MuiPickersDay-today {
+        @apply border-light-3 !important;
+    }
+}
+
+
+// class="MuiButtonBase-root Mui-disabled MuiPickersDay-root Mui-disabled MuiPickersDay-dayWithMargin MuiPickersDay-today css-23p0if-MuiButtonBase-root-MuiPickersDay-root"
