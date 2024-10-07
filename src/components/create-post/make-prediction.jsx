@@ -1,6 +1,7 @@
 import Input from '../../ui/input';
 import ModalHeader from '../../ui/modal/header';
 import Switch from '../../ui/switch';
+import Textarea from '../../ui/textarea';
 import styles from './make.module.scss';
 
 export default function MakePrediction({ stock_name, estimated_change_percent, estimated_direction, guess_date, setPage, close }) {
@@ -15,7 +16,8 @@ export default function MakePrediction({ stock_name, estimated_change_percent, e
                 by
                 <button type="button" className={guess_date ? styles.active : ""} onClick={() => setPage(3)}>{guess_date ? guess_date.format("MMMM DD, YYYY") : "date"}</button>
             </div>
-            <Input />
+            <Input label="Why do you think this?" />
+            <Textarea label="Why do you think this?" />
             <Switch title="Only for Subscribers?" />
         </>
     )

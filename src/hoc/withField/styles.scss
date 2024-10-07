@@ -3,7 +3,7 @@ $left: 1em;
 .Input-Wrapper {
     @apply relative flex flex-wrap leading-3 items-center border-2 text-light-3 rounded-[0.5em];
 
-    input, textarea {
+    .Field {
         background: none;
         outline: none;
         padding: calc($left - 2px);
@@ -19,7 +19,7 @@ $left: 1em;
     }
 
     label {
-        @apply absolute top-1/2 -translate-y-1/2 transition-all;
+        @apply absolute top-[1em] transition-all;
         left: $left;
     }
     .Error {
@@ -32,7 +32,7 @@ $left: 1em;
 
 
 .Input-Wrapper {
-    input {
+    .Field {
 
         &:focus,
         &:not(:placeholder-shown) {
@@ -47,14 +47,14 @@ $left: 1em;
         }
     }
 
-    &:has(input:focus) {
+    &:has(:focus) {
         @apply text-primary-0;
     }
 }
 
 .Input-Wrapper:has(.Input-Blur) form.submitted .Input-Wrapper {
 
-    &:has(input:invalid),
+    &:has(:invalid),
     &:has(.invalid) {
         @apply border-red-0;
 
