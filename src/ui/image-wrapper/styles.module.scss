@@ -1,8 +1,11 @@
 .root {
-    img {
-        object-fit: cover;
+    @apply relative flex;
+    &::after {
+        content: "";
+        padding-top: var(--height);
     }
-    >*:not(:first-child) {
+    img {
+        @apply object-cover;
         position: absolute;
         top: 0;
         left: 0;

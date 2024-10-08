@@ -36,8 +36,8 @@
 
 .btn-text {
     @extend .btn;
-    @apply gap-[0.4em];
+    @apply gap-[0.5em] text-primary-0;
     &:hover:not(:active) {
-        @apply underline;
+        @apply underline cursor-pointer;
     }
 }

@@ -1,10 +1,10 @@
 .root {
-    @apply flex justify-between items-center;
-
+    @apply sm:flex grid gap-3 items-center;
+    grid-template-columns: auto 1fr;
     >button {
         @apply px-3 py-2 rounded-2;
         &:not(.active) {
-            @apply border-2 border-light-3 text-gray-0 hover:text-primary-0 flex items-center gap-2;
+            @apply border-2 text-light-3 justify-between hover:text-primary-0 flex items-center gap-2;
 
             &::after {
                 font-family: "Font Awesome 5 Free";

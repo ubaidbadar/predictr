@@ -2,12 +2,14 @@ import Input from '../../ui/input';
 import ModalHeader from '../../ui/modal/header';
 import Switch from '../../ui/switch';
 import Textarea from '../../ui/textarea';
+import ImageSelect from './image-select';
 import styles from './make.module.scss';
 
-export default function MakePrediction({ stock_name, estimated_change_percent, estimated_direction, guess_date, setPage, close }) {
+export default function MakePrediction(props) {
+    const { stock_name, estimated_change_percent, estimated_direction, guess_date, setPage } = props;
     return (
         <>
-            <ModalHeader title="Make a Prediction" close={close} />
+            <ModalHeader title="Make a Prediction" close={props.close} />
             <div className={styles.root}>
                 I think
                 <button type="button" className={stock_name ? styles.active : ""} onClick={() => setPage(1)}>{stock_name || 'stock'}</button>
@@ -18,6 +20,7 @@ export default function MakePrediction({ stock_name, estimated_change_percent, e
             </div>
             <Input label="Why do you think this?" />
             <Textarea label="Why do you think this?" />
+            <ImageSelect {...props} />
             <Switch title="Only for Subscribers?" />
         </>
     )
