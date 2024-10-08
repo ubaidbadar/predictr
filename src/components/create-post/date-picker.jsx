@@ -5,7 +5,7 @@ import dayjs from "dayjs";
 
 
 const date = dayjs(), min = date.add(2, 'day')
-const shouldDisableDate = date => {
+const disabled = date => {
     const day = date.day();
     return day === 0 || day === 6;
 }
@@ -15,11 +15,11 @@ export default function DatePicker(props) {
     return (
         <>
             {props.getHeader('Date')}
-            <DateCalendar className="m-auto"
+            <DateCalendar className="m-auto scale-110 origin-top"
                 onChange={setDate}
                 minDate={min}
                 value={date}
-                shouldDisableDate={shouldDisableDate}
+                shouldDisableDate={disabled}
             />
             <div className="Modal-Footer">
                 <button onClick={() => {

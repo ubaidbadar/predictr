@@ -1,5 +1,5 @@
 .main {
-    @apply grid text-nowrap;
+    @apply flex flex-col min-h-[30rem] text-nowrap;
     >label:not(:first-child) {
         @apply flex items-center py-2 border-t-1;
         &:hover + label {

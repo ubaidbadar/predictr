@@ -1,6 +1,6 @@
 import React from 'react';
 import InputField from '../ui/input';
-import Model from '../ui/modal/modal';
+import Modal from '../ui/modal/modal';
 import Form from '../hoc/form';
 import axios from '../config/axios';
 
@@ -17,19 +17,19 @@ const AddStockModal = ({ onFinished, defaultValue }) => {
             .catch(err => data.onFailure(err?.response?.data?.message || err.message))
     }
     return (
-        <Model
+        <Modal
             Root={Form}
             onSubmit={onSubmit}
             title='Add Stock'
             component={tools => <button className='btn btn-text' onClick={tools.open}>try adding it</button>}
-            footer={isLoading => (
+            footer={props => (
                 <div className='model-footer mt-2'>
-                    <button className={`btn btn-primary me-auto ${isLoading ? 'progress-btn' : ''}`} disabled={isLoading}>Save</button>
+                    <button className={`btn btn-primary me-auto ${props.className}`} disabled={props.disabled}>Save</button>
                 </div>
             )}
         >
             <InputField defaultValue={defaultValue} label='Symbol' name='symbol' required={true} errorText="Symbol is required!" />
-        </Model>
+        </Modal>
     )
 }
 

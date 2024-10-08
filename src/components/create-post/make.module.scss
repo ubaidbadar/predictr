@@ -4,7 +4,7 @@
     >button {
         @apply px-3 py-2 rounded-2;
         &:not(.active) {
-            @apply border-2 hover:text-primary-0 flex items-center gap-2;
+            @apply border-2 border-light-3 text-gray-0 hover:text-primary-0 flex items-center gap-2;
 
             &::after {
                 font-family: "Font Awesome 5 Free";
@@ -14,7 +14,7 @@
             }
         }
         &.active {
-            @apply bg-light-0;
+            @apply bg-light-4;
         }
     }
 }
