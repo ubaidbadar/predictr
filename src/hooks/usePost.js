@@ -4,10 +4,10 @@ import getAxiosMessage from "../lib/getAxiosMessage";
 
 export default function usePost() {
     const [state, setState] = useState({});
-    const submit = (api, method = "post", data) => {
+    const submit = (options) => {
         if (state.loading) return;
         setState({ loading: true })
-        axios[method](api, data)
+        axios(options)
             .then(res => setState({ data: res }))
             .catch(err => setState({ err: getAxiosMessage(err) }))
     }

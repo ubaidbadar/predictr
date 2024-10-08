@@ -1,20 +1,24 @@
 import usePost from "../../hooks/usePost"
 
-const required = ['stock_symbol', 'guess_date', 'estimated_change_percent']
-
-
-
 
 function Main(props) {
     const { loading, err, res, submit } = usePost();
-    return (
-        <div className="Modal-Footer">
-            <button className="btn-primary" onSubmit={() => submit(props.form)}>Submit</button>
-        </div>
-    )
+    return <button className={`btn-primary${loading ? " loading" : ""}`}
+        onClick={() => {
+            const data = new FormData();
+            for (let key in props.form) data.append(key, props.form[key]);
+            submit({
+                method: 'POST',
+                url: '/leaderboard_post',
+                data,
+                headers: { 'content-type': 'multipart/form-data' },
+            })
+        }}
+    >Submit</button>
 }
 
-export default function Submit({ form }) {
+export default function Submit(props) {
+    const form = props.form;
     return (
         <div className="Modal-Footer">
             {form.stock_symbol && form.guess_date && form.estimated_change_percent ?
