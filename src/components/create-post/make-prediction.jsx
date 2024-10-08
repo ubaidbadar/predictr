@@ -5,13 +5,13 @@ import ImageSelect from './image-select';
 import styles from './make.module.scss';
 
 export default function MakePrediction(props) {
-    const { stock_name, estimated_change_percent, estimated_direction, guess_date, setPage } = props;
+    const { stock_symbol, estimated_change_percent, estimated_direction, guess_date, setPage } = props;
     return (
         <>
             <ModalHeader title="Make a Prediction" close={props.close} />
             <div className={styles.root}>
                 I think
-                <button type="button" className={stock_name ? styles.active : ""} onClick={() => setPage(1)}>{stock_name || 'stock'}</button>
+                <button type="button" className={stock_symbol ? styles.active : ""} onClick={() => setPage(1)}>{stock_symbol || 'stock'}</button>
                 will go
                 <button type="button" className={estimated_change_percent ? styles.active : ""} onClick={() => setPage(2)}>{estimated_change_percent ? `${estimated_direction} ${estimated_change_percent}%` : "movement"}</button>
                 by

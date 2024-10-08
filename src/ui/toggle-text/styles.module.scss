@@ -5,4 +5,7 @@
     &:has(:checked), &:not(:has(:checked)):hover {
         @apply underline text-primary-0;
     }
+    &[about]::before {
+        content: attr(about);
+    }
 }

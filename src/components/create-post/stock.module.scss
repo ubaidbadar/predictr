@@ -2,16 +2,14 @@
     @apply flex flex-col min-h-[30rem] text-nowrap;
     >label:not(:first-child) {
         @apply flex items-center py-2 border-t-1;
-        &:hover + label {
-            @apply border-t-primary-0;
-        }
-        span[ticker]{
-            &::before {
-                content: attr(ticker);
-                width: 5.5rem;
-                display: inline-block;
-                color: var(--text);
+        &:hover  {
+            @apply no-underline;
+            + label {
+                @apply border-t-primary-0 !important;
             }
+        }
+        &::before {
+            width: 5.5rem;
         }
         &:hover {
             &, & + label {

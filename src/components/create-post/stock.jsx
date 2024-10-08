@@ -9,17 +9,17 @@ function Main(props) {
     const { results, onAdd, ...sProps } = useStockSearch({ value: props.stock_symbol, api: "fetch_stock" });
     return (
         <div className={styles.main}>
-            <Search placeholder="Search" className="mb-5" {...sProps} />
+            <Search placeholder="Search" className="mb-6" {...sProps} />
             {results.map(item => (
                 <ToggleText
                     key={item._id}
                     value={item.ticker}
                     onChange={props.onSelect}
-                    subtitle={item.ticker}
+                    about={item.ticker}
                     title={item.company_name}
                 />
             ))}
-            <p className='mb-0 text-accent-4 d-flex gap-1 align-items-center'>
+            <p className='mt-4 text-accent-4 d-flex gap-1 align-items-center'>
                 Don't see your stock, <AddStockModal defaultValue={sProps.value} onFinished={onAdd} />
             </p>
         </div>

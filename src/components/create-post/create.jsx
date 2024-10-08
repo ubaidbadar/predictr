@@ -34,7 +34,6 @@ export default function Create(props) {
         </h3>
     );
     newProps.onChange = e => newProps.setForm({ [e.target.name]: e.target.value });
-
     return (
         <>
             <Current {...newProps} />
