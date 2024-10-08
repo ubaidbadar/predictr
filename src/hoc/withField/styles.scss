@@ -19,7 +19,7 @@ $left: 1em;
     }
 
     label {
-        @apply absolute top-[1em] transition-all;
+        @apply absolute top-[1em] transition-all origin-left;
         left: $left;
     }
     .Error {
@@ -37,11 +37,12 @@ $left: 1em;
         &:focus,
         &:not(:placeholder-shown) {
             ~label {
-                margin-top: -($left * 1.5);
+                margin-top: -($left * 1.45);
                 @apply scale-75;
             }
 
             ~legend {
+                font-size: 0.8em;
                 @apply max-w-96;
             }
         }
