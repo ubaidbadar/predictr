@@ -1,4 +1,3 @@
-import Input from '../../ui/input';
 import ModalHeader from '../../ui/modal/header';
 import Switch from '../../ui/switch';
 import Textarea from '../../ui/textarea';
@@ -18,8 +17,7 @@ export default function MakePrediction(props) {
                 by
                 <button type="button" className={guess_date ? styles.active : ""} onClick={() => setPage(3)}>{guess_date ? guess_date.format("MMMM DD, YYYY") : "date"}</button>
             </div>
-            <Input label="Why do you think this?" />
-            <Textarea label="Why do you think this?" />
+            <Textarea value={props.description} name='description' onChange={props.onChange} label="Why do you think this?" />
             <ImageSelect {...props} />
             <Switch title="Only for Subscribers?" />
         </>

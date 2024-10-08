@@ -32,7 +32,7 @@ export default function Stock(props) {
             {props.getHeader('Select a stock')}
             <Main {...props}
                 onSelect={e => {
-                    props.setForm({ stock_name: e.target.value, stock_symbol: e.target.title });
+                    props.setForm({ stock_symbol: e.target.value, stock_name: e.target.title });
                     props.back();
                 }}
             />

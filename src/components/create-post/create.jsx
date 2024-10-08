@@ -4,6 +4,7 @@ import Stock from "./stock";
 import Chevron from "../../icons-v2/chevron";
 import Movement from "./movement";
 import DatePicker from "./date-picker";
+import Submit from "./submit";
 
 const pages = {
     0: MakePrediction,
@@ -34,5 +35,10 @@ export default function Create(props) {
     );
     newProps.onChange = e => newProps.setForm({ [e.target.name]: e.target.value });
 
-    return <Current {...newProps} />
+    return (
+        <>
+            <Current {...newProps} />
+            {page === 0 && <Submit form={form} />}
+        </>
+    )
 }
