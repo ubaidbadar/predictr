@@ -1,0 +1,53 @@
+.bar {
+    height: 0.2em;
+    flex: 1;
+}
+
+.root {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    color: var(--surface-1);
+    white-space: nowrap;
+    &::before, &::after {
+        font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f164";
+        width: 2.25em;
+        height: 2.25em;
+        border-radius: 50%;
+        background-color: var(--accent-3);
+        display: grid;
+        place-items: center;
+        margin: 0 0.5em 0 0;
+    }
+    &::after {
+        transform: scale(-1);
+        background-color: var(--accent-2);
+        margin: 0 0 0 0.5em;
+    }
+    >span {
+        height: 0.5em;
+        border-radius: 1em 0 0 1em;
+        background-color: currentColor;
+        margin: auto 0 0.125em 0;
+        position: relative;
+        color: var(--accent-2);
+        &:only-child {
+            border-radius: 1rem;
+        }
+        &::before {
+            content: attr(title);
+            position: absolute;
+            top: calc(-100% - 1em);
+        }
+    }
+    @media (max-width: 425px) {
+        font-size: 13px;
+    }
+}
+
+.disagree {
+    transform: scaleX(-1);
+    &::before {
+        transform: scaleX(-1);
+    }
+}

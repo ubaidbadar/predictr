@@ -1,0 +1,1 @@
+export default (inc = 0) => window.innerHeight + window.scrollY + inc;

@@ -1,0 +1,6 @@
+.root {
+    gap: 0.25em;
+    >a:not(:first-child):not(:last-child) {
+        margin-left: -1.25em;
+    }
+}
