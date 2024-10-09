@@ -19,7 +19,12 @@ export default function MakePrediction(props) {
             </div>
             <Textarea value={props.description} name='description' onChange={props.onChange} label="Why do you think this?" />
             <ImageSelect {...props} />
-            <Switch title="Only for Subscribers?" />
+            {props.onlyForSubscribers !== undefined && (
+                <Switch title="Only for Subscribers?"
+                    checked={props.onlyForSubscribers}
+                    onChange={e => props.setForm({ onlyForSubscribers: e.target.checked })}
+                />
+            )}
         </>
     )
 }
