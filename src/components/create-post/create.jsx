@@ -32,6 +32,7 @@ export default function Create(props) {
         setPage,
         back: () => setPage(0),
         setForm: update => setForm({ ...form, ...update }),
+        close: props.close
     }
     newProps.getHeader = title => (
         <h3 className="flex-center gap-1">

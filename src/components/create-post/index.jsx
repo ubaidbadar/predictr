@@ -13,7 +13,7 @@ export default function CreatePost(props) {
             </button>
             {tools.className && (
                 <Modal className={`Modal-0 ${tools.className}`}>
-                    <Create {...props} />
+                    <Create {...props} close={tools.close} />
                 </Modal>
             )}
         </>

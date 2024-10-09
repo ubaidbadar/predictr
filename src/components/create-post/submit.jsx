@@ -6,7 +6,10 @@ function Main(props) {
     return <button className={`btn-primary${loading ? " loading" : ""}`}
         onClick={() => {
             const data = new FormData();
-            for (let key in props.form) data.append(key, props.form[key]);
+            if(typeof props.form.guess_date !== 'string') {
+                props.form.guess_date = props.form.guess_date.toISOString();
+            }
+            for (let key in props.form) props.form[key] !== undefined && data.append(key, props.form[key]);
             submit({
                 method: 'POST',
                 url: '/leaderboard_post',
