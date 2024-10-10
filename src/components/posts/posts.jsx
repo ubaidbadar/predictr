@@ -2,11 +2,11 @@ import useScrollFetch from "../../hooks/useScrollFetch";
 import Spinner from "../../ui/spinner";
 import Post from "../post";
 
-const Main = ({api = '/fetch_global_feeds'}) => {
+const Main = ({api = '/fetch_global_feeds', ...props}) => {
     const { exists, posts, initial, ...state } = useScrollFetch(api)
     return (
         <>
-            {posts.map(post => <Post {...post} key={post._id} />)}
+            {posts.map(post => <Post {...props} {...post} key={post._id} />)}
             {exists && <Spinner className="mx-auto text-exs" />}
         </>
     )

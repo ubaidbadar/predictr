@@ -1,12 +1,12 @@
 import getProfile from "../../../old/utility/getProfile";
-import Follow from "../follow";
 import User from "../user";
 import dayjs from "dayjs";
 import plugin from "dayjs/plugin/relativeTime";
+import Buttons from "./buttons";
 dayjs.extend(plugin)
 
-export default function Post({isFollow = true, ...props}) {
-    const postedOn = dayjs(props.createdOn)
+export default function Post(props) {
+    const postedOn = dayjs(props.createdOn), isCurrent = props.userId._id === props.user._id;
     return (
         <div className="border border-light-0 bg-light-1 rounded-4">
             <div className="p-4 bg-surface shadow-1 rounded-4">
@@ -16,9 +16,8 @@ export default function Post({isFollow = true, ...props}) {
                             postedOn.isSame(dayjs(), "day") ? postedOn.fromNow() : postedOn.format('MMM DD, YYYY, hh:mm A')
                         }
                     />
-                    {isFollow && <Follow userId={props.userId._id} is_following={props.is_following} />}
+                    {!isCurrent && <Buttons {...props} />}
                 </div>
-
             </div>
         </div>
     )
