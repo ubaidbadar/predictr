@@ -4,11 +4,13 @@ import dayjs from "dayjs";
 
 
 
-const date = dayjs(), min = date.add(2, 'day')
-const disabled = date => {
-    const day = date.day();
-    return day === 0 || day === 6;
-}
+const date = dayjs(), regex = /0|6/;
+let min = date.add(2, 'day');
+
+if(regex.test(min.day())) min = min.add(1, 'day');
+if(regex.test(min.day())) min = min.add(1, 'day');
+
+const disabled = date => regex.test(date.day());
 
 export default function DatePicker(props) {
     const [date, setDate] = useState(props.guess_date ? dayjs(props.guess_date) : min);
