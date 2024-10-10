@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {    
       spacing: {
-        inherit: "inherit"
+        inherit: "inherit",
+        nav: 'var(--nav-height)',
       }
     },
     borderWidth: {
@@ -30,7 +31,8 @@ module.exports = {
       green: {
         "0": "#4BB54B",
         "1": "#00E983",
-        "2": "#BAEBAE"
+        "2": "#BAEBAE",
+        "3": "#0AC171"
       },
       light: {
         "0": "#E7E7E7",

@@ -6,7 +6,7 @@ import Avatar from '../avatar';
 
 export default function Header(props) {
     return (
-        <header className="cont-p gap-8 backdrop-blur-lg bg-white bg-opacity-80 nav-height border-light-0 border-b flex-center">
+        <header className="cont-p gap-8 backdrop-blur-lg bg-white bg-opacity-80 sticky top-0 z-2 h-nav border-light-0 border-b flex-center">
             <Link to='/' className="text-primary-0 text-xl font-extrabold">Predictr.</Link>
             <Search className='ml-auto text-sm min-w-[18.75rem]' placeholder="Search Predictr..." />
             {props.isLoggedIn ? (

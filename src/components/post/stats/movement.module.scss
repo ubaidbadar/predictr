@@ -1,62 +1,7 @@
 .root {
-    display: flex;
-    align-items: center;
-    font-size: .875rem;
-    gap: .4375rem;
-    padding: .75rem 1rem;
-    position: relative;
-    z-index: 1;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
-        background-color: currentColor;
-    }
-
-
-    &:not(.daysLeft) {
-
-        svg,
-        span {
-            color: var(--surface-1);
-        }
-
-        .points {
-            background-color: var(--surface-1);
-            color: inherit;
-            &::after {
-                color: inherit;
-            }
-        }
-    }
-
-    svg {
-        height: 1em;
-    }
-
-    &.daysLeft {
-        &::before {
-            opacity: 0.2;
-        }
-        
-    }
-}
-
-
-.points {
-    padding: 0.25em 0.5em;
-    border-radius: 1em;
-    line-height: 1;
-    position: relative;
-    z-index: 1;
-    background-color: currentColor;
-    &::after {
-        content: attr(aria-details) " Points";
-        color: var(--surface-1);
+    @apply flex items-center px-5 py-4 gap-[0.375rem];
+    &[about]::after {
+        content: 'Result in ' attr(about) 'd';
+        @apply ml-auto;
     }
 }
