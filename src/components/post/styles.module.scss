@@ -1,0 +1,6 @@
+.main {
+    @apply gap-[.375rem];
+    b {
+        @apply bg-primary-1 px-2 rounded-2 leading-0 h-7 flex items-center;
+    }
+}
