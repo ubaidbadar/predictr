@@ -7,11 +7,12 @@ dayjs.extend(plugin)
 import styles from './styles.module.scss'
 import ToolTip from "../../ui/tooltip";
 import Stats from "./stats";
+import Agree from "./agree";
 
 export default function Post(props) {
     const postedOn = dayjs(props.createdOn), isCurrent = props.userId._id === props.user._id, guess_date = dayjs(props.guess_date)
     return (
-        <div className="border border-light-0 overflow-hidden bg-light-1 rounded-4">
+        <div className="border border-light-0 bg-light-1 rounded-4">
             <div className="p-4 grid m-2px gap-4 bg-surface shadow-1 rounded-4">
                 <div className="flex-between">
                     <User {...getProfile(props.userId)}
@@ -33,6 +34,9 @@ export default function Post(props) {
                             {props.description && <p className={`my-0 w-100 p-1 ${styles.blur}`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut pariatur explicabo laboriosam repellendus molestias accusantium. Doloremque expedita quas magni. Eos delectus recusandae odit corporis, totam suscipit omnis ipsam fugit hic?</p>}
                         </>
                     )}
+                </div>
+                <div className="text-gray-0 gap-6 flex">
+                    <Agree {...props} />
                 </div>
             </div>
             <Stats {...props} />

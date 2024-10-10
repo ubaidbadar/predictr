@@ -3,7 +3,8 @@ import BookMark from "../../icons/bookmark";
 import styles from './styles.module.scss'
 import getAxiosMessage from "../../lib/getAxiosMessage";
 
-export default function Follow({ userId, is_following }) {
+export default function Follow({ userId, is_following, isLoggedIn }) {
+    if(!isLoggedIn) return <a href="#login" className={styles.root}>Follow <BookMark /></a>
     const className = `follow-${userId}`;
     return (
         <button

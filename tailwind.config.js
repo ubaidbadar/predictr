@@ -18,6 +18,7 @@ module.exports = {
     },
     colors: {
       current: "currentColor",
+      inherit: "inherit",
       none: "transparent",
       primary: {
         "0": "#024BAC",
