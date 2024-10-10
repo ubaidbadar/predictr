@@ -34,7 +34,7 @@ button {
 }
 
 .leaderboard {
-    @apply grid gap-4 text-sm items-start py-4 relative;
+    @apply grid gap-4 text-sm items-start relative;
     grid-template-columns: 16.75rem 33.5rem 16.75rem;
 }
 

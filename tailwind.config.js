@@ -46,6 +46,7 @@ module.exports = {
       surface: '#fff',
       gray: {
         "0": "#505050",
+        1: "#717272"
       },
       red: {
         "0": "#E33F3F",
@@ -65,6 +66,7 @@ module.exports = {
       "base": "1rem",
       "sm": "0.875rem",
       "xs": "0.75rem",
+      xxs: "0.6875rem",
       "exs": "0.625rem"
     },
     zIndex: {

@@ -4,7 +4,7 @@ import Stats from "../../components/stats";
 
 export default function Left(props) {
     return (
-        <div className="grid gap-inherit sticky top-nav">
+        <div className="grid gap-inherit sticky top-nav pt-4">
             {props.isLoggedIn ? (
                 <>
                     <Stats {...props} />

@@ -4,12 +4,12 @@ import Movement from './movement';
 import dayjs from 'dayjs';
 
 
-const transformDate = date => dayjs(date).format('MMM DD, hh:mm A')
+const transformDate = date => dayjs(date).format('DD MMM, h:mm A')
 
 const Item = ({ title, value, subtitle }) => (
-    <div className="flex-col">
-        <small className="text-xs">{title}</small>
-        <b className='text-md font-bold'>{value}</b>
+    <div>
+        <small className="text-gray-0 text-xs">{title}</small>
+        <h6 className='text-md font-bold'>{value}</h6>
         {subtitle && <small className='smaller'>{subtitle}</small>}
     </div>
 )
@@ -17,7 +17,7 @@ const Item = ({ title, value, subtitle }) => (
 const Stats = ({ current_stock_price, stock_price_when_guessed, guess_date, estimated_direction, actual_direction, guess_accuracy, actual_change, last_updated, createdOn, points, allowed }) => {
     return (
         <div>
-            <div className='grid grid-cols-3 px-4 py-3 gap-4'>
+            <div className='grid grid-cols-3 px-5 py-4 gap-4'>
                 <Item title="Price When Guessed"
                     value={`$${stock_price_when_guessed?.toFixed(2)} USD`}
                     subtitle={transformDate(createdOn)}
