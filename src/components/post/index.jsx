@@ -6,12 +6,13 @@ import Buttons from "./buttons";
 dayjs.extend(plugin)
 import styles from './styles.module.scss'
 import ToolTip from "../../ui/tooltip";
+import Stats from "./stats";
 
 export default function Post(props) {
     const postedOn = dayjs(props.createdOn), isCurrent = props.userId._id === props.user._id, guess_date = dayjs(props.guess_date)
     return (
         <div className="border border-light-0 bg-light-1 rounded-4">
-            <div className="p-4 bg-surface shadow-1 rounded-4">
+            <div className="p-4 grid m-[1px] gap-4 bg-surface shadow-1 rounded-4">
                 <div className="flex-between">
                     <User {...getProfile(props.userId)}
                         subtitle={
@@ -20,7 +21,7 @@ export default function Post(props) {
                     />
                     {!isCurrent && <Buttons {...props} />}
                 </div>
-                <div className={`flex-center flex-wrap gap-2 ${styles.main}`}>
+                <div className={`flex-center text-base flex-wrap gap-2 ${styles.main}`}>
                     I think <ToolTip title={props.stock_name}><b>{props.stock_symbol}</b></ToolTip> will go {props.allowed ? (
                         <>
                             <b>{props.estimated_direction} {props.estimated_change_percent}%</b> by <ToolTip title={guess_date.format('LL')}><b>{guess_date.format('MMM DD')}</b></ToolTip>
@@ -34,6 +35,7 @@ export default function Post(props) {
                     )}
                 </div>
             </div>
+            <Stats {...props} />
         </div>
     )
 }

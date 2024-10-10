@@ -14,7 +14,10 @@ function Main(props) {
                 <ToggleText
                     key={item._id}
                     value={item.ticker}
-                    onChange={() => props.setForm({ stock_symbol: item.ticker, stock_name: item.company_name })}
+                    onChange={() => {
+                        props.setForm({ stock_symbol: item.ticker, stock_name: item.company_name });
+                        props.back();
+                    }}
                     about={item.ticker}
                     title={item.company_name}
                 />
