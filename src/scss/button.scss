@@ -6,10 +6,6 @@
     height: 2.25em;
     border-radius: 50%;
     @extend .btn, .btn-hover;
-    svg {
-        max-width: 1em;
-        max-height: 1.125em;
-    }
     &.no-space {
         margin: -0.625em;
     }

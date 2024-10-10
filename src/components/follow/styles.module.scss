@@ -1,0 +1,18 @@
+.active {
+    >svg {
+        fill: currentColor;
+        margin-left: 0.5em;
+    }
+    &::after {
+        content: 'ing';
+    }
+}
+
+.root {
+    @apply text-primary-0 inline-flex;
+    >svg {
+        margin-left: 0.5em;
+        width: 0.9em;
+        order: 1;
+    }
+}
