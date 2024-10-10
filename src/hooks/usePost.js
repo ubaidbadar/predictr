@@ -8,7 +8,10 @@ export default function usePost() {
         if (state.loading) return;
         setState({ loading: true })
         axios(options)
-            .then(res => setState({ data: res }))
+            .then(res => {
+                options.cb && options.cb(res);
+                setState({ data: res });
+            })
             .catch(err => setState({ err: getAxiosMessage(err) }))
     }
     return {...state, submit}

@@ -43,7 +43,7 @@ export default function Create(props) {
     return (
         <>
             <Current {...newProps} />
-            {page === 0 && <Submit form={form} />}
+            {page === 0 && <Submit form={form} create={props.create} />}
         </>
     )
 }

@@ -13,6 +13,7 @@ function Main(props) {
                 url: '/leaderboard_post',
                 data,
                 headers: { 'content-type': 'multipart/form-data' },
+                cb: props.create
             })
         }}
     >Submit</button>
