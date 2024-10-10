@@ -2,13 +2,7 @@ $left: 1em;
 
 .Input-Wrapper {
     @apply relative flex flex-wrap leading-3 items-center border-2 text-light-3 rounded-[0.5em];
-
-    .Field {
-        background: none;
-        outline: none;
-        padding: calc($left - 2px);
-        @apply text-dark-0 flex-1 min-w-0 z-1;
-    }
+    
     textarea {
         resize: none;
     }
@@ -19,17 +13,34 @@ $left: 1em;
     }
 
     label {
-        @apply absolute top-[1em] transition-all origin-left;
+        @apply absolute top-[1em] transition-all origin-left z-1;
         left: $left;
     }
+
     .Error {
         @apply hidden;
     }
+
     &:has(:disabled) {
         cursor: not-allowed;
     }
 }
 
+.Field {
+    background: none;
+    outline: none;
+    padding: calc($left - 2px);
+    @apply text-dark-0 flex-1 min-w-0 z-1 rounded-inherit;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+        background-color: white;
+
+    }
+}
 
 .Input-Wrapper {
     .Field {
@@ -38,12 +49,14 @@ $left: 1em;
         &:not(:placeholder-shown) {
             ~label {
                 margin-top: -($left * 1.45);
-                @apply scale-75;
+                // @apply scale-75;
+                font-size: 0.8em;
+                left: $left + 0.1em;
             }
 
             ~legend {
                 font-size: 0.8em;
-                @apply max-w-96;
+                @apply max-w-96 px-[0.1em];
             }
         }
     }
@@ -62,6 +75,7 @@ $left: 1em;
         label {
             @apply text-red-0;
         }
+
         .Error {
             @apply block;
         }
