@@ -1,3 +1,4 @@
+import useScrollFetch from "../../hooks/useScrollFetch";
 import Spinner from "../../ui/spinner";
 import Post from "../post";
 
