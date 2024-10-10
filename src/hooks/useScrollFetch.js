@@ -8,8 +8,7 @@ let hasEvent = false;
 const useScrollFetch = (api, posts = []) => {
     const [state, setState] = useState({
         posts,
-        exists: posts ? posts.length % 20 === 0 : true,
-        initial: true
+        exists: posts ? posts.length % 20 === 0 : true
     })
     useEffect(() => {
         if (!state.exists) return;
