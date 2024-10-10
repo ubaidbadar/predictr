@@ -2,18 +2,22 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 import getAxiosMessage from "../lib/getAxiosMessage";
 
+
+let hasEvent = false;
+
 const useScrollFetch = (api, posts = []) => {
     const [state, setState] = useState({
         posts,
         exists: posts ? posts.length % 20 === 0 : true,
+        initial: true
     })
     useEffect(() => {
-        console.log(state)
         if (!state.exists) return;
         const p = [...state.posts];
         let exists = true, other = {};
         const cb = async (e) => {
-            if (!exists || (typeof e === 'object' && window.innerHeight + window.scrollY + 200) >= document.body.offsetHeight) return;
+            if (!exists || (typeof e === 'object' && (window.innerHeight + window.scrollY + 200)) >= document.body.offsetHeight) return;
+            exists = false;
             setState({ posts, exists: true });
             const search = new URLSearchParams(location.search);
             search.set('page', (p.length / 20) + 1);
@@ -31,10 +35,14 @@ const useScrollFetch = (api, posts = []) => {
             }
 
         }
-        cb();
-        window.addEventListener('scroll', cb);
-        return () => {
-            window.removeEventListener('scroll', cb);
+        if(!hasEvent) {
+            console.log(hasEvent)
+            hasEvent = true;
+            window.addEventListener('scroll', cb);
+            cb();
+            return () => {
+                window.removeEventListener('scroll', cb);
+            }
         }
     }, [location.search])
     return state;
