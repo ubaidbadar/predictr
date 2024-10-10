@@ -11,8 +11,8 @@ import Stats from "./stats";
 export default function Post(props) {
     const postedOn = dayjs(props.createdOn), isCurrent = props.userId._id === props.user._id, guess_date = dayjs(props.guess_date)
     return (
-        <div className="border border-light-0 p-2px overflow-hidden bg-light-2 rounded-4">
-            <div className="p-4 grid gap-4 bg-surface shadow-1 rounded-4">
+        <div className="border border-light-0 overflow-hidden bg-light-1 rounded-4">
+            <div className="p-4 grid m-2px gap-4 bg-surface shadow-1 rounded-4">
                 <div className="flex-between">
                     <User {...getProfile(props.userId)}
                         subtitle={

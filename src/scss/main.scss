@@ -48,6 +48,13 @@ button {
     @apply not-italic font-black;
 }
 
+.MuiTooltip-tooltip {
+    @apply bg-dark-0 !important;
+    .MuiTooltip-arrow {
+        @apply text-dark-0 !important;
+    }
+}
+
 @media (max-width: 2500px) {
     :root {
         --font-size: 18px;

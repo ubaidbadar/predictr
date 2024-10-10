@@ -6,10 +6,10 @@ import dayjs from 'dayjs';
 
 const transformDate = date => dayjs(date).format('MMM DD, hh:mm A')
 
-const Item = ({ title, value, subtitle, className = 'flex-2' }) => (
-    <div className={className}>
+const Item = ({ title, value, subtitle }) => (
+    <div className="flex-col">
         <small className="text-xs">{title}</small>
-        <b className={`text-md font-bold block ${className}`}>{value}</b>
+        <b className='text-md font-bold'>{value}</b>
         {subtitle && <small className='smaller'>{subtitle}</small>}
     </div>
 )
@@ -27,7 +27,6 @@ const Stats = ({ current_stock_price, stock_price_when_guessed, guess_date, esti
                     value={current_stock_price ? `$${current_stock_price.toFixed(2)} USD` : '-'}
                 />
                 <Item title="Movement"
-                    className='flex-2-sm'
                     value={current_stock_price ? (
                         <ArrowMovement
                             accurate={estimated_direction === actual_direction}
