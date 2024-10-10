@@ -14,7 +14,7 @@ function Main(props) {
                 <ToggleText
                     key={item._id}
                     value={item.ticker}
-                    onChange={props.onSelect}
+                    onChange={() => props.setForm({ stock_symbol: item.ticker, stock_name: item.company_name })}
                     about={item.ticker}
                     title={item.company_name}
                 />
@@ -30,12 +30,7 @@ export default function Stock(props) {
     return (
         <>
             {props.getHeader('Select a stock')}
-            <Main {...props}
-                onSelect={e => {
-                    props.setForm({ stock_symbol: e.target.value, stock_name: e.target.title });
-                    props.back();
-                }}
-            />
+            <Main {...props} />
         </>
     )
 }
