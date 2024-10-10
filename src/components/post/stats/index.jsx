@@ -16,7 +16,7 @@ const Item = ({ title, value, subtitle, className = 'flex-2' }) => (
 
 const Stats = ({ current_stock_price, stock_price_when_guessed, guess_date, estimated_direction, actual_direction, guess_accuracy, actual_change, last_updated, createdOn, points, allowed }) => {
     return (
-        <div className='overflow-hidden w-100'>
+        <div>
             <div className='grid grid-cols-3 px-4 py-3 gap-4'>
                 <Item title="Price When Guessed"
                     value={`$${stock_price_when_guessed?.toFixed(2)} USD`}

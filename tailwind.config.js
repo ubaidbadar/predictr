@@ -8,6 +8,8 @@ module.exports = {
       spacing: {
         inherit: "inherit",
         nav: 'var(--nav-height)',
+        '1px': 'var(--border-width-1)',
+        '2px': 'var(--border-width-2)',
       }
     },
     borderWidth: {
