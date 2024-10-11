@@ -77,37 +77,6 @@
 
     .cont-l,
     .cont {
-        margin-left: 1.25rem;
-    }
-
-    .cont-r,
-    .cont {
-        margin-right: 1.25rem;
-    }
-
-    .cont-pl,
-    .cont-p {
-        padding-left: 1.25rem;
-    }
-
-    .cont-pr,
-    .cont-p {
-        padding-right: 1.25rem;
-    }
-
-    .cont-gap {
-        gap: 1.25rem;
-    }
-    .no-cont-sm {
-        margin-left: 0;
-        margin-right: 0;
-    }
-}
-
-@media (max-width: 380px) {
-
-    .cont-l,
-    .cont {
         margin-left: 1rem;
     }
 
@@ -128,5 +97,9 @@
 
     .cont-gap {
         gap: 1rem;
+    }
+    .no-cont-sm {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
