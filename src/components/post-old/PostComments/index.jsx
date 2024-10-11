@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Message from '../../../icons-v2/Message';
 import AddComment from '../AddComment';
 import Comments from '../Comments';
 import LoadMore from '../LoadMore';

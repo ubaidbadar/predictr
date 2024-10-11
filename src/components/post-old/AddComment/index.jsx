@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import CheckIcon from '../../../icons-v2/CheckIcon';
-import Spinner from '../../../ui-v2/Spinner/Spinner';
-import axiosErrorHandler from '../../../utility/axiosErrorHandler';
+import CheckIcon from '../../../icons/check-circle';
+import Spinner from '../../../ui/spinner';
+import getAxiosMessage from '../../../lib/getAxiosMessage';
 
 const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', getUser, focus, _id, postId, checkLogin, isLoggedIn }) => {
     const [status, setStatus] = useState('active');
@@ -26,7 +26,7 @@ const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', get
                 })
                 .catch(err => {
                     setStatus('active');
-                    axiosErrorHandler(err)
+                    getAxiosMessage(err)
                 })
         }
     }

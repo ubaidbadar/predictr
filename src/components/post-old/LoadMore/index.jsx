@@ -1,6 +1,6 @@
 import React from 'react';
 import useLoadMore from '../../../hooks/useLoadMore';
-import Spinner from '../../../ui-v2/Spinner/Spinner';
+import Spinner from '../../../ui/spinner';
 
 const LoadMore = ({ api, onLoad, title, className = '', checkLogin }) => {
     const { isLoading, loadMore } = useLoadMore(api, onLoad);
