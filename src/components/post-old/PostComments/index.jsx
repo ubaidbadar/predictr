@@ -18,7 +18,6 @@ const PostComments = ({ comments = [], total_comments = 0, total_replies = 0, ..
     const onReply = () => setStatus({ ...status, total: total + 1 });
     return (
         <>
-            <small className='smaller m-auto ms-0'>{total_cms} comments</small>
             <AddComment {...props} _id={props.postId} onAdd={onAdd} className='w-100 mt-3' getUser={null} />
             {total > 0 && (
                 <div className='w-100 border-top mt-3 pt-3 my-2'>
