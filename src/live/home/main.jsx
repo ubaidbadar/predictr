@@ -12,10 +12,12 @@ function Master(props) {
     const [{ posts, feed }, setState] = useState({ posts: [], feed: isFeed });
     return (
         <>
-            <Tabs onTabChange={(title) => {
+            <Tabs 
+                value={feed ? "My Feed" : "Explore"}
+                onTabChange={(title) => {
                 const feed = title === 'My Feed';
-                feed ? localStorage.setItem(key) : localStorage.removeItem(key, true);
-                setState({ posts, explore })
+                feed ? localStorage.setItem(key, true) : localStorage.removeItem(key);
+                setState({ posts, feed })
             }}
                 options={["Explore", "My Feed"]}
             />

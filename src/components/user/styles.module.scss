@@ -1,15 +1,18 @@
 .root {
-    @apply grid items-center;
+    @apply flex items-center;
     grid-template-columns: auto 1fr;
     gap: 0 0.5em;
     line-height: 1;
-    &[subtitle]::after {
-        content: attr(subtitle);
-        @apply text-xs text-gray-0;
+    &[subtitle] {
+        @apply grid;
+        &::after {
+            content: attr(subtitle);
+            @apply text-xs text-gray-0;
+        }
     }
     &[name]::before {
         content: attr(name);
-        @apply font-bold;
+        @apply font-bold order-1;
     }
     >span {
         grid-row: 1/3;
