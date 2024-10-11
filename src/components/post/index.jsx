@@ -19,6 +19,7 @@ export default function Post(props) {
                         subtitle={
                             postedOn.isSame(dayjs(), "day") ? postedOn.fromNow() : postedOn.format('MMM DD, YYYY, hh:mm A')
                         }
+                        isLoggedIn={props.isLoggedIn}
                     />
                     {!isCurrent && <Buttons {...props} />}
                 </div>
