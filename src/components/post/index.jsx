@@ -13,7 +13,7 @@ import Comment from "../../icons/comment";
 import Share from "./share";
 
 export default function Post(props) {
-    const postedOn = dayjs(props.createdOn), isCurrent = props.userId._id === props.user._id, guess_date = dayjs(props.guess_date)
+    const postedOn = dayjs(props.createdOn), isCurrent = props.isLoggedIn && props.userId._id === props.user._id, guess_date = dayjs(props.guess_date)
     return (
         <div className="border border-light-0 bg-light-1 rounded-4">
             <div className="p-4 grid m-2px gap-4 bg-surface shadow-1 rounded-4">
