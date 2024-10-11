@@ -15,11 +15,8 @@ export default function useActive() {
                 }, 200)
             }
             else if (e.target === btn || btn.contains(e.target)) {
-                status = "normal";
+                status = "active";
                 setStatus(status)
-                setTimeout(() => {
-                    setStatus("active")
-                }, 200)
             }
         }
         window.addEventListener('click', cb)

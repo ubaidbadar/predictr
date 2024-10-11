@@ -10,6 +10,7 @@ import Stats from "./stats";
 import Agree from "./agree";
 import PostComments from "../post-old/PostComments";
 import Comment from "../../icons/comment";
+import Share from "./share";
 
 export default function Post(props) {
     const postedOn = dayjs(props.createdOn), isCurrent = props.userId._id === props.user._id, guess_date = dayjs(props.guess_date)
@@ -40,9 +41,10 @@ export default function Post(props) {
                 </div>
                 <div className="text-gray-0 gap-x-6 gap-2 flex flex-wrap">
                     {props.allowed && <Agree {...props} />}
-                    <label className="btn-text text-inherit">
+                    <label className="btn-text text-inherit mr-auto">
                         <Comment /> Comment
                     </label>
+                    <Share _id={props._id} />
                 </div>
             </div>
             <Stats {...props} />

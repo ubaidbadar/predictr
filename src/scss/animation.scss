@@ -1,0 +1,12 @@
+.animation-opacity {
+    animation: 0.2s forwards OpacityAnimation;
+}
+
+@keyframes OpacityAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

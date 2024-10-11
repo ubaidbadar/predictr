@@ -15,7 +15,7 @@ const setPosition = (tag1, tag2) => {
             style.top = (rect1.bottom - rect2.height - rect1.height) + 'px';
         }
     }
-    onResize(cb);
+    return onResize(cb);
 }
 
 export default setPosition;

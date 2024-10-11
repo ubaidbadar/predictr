@@ -1,0 +1,9 @@
+.root {
+    @apply fixed bg-dark-1 w-[10em] py-[0.5em] text-surface rounded-[0.5em] z-2 transition-opacity;
+    a, button {
+        @apply px-[1em] py-[0.5em] flex gap-[0.5em] w-full;
+        &:hover {
+            @apply bg-surface bg-opacity-20 active:bg-opacity-15;
+        }
+    }
+}
