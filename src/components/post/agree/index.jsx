@@ -1,4 +1,5 @@
-import Thumb from "../../icons/thumb";
+import { useState } from "react";
+import Thumb from "../../../icons/thumb";
 
 export default function Agree(props) {
     return (
@@ -10,5 +11,5 @@ export default function Agree(props) {
                 <Thumb /> Disagree
             </button>
         </>
-    )
+    );
 }
