@@ -37,7 +37,7 @@ export default function Post(props) {
                     )}
                 </div>
                 <div className="text-gray-0 gap-6 flex">
-                    <Agree {...props} />
+                    {props.allowed && <Agree {...props} />}
                 </div>
             </div>
             <Stats {...props} />

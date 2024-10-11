@@ -1,0 +1,35 @@
+.bars {
+    @apply flex flex-1 items-center;
+    &::after, &::before {
+        content: '';
+        @apply h-1;
+    }
+    &::after {
+        flex: var(--disagrees);
+        @apply bg-red-0;
+    }
+    &::before {
+        flex: var(--agrees);
+        @apply bg-green-0;
+    }
+    >span {
+        --agrees: inherit;
+        --disagrees: inherit;
+        @apply w-8 h-8 flex items-center justify-center bg-current rounded-[2em];
+        svg {
+            @apply text-surface;
+        }
+        &:first-child {
+            @apply -order-1 text-green-0 mr-1;
+            &::after {
+                content: var(--agrees);
+            }
+        }
+        &:last-child {
+            @apply order-1 rotate-180 text-red-0 ml-1;
+            &::after {
+                content: "";
+            }
+        }
+    }
+}
