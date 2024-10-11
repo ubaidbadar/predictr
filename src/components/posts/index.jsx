@@ -1,27 +1,15 @@
-import useGet from "../../hooks/useGet"
-import Post from "../post"
-import getProps from "../post/getProps"
-import Main from "./posts"
+import useScrollFetch from "../../hooks/useScrollFetch";
+import Spinner from "../../ui/spinner";
+import Post from "../post";
 
-
-const UnAuth = ({ api = "/fetch_global_feeds", ...props }) => {
-    const { data, Loader } = useGet(`${api}?limit=5`);
-    if (Loader) return <Loader className="mx-auto text-exs" />
+const Main = ({api = '/fetch_global_feeds', posts = [], ...props}) => {
+    const state = useScrollFetch(api, posts)
     return (
         <>
-            {data.posts.map(post => <Post {...post} {...props} key={post._id} />)}
-            <a href="#login" className="btn-text">Load More</a>
+            {state.posts.map(post => <Post {...props} {...post} key={post._id} />)}
+            {state.exists && <Spinner className="mx-auto text-exs" />}
         </>
     )
 }
 
-export default function Posts({ posts = [], ...props }) {
-    const nProps = getProps(props)
-    if (!props.isLoggedIn) return <UnAuth {...nProps} />
-    return (
-        <>
-            {posts.map(post => <Post {...nProps} {...post} key={post._id} />)}
-            <Main {...nProps} />
-        </>
-    )
-}
+export default Main;

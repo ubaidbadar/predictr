@@ -23,7 +23,6 @@ const useScrollFetch = (api, posts = []) => {
                     const { posts, ...data } = (await axios.get(`${api}?${search.toString()}`)).data
                     other = { ...other, ...data };
                     p.push(...posts);
-                    console.log(p)
                     exists = posts.length === 20;
                     setState({ posts: p, exists, other });
                 }
