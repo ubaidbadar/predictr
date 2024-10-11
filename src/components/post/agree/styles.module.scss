@@ -1,34 +1,40 @@
 .bars {
-    @apply flex flex-1 items-center;
+    @apply flex flex-1 items-end relative min-w-full order-1;
     &::after, &::before {
         content: '';
-        @apply h-1;
+        @apply h-1 mb-1;
     }
     &::after {
         flex: var(--disagrees);
         @apply bg-red-0;
+        border-radius: 0 1em 1em 0;
     }
     &::before {
         flex: var(--agrees);
         @apply bg-green-0;
+        border-radius: 1em 0 0 1em;
     }
     >span {
-        --agrees: inherit;
-        --disagrees: inherit;
         @apply w-8 h-8 flex items-center justify-center bg-current rounded-[2em];
+        >span {
+            @apply absolute top-1;
+        }
         svg {
             @apply text-surface;
         }
         &:first-child {
             @apply -order-1 text-green-0 mr-1;
-            &::after {
-                content: var(--agrees);
+            >span {
+                @apply left-9 text-green-0;
             }
         }
         &:last-child {
-            @apply order-1 rotate-180 text-red-0 ml-1;
-            &::after {
-                content: "";
+            @apply order-1 text-red-0 ml-1;
+            svg {
+                @apply rotate-180;
+            }
+            >span {
+                @apply text-red-0 right-9;
             }
         }
     }

@@ -36,7 +36,7 @@ export default function Post(props) {
                         </>
                     )}
                 </div>
-                <div className="text-gray-0 gap-6 flex">
+                <div className="text-gray-0 gap-x-6 gap-2 flex flex-wrap">
                     {props.allowed && <Agree {...props} />}
                 </div>
             </div>
