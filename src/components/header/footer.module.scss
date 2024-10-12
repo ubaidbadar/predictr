@@ -1,0 +1,16 @@
+.root {
+    @apply text-gray-2 leading-2;
+    >a {
+        @apply flex flex-col items-center gap-2 justify-center;
+        &[class *= "active"] {
+            @apply text-primary-0;
+        }
+    }
+    svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        path {
+            fill: currentColor;
+        }
+    }
+}
