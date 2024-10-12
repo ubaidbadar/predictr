@@ -36,6 +36,9 @@ button {
 .leaderboard {
     @apply grid gap-4 text-sm items-start relative;
     grid-template-columns: 16.75rem 33.5rem 16.75rem;
+    @media (max-width: 1023px) {
+        grid-template-columns: 1fr;
+    }
 }
 
 #root {
@@ -68,5 +71,12 @@ button {
         --font-size: 16px;
         --border-width-1: 1px;
         --border-width-2: 2px;
+    }
+}
+
+@media (max-width: 500px) {
+    :root {
+        --font-size: 15px;
+        --nav-height: 3rem;
     }
 }

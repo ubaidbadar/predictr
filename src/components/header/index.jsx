@@ -10,7 +10,7 @@ export default function Header(props) {
     return (
         <header className="cont-p sm:gap-8 gap-6 backdrop-blur-lg bg-white bg-opacity-80 sticky top-0 z-2 h-nav border-light-0 border-b-1 flex-center">
             <Link to='/' className="text-primary-0 text-xl font-extrabold mr-auto">Predictr.</Link>
-            <Search />
+            <Search {...props} isMobile={isMobile} />
             {props.isLoggedIn ? (
                 !isMobile && (
                     <>
@@ -28,8 +28,8 @@ export default function Header(props) {
                 )
             ) : (
                 <>
-                    <a href='#login' className='btn-primary text-sm -mr-6 bg-light-1'>Login</a>
-                    <button className='btn-primary text-sm'>Join Predictr</button>
+                    <a href='#login' className='btn-primary text-xs -mr-4 md:-mr-6 bg-light-1'>Login</a>
+                    <button className='btn-primary text-xs sm:text-sm'>Join Predictr</button>
                 </>
             )}
         </header>
