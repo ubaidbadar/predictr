@@ -1,6 +1,6 @@
 .Modal-0 {
     .Dialog-Main {
-        @apply flex flex-col gap-4 md:w-[35rem] md:h-[initial] h-full w-full md:p-6 p-5 md:rounded-4;
+        @apply flex flex-col lg:gap-5 gap-4 md:w-[35rem] md:h-[initial] h-full w-full lg:p-7 md:p-5 p-4 md:rounded-4;
     }
     .Modal-Header {
         @extend .flex-between;
@@ -10,7 +10,7 @@
             @extend .btn-icon, .no-space;
         }
         >h3 {
-            @apply text-lg font-medium flex-between gap-[0.25em];
+            @apply md:text-lg text-md font-semibold flex-between gap-[0.25em];
         }
     }
     .Modal-Footer {
