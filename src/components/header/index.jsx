@@ -5,6 +5,7 @@ import Avatar from '../avatar';
 import useQuery from '../../hooks/useQuery';
 import Search from './search';
 import Footer from './footer';
+import User from './user';
 
 export default function Header(props) {
     const isMobile = useQuery(450)
@@ -22,10 +23,7 @@ export default function Header(props) {
                             <button className='text-gray-0 btn-icon no-space'>
                                 <NotificationIcon />
                             </button>
-                            <div className='flex-center font-medium text-sm gap-[0.429em]'>
-                                <Avatar className="text-3xl" {...props.user} />
-                                {props.user.name}
-                            </div>
+                            <User {...props} />
                         </>
                     )
                 ) : (
@@ -35,7 +33,7 @@ export default function Header(props) {
                     </>
                 )}
             </header>
-            <Footer />
+           {isMobile &&  <Footer />}
         </>
     )
 }

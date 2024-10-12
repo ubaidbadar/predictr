@@ -1,9 +1,13 @@
 .root {
-    @apply fixed bg-dark-1 w-[10em] py-[0.5em] text-surface rounded-[0.5em] z-2 transition-opacity;
+    @apply fixed bg-dark-1 shadow-1 min-w-[10em] py-[0.5em] text-surface rounded-[0.5em] z-2 transition-opacity;
     a, button {
-        @apply px-[1em] py-[0.5em] flex gap-[0.5em] w-full;
+        @apply px-[1em] h-[2.5em] items-center grid text-start gap-[0.5em] w-full;
+        grid-template-columns: 1.5em 1fr;
         &:hover {
             @apply bg-surface bg-opacity-20 active:bg-opacity-15;
+        }
+        svg {
+            @apply max-w-[1.5em] max-h-[1em];
         }
     }
 }
