@@ -28,8 +28,8 @@ export default function Header(props) {
                     )
                 ) : (
                     <>
-                        <a href='#login' className='text-sm btn-primary -mr-4 md:-mr-6 bg-light-1'>Login</a>
-                        <button className='text-sm btn-primary '>Join Predictr</button>
+                        <a href='#login' className='sm:text-sm text-xs btn-primary -mr-4 md:-mr-6 bg-light-1'>Login</a>
+                        <button className='sm:text-sm text-xs btn-primary '>Join Predictr</button>
                     </>
                 )}
             </header>
