@@ -18,7 +18,7 @@ const PostComments = ({ comments = [], total_comments = 0, total_replies = 0, ..
     const onReply = () => setStatus({ ...status, total: total + 1 });
     return (
         <>
-            <AddComment {...props} _id={props.postId} onAdd={onAdd} className='w-100 mt-3' getUser={null} />
+            <AddComment {...props} _id={props.postId} onAdd={onAdd} className='w-100 mt-3' />
             {total > 0 && (
                 <div className='w-100 border-top mt-3 pt-3 my-2'>
                     <Comments {...props} comments={cms} onReply={onReply} />

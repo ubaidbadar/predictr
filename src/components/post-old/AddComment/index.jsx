@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import CheckIcon from '../../../icons/check-circle';
-import Spinner from '../../../ui/spinner';
+import Check from '../../../icons/check-circle';
 import getAxiosMessage from '../../../lib/getAxiosMessage';
 import Avatar from '../../avatar';
 import Plane from '../../../icons/plane';
 
-const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', getUser, focus, _id, postId, checkLogin, isLoggedIn, user }) => {
-    const [status, setStatus] = useState('loading');
+const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', focus, _id, postId, checkLogin, isLoggedIn, user, ...props }) => {
+    console.log(postId, _id, props, 'Add Comment')
+    const [status, setStatus] = useState('active');
     const isWorking = status !== 'active';
     const onSubmit = e => {
         if (isWorking) return;
@@ -16,6 +16,7 @@ const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', get
         const message = e.target.message.value.trim();
         if (message !== '') {
             const data = { message, postId };
+            console.log(data);
             if (_id !== postId) data.commentId = _id;
             axios.put(api, data)
                 .then(res => {
@@ -45,9 +46,8 @@ const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', get
                 placeholder={`Add ${isReply ? 'reply' : 'comment'}`}
                 id={_id}
             />
-            {getUser && getUser('order-1')}
             {isWorking ? (
-                status === "loading" ? <Spinner className='text-exs' /> : <CheckIcon className='h5 text-accent-3' />
+                status === "loading" ? <div className='loader loading text-lg mr-2' /> : <Check className='text-green-0 mr-2 w-5 h-5' />
             ) : (
                 <button className='btn-icon text-primary-0 text-lg'>
                     <Plane />

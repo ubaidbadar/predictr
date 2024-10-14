@@ -50,7 +50,7 @@ export default function Post(props) {
                 </div>
                 <Stats {...props} />
             </div>
-            <PostComments {...props} />
+            <PostComments {...props} postId={props._id} />
         </div>
     )
 }
