@@ -3,9 +3,11 @@ import axios from 'axios';
 import CheckIcon from '../../../icons/check-circle';
 import Spinner from '../../../ui/spinner';
 import getAxiosMessage from '../../../lib/getAxiosMessage';
+import Avatar from '../../avatar';
+import Plane from '../../../icons/plane';
 
-const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', getUser, focus, _id, postId, checkLogin, isLoggedIn }) => {
-    const [status, setStatus] = useState('active');
+const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', getUser, focus, _id, postId, checkLogin, isLoggedIn, user }) => {
+    const [status, setStatus] = useState('loading');
     const isWorking = status !== 'active';
     const onSubmit = e => {
         if (isWorking) return;
@@ -31,23 +33,27 @@ const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', get
         }
     }
     return (
-        <form onSubmit={onSubmit} className={`position-relative d-flex gap-2 align-items-center ${className}`}>
+        <form onSubmit={onSubmit} className={`bg-light-1 flex-center relative pl-3 rounded-3 ${className}`}>
+            <Avatar className="text-2xl" {...user} />
             <input
                 onClick={checkLogin}
                 type="text"
                 autoFocus={focus}
                 disabled={!isLoggedIn || isWorking}
-                className='text-field flex-1 bg-surface-3' name='message'
+                className='outline-none h-full py-4 flex-1 bg-none pl-3'
+                name='message'
                 placeholder={`Add ${isReply ? 'reply' : 'comment'}`}
                 id={_id}
             />
             {getUser && getUser('order-1')}
-            <button className='d-none' />
-            {isWorking && (
-                <div className='position-absolute translate-middle-y top-50 start-0 ms-3'>
-                    {status === 'loading' ? <Spinner fontSize='0.25rem' /> : <CheckIcon className='h5 text-accent-3' />}
-                </div>
+            {isWorking ? (
+                status === "loading" ? <Spinner className='text-exs' /> : <CheckIcon className='h5 text-accent-3' />
+            ) : (
+                <button className='btn-icon text-primary-0 text-lg'>
+                    <Plane />
+                </button>
             )}
+
         </form>
     )
 }
