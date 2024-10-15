@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // import useSocket from '../../../hooks/useSocket';
 import AddComment from '../AddComment';
 import Comments from '../Comments';
-import LoadMore from '../LoadMore';
+import LoadMore from '../Load';
 import styles from './reply.module.scss';
 
 const Reply = ({ total_replies, onReply, _id, replies: rps, ...props }) => {

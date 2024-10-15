@@ -2,7 +2,7 @@ import React from 'react';
 import useLoad from '../../../hooks/useLoad';
 import Spinner from '../../../ui/spinner';
 
-const LoadMore = ({ api, onLoad, title, className = '', guard }) => {
+const Load = ({ api, onLoad, title, className = '', guard }) => {
     const { isLoading, load } = useLoad(api, onLoad);
     return (
         <button
@@ -16,4 +16,4 @@ const LoadMore = ({ api, onLoad, title, className = '', guard }) => {
     )
 }
 
-export default LoadMore;
+export default Load;

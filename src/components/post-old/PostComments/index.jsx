@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AddComment from '../AddComment';
 import Comments from '../Comments';
-import LoadMore from '../LoadMore';
+import Load from '../Load';
 
 const PostComments = ({ comments = [], total_comments = 0, total_replies = 0, ...props }) => {
     const [status, setStatus] = useState({
@@ -19,7 +19,7 @@ const PostComments = ({ comments = [], total_comments = 0, total_replies = 0, ..
                 <div className='card-v3 mt-3 gap-4'>
                     <Comments {...props} comments={cms} onReply={onReply} />
                     {total_cms > cms.length && (
-                        <LoadMore {...props} onLoad={onLoad}
+                        <Load {...props} onLoad={onLoad}
                             className='ms-auto'
                             title="View previous comments"
                             api={`/feed_comments/${props.postId}?page=${Math.floor(cms.length / 10) + 1}`}
