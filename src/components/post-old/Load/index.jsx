@@ -7,7 +7,7 @@ const Load = ({ api, onLoad, title, className = '', guard }) => {
     return (
         <button
             disabled={isLoading}
-            onClick={() => guard(load)}
+            onClick={() => guard(null, load)}
             className={`btn btn-text small ${className}`}
         >
             {title}
