@@ -5,7 +5,7 @@ import getAxiosMessage from '../../../lib/getAxiosMessage';
 import Avatar from '../../avatar';
 import Plane from '../../../icons/plane';
 
-const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', focus, _id, postId, checkLogin, isLoggedIn, user, ...props }) => {
+const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', focus, _id, postId, gaurd, isLoggedIn, user, ...props }) => {
     const [status, setStatus] = useState('');
     const onSubmit = e => {
         if (status) return;
@@ -35,7 +35,7 @@ const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', foc
         <form onSubmit={onSubmit} className={`bg-light-1 flex-center relative pl-3 rounded-3 ${className}`}>
             <Avatar className="text-2xl" {...user} />
             <input
-                onClick={checkLogin}
+                onClick={gaurd}
                 type="text"
                 autoFocus={focus}
                 disabled={!isLoggedIn || status}

@@ -16,11 +16,12 @@ const PostComments = ({ comments = [], total_comments = 0, total_replies = 0, ..
     }
     const onLoad = comments => setStatus({ ...status, cms: cms.length === 1 ? comments : [...cms, ...comments] });
     const onReply = () => setStatus({ ...status, total: total + 1 });
+    console.log(props)
     return (
         <>
-            <AddComment {...props} _id={props.postId} onAdd={onAdd} className='w-100 mt-3' />
+            <AddComment {...props} _id={props.postId} onAdd={onAdd} className='my-3' />
             {total > 0 && (
-                <div className='card gap-4'>
+                <div className='card-v3 gap-4'>
                     <Comments {...props} comments={cms} onReply={onReply} />
                     {total_cms > cms.length && (
                         <LoadMore {...props} onLoad={onLoad}

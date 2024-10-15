@@ -2,16 +2,16 @@ import React from 'react';
 import useLoadMore from '../../../hooks/useLoadMore';
 import Spinner from '../../../ui/spinner';
 
-const LoadMore = ({ api, onLoad, title, className = '', checkLogin }) => {
+const LoadMore = ({ api, onLoad, title, className = '', gaurd }) => {
     const { isLoading, loadMore } = useLoadMore(api, onLoad);
     return (
         <button
             disabled={isLoading}
-            onClick={() => checkLogin() && loadMore()}
+            onClick={() => gaurd() && loadMore()}
             className={`btn btn-text small ${className}`}
         >
             {title}
-            {isLoading && <Spinner fontSize='0.25rem' />}
+            {isLoading && <Spinner className='text-exs' />}
         </button>
     )
 }
