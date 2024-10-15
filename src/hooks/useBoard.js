@@ -3,6 +3,6 @@ import useAuth from "../contexts/auth";
 
 
 export default function useBoard() {
-    const navigate = useNavigate(), auth = useAuth(), gaurd = () => !auth.isLoggedIn && navigate({ hash: 'register' });    
-    return { ...auth, gaurd, navigate, }
+    const navigate = useNavigate(), auth = useAuth(), gaurd = () => !auth.isLoggedIn && (location.hash = "#login");    
+    return { ...auth, gaurd, navigate }
 }

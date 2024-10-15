@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 
-const useLoadMore = (api = '/', cb) => {
+const useLoad = (api = '/', cb) => {
     const [isLoading, setIsLoading] = useState(false);
     const loadMore = () => {
         if (isLoading) return;
@@ -16,4 +16,4 @@ const useLoadMore = (api = '/', cb) => {
     return { isLoading, loadMore }
 }
 
-export default useLoadMore;
+export default useLoad;

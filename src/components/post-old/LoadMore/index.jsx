@@ -1,9 +1,9 @@
 import React from 'react';
-import useLoadMore from '../../../hooks/useLoadMore';
+import useLoad from '../../../hooks/useLoad';
 import Spinner from '../../../ui/spinner';
 
 const LoadMore = ({ api, onLoad, title, className = '', gaurd }) => {
-    const { isLoading, loadMore } = useLoadMore(api, onLoad);
+    const { isLoading, loadMore } = useLoad(api, onLoad);
     return (
         <button
             disabled={isLoading}
