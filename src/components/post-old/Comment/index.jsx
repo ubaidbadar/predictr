@@ -2,11 +2,17 @@ import React from 'react';
 import Reply from '../Reply';
 import User from '../../user';
 import dayjs from 'dayjs';
+import Avatar from '../../avatar';
+import { Link } from 'react-router-dom';
 
 const Comment = props => (
-    <div className='mt-2'>
-        <User isLoggedIn={props.isLoggedIn} {...props.userId} className='d-flex' subtitle={dayjs(props.createdOn).fromNow()} />
-        <div className='text-normal smaller' style={{ paddingLeft: 'calc(2.625em + 0.5rem)' }}>
+    <div>
+        <Link to={props.isLoggedIn ? "/" : {hash: "login"} } className='flex-center hover:underline text-gray-1 gap-2'>
+            <Avatar {...props.userId} className="text-xl" />
+            <b className='text-dark-0 text-sm font-semibold'>Madelyn Bergson</b>
+            {dayjs(props.createdOn).fromNow()}
+        </Link>
+        <div className='ml-8'>
             <div className='small'>
                 <p className='m-0'>{props.message}</p>
                 <div className='d-flex gap-3'>
