@@ -1,4 +1,3 @@
-import axios from "../../../config/axios";
 import Thumb from "../../../icons/thumb";
 
 export default function Buttons(props) {
