@@ -15,6 +15,7 @@ export default function LogoutModal(props) {
                             axios.get("/log_out");
                             setTimeout(() => {
                                 close();
+                                props.logout();
                             }, 300)
                         }}
                     >Logout</button>
