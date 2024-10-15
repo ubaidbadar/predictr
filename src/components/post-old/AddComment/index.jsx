@@ -12,8 +12,8 @@ const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', foc
             const data = { message, postId };
             if (_id !== postId) data.commentId = _id;
             submit({
+                method: 'PUT',
                 url: api, data, cb: (res) => {
-                    console.log(res.data)
                     onAdd && onAdd(res.data);
                     e.target.reset();
                 }

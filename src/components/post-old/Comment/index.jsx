@@ -3,6 +3,7 @@ import Reply from '../Reply';
 import dayjs from 'dayjs';
 import Avatar from '../../avatar';
 import { Link } from 'react-router-dom';
+import CommentButtons from '../../post/comment-agree';
 
 const Comment = props => (
     <div>
@@ -12,11 +13,9 @@ const Comment = props => (
             {dayjs(props.createdOn).fromNow()}
         </Link>
         <div className='ml-8'>
-            <div className='small'>
+            <div className='small flex-col gap-1'>
                 <p className='m-0'>{props.message}</p>
-                <div className='flex gap-3'>
-                    <label htmlFor={props.commentId || props._id} className='btn btn-text smaller text-accent-4'>Reply</label>
-                </div>
+                <CommentButtons {...props} />
                 {props.onReply && <Reply commentId={props.commentId || props._id} {...props} />}
             </div>
         </div>
