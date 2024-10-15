@@ -29,18 +29,6 @@
     &:disabled {
         @apply cursor-not-allowed bg-opacity-25;
     }
-    &.loading {
-        @apply cursor-wait;
-        &::after {
-            content: "";
-            width: 1em;
-            height: 1em;
-            border: 2px solid;
-            border-top-color: transparent;
-            border-radius: 50%;
-            @apply animate-spin;
-        }
-    }
 }
 
 .desktop {
