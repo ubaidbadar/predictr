@@ -13,7 +13,7 @@ export default function LogoutModal(props) {
                     <button
                         className="text-red-0"
                         onClick={() => {
-                            axios.post("/logout");
+                            axios.get("/log_out");
                             close();
                             setTimeout(() => {
                                 props.logout();
