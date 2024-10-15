@@ -14,7 +14,7 @@ const Comment = props => (
         <div className='ml-8'>
             <div className='small'>
                 <p className='m-0'>{props.message}</p>
-                <div className='d-flex gap-3'>
+                <div className='flex gap-3'>
                     <label htmlFor={props.commentId || props._id} className='btn btn-text smaller text-accent-4'>Reply</label>
                 </div>
                 {props.onReply && <Reply commentId={props.commentId || props._id} {...props} />}
