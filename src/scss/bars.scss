@@ -1,6 +1,7 @@
 .loading {
-    @apply cursor-wait;
+    @apply cursor-wait inline-flex text-gray-1;
     &::after {
-        @apply border-2 w-[1em] h-[1em] text-gray-1 border-r-none rounded-[2em] animate-spin;
+        content: "";
+        @apply border-2 w-[1em] h-[1em] border-r-none rounded-[2em] animate-spin;
     }
 }

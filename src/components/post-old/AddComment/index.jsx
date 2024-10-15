@@ -14,7 +14,10 @@ const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', foc
             submit({
                 method: 'PUT',
                 url: api, data, cb: (res) => {
-                    onAdd && onAdd(res.data);
+                    onAdd && onAdd({
+                        ...res.data,
+                        createdOn: new Date(),
+                    });
                     e.target.reset();
                 }
             })
@@ -32,7 +35,7 @@ const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', foc
                 placeholder={`Add ${isReply ? 'reply' : 'comment'}`}
                 id={_id}
             />
-            {loading && <div className='loader loading text-lg mr-2' />}
+            {loading && <div className='loading text-lg mr-2' />}
             {done && <Check className='text-green-0 mr-2 w-5 h-5' />}
             {!loading && !done && (
                 <button className='btn-icon text-primary-0 text-lg'>
