@@ -1,7 +1,7 @@
 import Modal from "../ui/modal/modal";
 import axios from "../config/axios";
 
-export default function LogoutModal() {
+export default function LogoutModal(props) {
     return (
         <Modal design={1}
             id="Logout-Close"
@@ -9,10 +9,17 @@ export default function LogoutModal() {
             component={tools => <button onClick={tools.open} type="button" id="Logout-Modal" className="d-none" />}
             footer={close => (
                 <>
-                    <button onClick={() => {
-                        close();
-                    }}>Cancel</button>
-                    <button className="text-red-0">Logout</button>
+                    <button>Cancel</button>
+                    <button
+                        className="text-red-0"
+                        onClick={() => {
+                            axios.post("/logout");
+                            close();
+                            setTimeout(() => {
+                                props.logout();
+                            }, 300)
+                        }}
+                    >Logout</button>
                 </>
             )}
         >

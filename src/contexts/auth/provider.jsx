@@ -40,7 +40,7 @@ export default function AuthProvider({ children }) {
             {value.isLoggedIn ? (
                 <>
                     <SetUpSubscription {...value} />
-                    <LogoutModal setAuth={setAuth} />
+                    <LogoutModal logout={() => setState({ ...user, loading: false })} />
                 </>
             ) : <Auth setAuth={setAuth} />}
             <AuthContext.Provider value={value}>
