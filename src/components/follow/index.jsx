@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../config/axios";
 import BookMark from "../../icons/bookmark";
 import styles from './styles.module.scss'
 import getAxiosMessage from "../../lib/getAxiosMessage";

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Spinner from "../../ui/spinner";
-import axios from "axios";
+import axios from "../../config/axios";
 import RefreshContext from "./context";
 
 const search = window.location.search, isSearch = /scope|code/.test(search);

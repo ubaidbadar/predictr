@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import axios from "axios";
+import axios from "../config/axios";
 import getAxiosMessage from "../lib/getAxiosMessage";
 import Spinner from "../ui/spinner";
 

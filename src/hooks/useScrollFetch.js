@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../config/axios";
 import { useEffect, useState } from "react"
 import getAxiosMessage from "../lib/getAxiosMessage";
 
