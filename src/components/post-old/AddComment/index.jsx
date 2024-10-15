@@ -1,33 +1,23 @@
-import React, { useState } from 'react';
-import axios from 'axios';
 import Check from '../../../icons/check-circle';
-import getAxiosMessage from '../../../lib/getAxiosMessage';
 import Avatar from '../../avatar';
 import Plane from '../../../icons/plane';
+import usePost from '../../../hooks/usePost';
 
 const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', focus, _id, postId, guard, isLoggedIn, user }) => {
-    const [status, setStatus] = useState('');
+    const { submit, loading, done } = usePost();
     const onSubmit = e => {
-        if (status) return;
-        setStatus('loading');
         e.preventDefault();
         const message = e.target.message.value.trim();
         if (message !== '') {
             const data = { message, postId };
             if (_id !== postId) data.commentId = _id;
-            axios.put(api, data)
-                .then(res => {
-                    onAdd(res.data);
-                    setStatus('done');
-                    setTimeout(() => {
-                        e.target.reset();
-                        setStatus('');
-                    }, 500);
-                })
-                .catch(err => {
-                    setStatus('');
-                    getAxiosMessage(err)
-                })
+            submit({
+                url: api, data, cb: (res) => {
+                    console.log(res.data)
+                    onAdd && onAdd(res.data);
+                    e.target.reset();
+                }
+            })
         }
     }
     return (
@@ -36,15 +26,15 @@ const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', foc
             <input
                 type="text"
                 autoFocus={focus}
-                disabled={!isLoggedIn || status}
+                disabled={!isLoggedIn || loading}
                 className='outline-none h-full py-4 flex-1 bg-none pl-3'
                 name='message'
                 placeholder={`Add ${isReply ? 'reply' : 'comment'}`}
                 id={_id}
             />
-            {status ? (
-                status === "loading" ? <div className='loader loading text-lg mr-2' /> : <Check className='text-green-0 mr-2 w-5 h-5' />
-            ) : (
+            {loading && <div className='loader loading text-lg mr-2' />}
+            {done && <Check className='text-green-0 mr-2 w-5 h-5' />}
+            {!loading && !done && (
                 <button className='btn-icon text-primary-0 text-lg'>
                     <Plane />
                 </button>
