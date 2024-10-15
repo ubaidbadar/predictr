@@ -5,7 +5,7 @@ import getAxiosMessage from '../../../lib/getAxiosMessage';
 import Avatar from '../../avatar';
 import Plane from '../../../icons/plane';
 
-const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', focus, _id, postId, gaurd, isLoggedIn, user, ...props }) => {
+const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', focus, _id, postId, guard, isLoggedIn, user }) => {
     const [status, setStatus] = useState('');
     const onSubmit = e => {
         if (status) return;
@@ -14,7 +14,6 @@ const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', foc
         const message = e.target.message.value.trim();
         if (message !== '') {
             const data = { message, postId };
-            console.log(data);
             if (_id !== postId) data.commentId = _id;
             axios.put(api, data)
                 .then(res => {
@@ -22,11 +21,11 @@ const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', foc
                     setStatus('done');
                     setTimeout(() => {
                         e.target.reset();
-                        setStatus('active');
+                        setStatus('');
                     }, 500);
                 })
                 .catch(err => {
-                    setStatus('active');
+                    setStatus('');
                     getAxiosMessage(err)
                 })
         }
@@ -35,7 +34,6 @@ const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', foc
         <form onSubmit={onSubmit} className={`bg-light-1 flex-center relative pl-3 rounded-3 ${className}`}>
             <Avatar className="text-2xl" {...user} />
             <input
-                onClick={gaurd}
                 type="text"
                 autoFocus={focus}
                 disabled={!isLoggedIn || status}

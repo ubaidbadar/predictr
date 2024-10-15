@@ -2,18 +2,18 @@ import axios from "axios";
 import { useState } from "react";
 
 const useLoad = (api = '/', cb) => {
-    const [isLoading, setIsLoading] = useState(false);
-    const loadMore = () => {
+    const [isLoading, setLoading] = useState(false);
+    const load = () => {
         if (isLoading) return;
-        setIsLoading(true);
+        setLoading(true);
         axios.get(api)
             .then(res => {
-                setIsLoading(false);
+                setLoading(false);
                 cb(res.data);
             })
             .catch(err => console.log(err))
     }
-    return { isLoading, loadMore }
+    return { isLoading, load }
 }
 
 export default useLoad;

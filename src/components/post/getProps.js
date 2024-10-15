@@ -1,7 +1,7 @@
-export default function getProps({user, isLoggedIn, gaurd}) {
+export default function getProps({user, isLoggedIn, guard}) {
     return {
         user,
         isLoggedIn,
-        gaurd
+        guard
     }
 }
