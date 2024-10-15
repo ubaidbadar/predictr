@@ -5,7 +5,7 @@ import Avatar from "../../avatar";
 export default function User(props) {
     return (
         <DropDown
-            className=""
+            className="mt-2"
             component={nProps => (
                 <button {...nProps} 
                     className={`flex-center rounded-2 btn-hover h-full px-3 -mx-3 font-medium text-sm gap-[0.429em] ${nProps.className}`}

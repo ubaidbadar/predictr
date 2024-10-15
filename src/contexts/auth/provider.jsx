@@ -4,9 +4,8 @@ import axios from "../../config/axios";
 import user from './state';
 import Spinner from '../../ui/spinner';
 import Header from "../../components/header";
-import Auth from "../../dialogs/auth";
-import SetUpSubscription from "../../dialogs/subscription";
 import Pickers from "../pickers";
+import Global from "../../dialogs/global";
 import LogoutModal from "../../dialogs/logout";
 
 export default function AuthProvider({ children }) {
@@ -37,12 +36,14 @@ export default function AuthProvider({ children }) {
     const Root = value.isLoggedIn ? Fragment : Pickers
     return (
         <Root>
+            <Global {...value} />
             {value.isLoggedIn ? (
                 <>
-                    <SetUpSubscription {...value} />
-                    <LogoutModal logout={() => setState({ ...user, loading: false })} />
+                    <LogoutModal logout={() => setAuth({ ...user, loading: false })} />
                 </>
-            ) : <Auth setAuth={setAuth} />}
+            ) : (
+                <></>
+            )}
             <AuthContext.Provider value={value}>
                 <Header {...value} />
                 {children}
