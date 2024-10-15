@@ -7,6 +7,7 @@ import Header from "../../components/header";
 import Auth from "../../dialogs/auth";
 import SetUpSubscription from "../../dialogs/subscription";
 import Pickers from "../pickers";
+import LogoutModal from "../../dialogs/logout";
 
 export default function AuthProvider({ children }) {
     const [state, setState] = useState(user), setAuth = auth => setState({ ...state, ...auth });
@@ -36,7 +37,12 @@ export default function AuthProvider({ children }) {
     const Root = value.isLoggedIn ? Fragment : Pickers
     return (
         <Root>
-            {value.isLoggedIn ? <SetUpSubscription {...value} /> : <Auth setAuth={setAuth} />}
+            {value.isLoggedIn ? (
+                <>
+                    <SetUpSubscription {...value} />
+                    <LogoutModal setAuth={setAuth} />
+                </>
+            ) : <Auth setAuth={setAuth} />}
             <AuthContext.Provider value={value}>
                 <Header {...value} />
                 {children}

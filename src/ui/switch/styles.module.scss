@@ -1,5 +1,5 @@
 .root {
-    @apply cursor-pointer select-none relative inline-flex items-center gap-[1em] hover:text-primary-0;
+    @apply cursor-pointer relative inline-flex items-center gap-[1em] hover:text-primary-0;
     input {
         @apply hidden;
     }

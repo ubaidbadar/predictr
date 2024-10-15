@@ -21,8 +21,8 @@ html {
 }
 
 input,
-button {
-    @apply min-w-0;
+button, label {
+    @apply min-w-0 select-none;
 }
 
 .UserAvatar {

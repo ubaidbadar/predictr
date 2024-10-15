@@ -17,3 +17,26 @@
         @apply border-t-1 mt-auto md:mt-2 border-light-3 pt-5 flex justify-end;
     }
 }
+
+.Modal-1 {
+    .Dialog-Main {
+        @apply flex flex-col gap-5 w-80 md:h-[initial] h-full md:p-5 rounded-3;
+    }
+    .Modal-Header {
+        @extend .flex-between;
+        @apply gap-inherit;
+        >.btn-close {
+            @apply rotate-45;
+            @extend .btn-icon, .no-space;
+        }
+        >h3 {
+            @apply text-base font-semibold flex-between gap-[0.25em];
+        }
+    }
+    .Modal-Footer {
+        @apply justify-end flex gap-5;
+        button, a, label {
+            @apply hover:underline text-primary-0 cursor-pointer;
+        }
+    }
+}
