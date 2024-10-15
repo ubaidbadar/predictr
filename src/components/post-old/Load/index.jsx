@@ -8,10 +8,9 @@ const Load = ({ api, onLoad, title, className = '', guard }) => {
         <button
             disabled={isLoading}
             onClick={() => guard(null, load)}
-            className={`btn btn-text small ${className}`}
+            className={`btn-text mx-auto ${className}`}
         >
-            {title}
-            {isLoading && <Spinner className='text-exs' />}
+            {isLoading ? <Spinner className='text-exs' /> : title}
         </button>
     )
 }

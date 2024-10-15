@@ -4,7 +4,7 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {    
+    extend: {
       spacing: {
         inherit: "inherit",
         nav: 'var(--nav-height)',
@@ -63,14 +63,14 @@ module.exports = {
       "5xl": "3rem",
       "3xl": ["2rem", "1.2"],
       "2xl": "1.75rem",
-      "xl": "clamp(1.375rem, 5vw, 1.5rem)",
-      "lg": "1.25rem",
-      "md": "1.125rem",
-      "base": "1rem",
-      "sm": "0.875rem",
-      "xs": "0.75rem",
+      xl: "clamp(1.375rem, 5vw, 1.5rem)",
+      lg: "1.25rem",
+      md: "1.125rem",
+      base: "1rem",
+      sm: "0.875rem",
+      xs: "0.75rem",
       xxs: "0.6875rem",
-      "exs": "0.625rem"
+      exs: "0.625rem"
     },
     zIndex: {
       "0": 0,
