@@ -20,7 +20,7 @@
 
 .Modal-1 {
     .Dialog-Main {
-        @apply flex flex-col gap-5 w-80 md:h-[initial] h-full md:p-5 rounded-3;
+        @apply flex flex-col gap-5 w-80 p-5 rounded-3;
     }
     .Modal-Header {
         @extend .flex-between;

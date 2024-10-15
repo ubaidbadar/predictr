@@ -1,11 +1,10 @@
 import ModalBase from "../modal_base";
 import ModalHeader from "./header";
 
-export default function Modal({ id, children, design = 0, footer, ...props }) {
-    const mid = id || props.title;
+export default function Modal({ children, design = 0, footer, className, ...props }) {
     return (
-        <ModalBase {...props} id={mid} className={`Modal-${design}`}>
-            <ModalHeader {...props} id={mid} />
+        <ModalBase {...props} className={`Modal-${design} ${className}`}>
+            <ModalHeader {...props} />
             {children}
             {footer && (
                 <div className="Modal-Footer">
