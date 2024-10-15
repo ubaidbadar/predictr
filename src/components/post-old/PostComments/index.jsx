@@ -20,7 +20,7 @@ const PostComments = ({ comments = [], total_comments = 0, total_replies = 0, ..
         <>
             <AddComment {...props} _id={props.postId} onAdd={onAdd} className='w-100 mt-3' />
             {total > 0 && (
-                <div className='border-1 border-light-0 p-4 rounded-4'>
+                <div className='card gap-4'>
                     <Comments {...props} comments={cms} onReply={onReply} />
                     {total_cms > cms.length && (
                         <LoadMore {...props} onLoad={onLoad}

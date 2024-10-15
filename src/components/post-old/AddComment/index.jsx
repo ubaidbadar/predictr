@@ -6,11 +6,9 @@ import Avatar from '../../avatar';
 import Plane from '../../../icons/plane';
 
 const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', focus, _id, postId, checkLogin, isLoggedIn, user, ...props }) => {
-    console.log(postId, _id, props, 'Add Comment')
-    const [status, setStatus] = useState('active');
-    const isWorking = status !== 'active';
+    const [status, setStatus] = useState('');
     const onSubmit = e => {
-        if (isWorking) return;
+        if (status) return;
         setStatus('loading');
         e.preventDefault();
         const message = e.target.message.value.trim();
@@ -40,20 +38,19 @@ const AddComment = ({ className = '', onAdd, isReply, api = '/feed_comment', foc
                 onClick={checkLogin}
                 type="text"
                 autoFocus={focus}
-                disabled={!isLoggedIn || isWorking}
+                disabled={!isLoggedIn || status}
                 className='outline-none h-full py-4 flex-1 bg-none pl-3'
                 name='message'
                 placeholder={`Add ${isReply ? 'reply' : 'comment'}`}
                 id={_id}
             />
-            {isWorking ? (
+            {status ? (
                 status === "loading" ? <div className='loader loading text-lg mr-2' /> : <Check className='text-green-0 mr-2 w-5 h-5' />
             ) : (
                 <button className='btn-icon text-primary-0 text-lg'>
                     <Plane />
                 </button>
             )}
-
         </form>
     )
 }

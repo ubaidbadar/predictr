@@ -1,6 +1,5 @@
 import React from 'react';
 import Reply from '../Reply';
-import User from '../../user';
 import dayjs from 'dayjs';
 import Avatar from '../../avatar';
 import { Link } from 'react-router-dom';
@@ -9,7 +8,7 @@ const Comment = props => (
     <div>
         <Link to={props.isLoggedIn ? "/" : {hash: "login"} } className='flex-center hover:underline text-gray-1 gap-2'>
             <Avatar {...props.userId} className="text-xl" />
-            <b className='text-dark-0 text-sm font-semibold'>Madelyn Bergson</b>
+            <b className='text-dark-0 text-sm font-semibold'>{props.userId.name}</b>
             {dayjs(props.createdOn).fromNow()}
         </Link>
         <div className='ml-8'>
