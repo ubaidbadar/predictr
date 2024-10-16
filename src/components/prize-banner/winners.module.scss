@@ -1,0 +1,49 @@
+.root {
+    a {
+        @apply rounded-4 relative flex flex-col items-center gap-1 mt-auto flex-1 md:min-w-32;
+        &:first-child {
+            @apply bg-surface shadow-0 bg-opacity-20 border-2 border-opacity-20 border-surface pt-4 pb-3 xl:min-w-40;
+            [class *= "UserAvatar"] {
+                @apply text-8xl;
+            }
+            [src *= "/cup"] {
+                @apply lg:w-14 md:w-12 w-10 -top-[15%];
+            }
+        }
+        &::before {
+            content: attr(title);
+            @apply font-bold;
+        }
+        &::after {
+            content: '$' attr(about);
+            @apply text-green-1 font-bold;
+        }
+        &:nth-child(2) {
+            @apply -order-1;
+        }
+        small {
+            @apply opacity-80;
+        }
+    }
+    [src *= "/cup"] {
+        @apply absolute xl:-top-[15%] top-[-25%];
+    }
+    [class *= "UserAvatar"] {
+        @apply -order-1 text-6xl;
+    }
+    small {
+        @apply text-xs;
+    }
+}
+
+
+@media (min-width: 1280px) {
+    .root a {
+        &:not(:first-child) {
+            @apply py-3 border-2 border-opacity-20 bg-opacity-10 bg-surface border-surface;
+            [src *= "cup"] {
+                
+            }
+        }
+    }
+}

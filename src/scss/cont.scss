@@ -103,3 +103,10 @@
         margin-right: 0;
     }
 }
+
+@media (max-width: 500px) {
+    .cont-sm {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+}

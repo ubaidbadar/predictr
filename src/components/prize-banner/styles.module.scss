@@ -2,11 +2,15 @@
     @apply transition-all;
     >div {
         @apply min-w-full bg-cover;
-        >div {
-            @apply lg:m-12 m-8;
-        }
     }
 }
+
+.banner1 {
+    @media (min-width: 767px) {
+        grid-template-columns: auto auto;
+    }
+}
+
 
 .btns {
     >button {
