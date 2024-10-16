@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function useShow(classN) {
     const [className, setClass] = useState(classN);
@@ -8,6 +8,9 @@ export default function useShow(classN) {
         setTimeout(() => {
             setClass("");
         }, 300);
+    }, [])
+    useEffect(() => {
+        return () => window.removeEventListener('popstate', close)
     }, [])
     return {
         close,

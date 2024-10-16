@@ -23,7 +23,7 @@ export default function Profile() {
             {tools.className && (
                 <Portal id="Modals">
                     <div
-                        className={`bg-surface z-3 absolute-full bottom-14 ${styles.root} transition-opacity ${tools.className === "open" ? "animation-opacity" : "duration-300 opacity-0"}`}
+                        className={`bg-surface z-3 absolute-full bottom-14 ${styles.root} transition-opacity ${tools.className === "active" ? "animation-opacity" : "duration-300 opacity-0"}`}
                     >
                         <button onClick={tools.close} className="h-11 border-b-1 border-light-0 gap-2">
                             <ArrowBack /> Menu
