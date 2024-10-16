@@ -1,6 +1,6 @@
 .root {
     a {
-        @apply rounded-4 relative flex flex-col items-center gap-1 mt-auto flex-1 md:min-w-32;
+        @apply rounded-4 relative flex flex-col items-center gap-1 mt-auto flex-1 max-w-32 sm:min-w-32 min-w-28;
         &:first-child {
             @apply bg-surface shadow-0 bg-opacity-20 border-2 border-opacity-20 border-surface pt-3 pb-2 sm:pt-4 sm:pb-3 xl:min-w-40;
             [class *= "UserAvatar"] {
@@ -41,9 +41,6 @@
     .root a {
         &:not(:first-child) {
             @apply py-3 border-2 border-opacity-20 bg-opacity-10 bg-surface border-surface;
-            [src *= "cup"] {
-                
-            }
         }
     }
 }

@@ -1,91 +1,51 @@
 .m-resp {
-    @apply xl:m-12 lg:m-10 md:m-8 m-4;
-    &.m-sm {
-      @apply m-2;
-    }
-  }
-  
-  .mt-resp {
-    @apply xl:mt-12 lg:mt-10 md:mt-8 mt-4;
-    &.mt-sm {
-      @apply mt-2;
-    }
-  }
-  
-  .mr-resp {
-    @apply xl:mr-12 lg:mr-10 md:mr-8 mr-4;
-    &.mr-sm {
-      @apply mr-2;
-    }
-  }
-  
-  .mb-resp {
-    @apply xl:mb-12 lg:mb-10 md:mb-8 mb-4;
-    &.mb-sm {
-      @apply mb-2;
-    }
-  }
-  
-  .ml-resp {
-    @apply xl:ml-12 lg:ml-10 md:ml-8 ml-4;
-    &.ml-sm {
-      @apply ml-2;
-    }
-  }
-  
-  .p-resp {
-    @apply xl:p-12 lg:p-10 md:p-8 p-4;
-    &.p-sm {
-      @apply p-2;
-    }
-  }
-  
-  .pt-resp {
-    @apply xl:pt-12 lg:pt-10 md:pt-8 pt-4;
-    &.pt-sm {
-      @apply pt-2;
-    }
-  }
-  
-  .pr-resp {
-    @apply xl:pr-12 lg:pr-10 md:pr-8 pr-4;
-    &.pr-sm {
-      @apply pr-2;
-    }
-  }
-  
-  .pb-resp {
-    @apply xl:pb-12 lg:pb-10 md:pb-8 pb-4;
-    &.pb-sm {
-      @apply pb-2;
-    }
-  }
-  
-  .pl-resp {
-    @apply xl:pl-12 lg:pl-10 md:pl-8 pl-4;
-    &.pl-sm {
-      @apply pl-2;
-    }
-  }
-  
-  .gap-resp {
-    @apply xl:gap-12 lg:gap-10 md:gap-8 gap-4;
-    &.gap-sm {
-      @apply gap-2;
-    }
-  }
-  
-  .gap-x-resp {
-    @apply xl:gap-x-12 lg:gap-x-10 md:gap-x-8 gap-x-4;
-    &.gap-x-sm {
-      @apply gap-x-2;
-    }
-  }
-  
-  .gap-y-resp {
-    @apply xl:gap-y-12 lg:gap-y-10 md:gap-y-8 gap-y-4;
-    &.gap-y-sm {
-      @apply gap-y-2;
-    }
-  }
-  
+  @apply xl:m-12 lg:m-10 md:m-8 m-4;
+}
+
+.mt-resp {
+  @apply xl:mt-12 lg:mt-10 md:mt-8 mt-4;
+}
+
+.mr-resp {
+  @apply xl:mr-12 lg:mr-10 md:mr-8 mr-4;
+}
+
+.mb-resp {
+  @apply xl:mb-12 lg:mb-10 md:mb-8 mb-4;
+}
+
+.ml-resp {
+  @apply xl:ml-12 lg:ml-10 md:ml-8 ml-4;
+}
+
+.p-resp {
+  @apply xl:p-12 lg:p-10 md:p-8 p-4;
+}
+
+.pt-resp {
+  @apply xl:pt-12 lg:pt-10 md:pt-8 pt-4;
+}
+
+.pr-resp {
+  @apply xl:pr-12 lg:pr-10 md:pr-8 pr-4;
+}
+
+.pb-resp {
+  @apply xl:pb-12 lg:pb-10 md:pb-8 pb-4;
+}
+
+.pl-resp {
+  @apply xl:pl-12 lg:pl-10 md:pl-8 pl-4;
+}
+
+.gap-resp {
+  @apply xl:gap-12 lg:gap-10 md:gap-8 gap-4;
+}
+
+.gap-x-resp {
+  @apply xl:gap-x-12 lg:gap-x-10 md:gap-x-8 gap-x-4;
+}
+
+.gap-y-resp {
+  @apply xl:gap-y-12 lg:gap-y-10 md:gap-y-8 gap-y-4;
+}

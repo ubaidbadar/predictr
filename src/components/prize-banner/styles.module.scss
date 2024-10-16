@@ -5,13 +5,6 @@
     }
 }
 
-.banner1 {
-    @media (min-width: 767px) {
-        grid-template-columns: auto auto;
-    }
-}
-
-
 .btns {
     >button {
         &::after {
