@@ -1,0 +1,19 @@
+.root {
+    >button, >a {
+        @apply px-4 flex items-center w-full;
+        &:not(:first-child) {
+            @apply gap-3 h-[3.25rem] relative;
+            svg {
+                @apply w-[1.125rem] h-[1.125rem] text-gray-2;
+            }
+            &::before {
+                content: '';
+                @apply absolute left-12 bottom-0 border-b-1 border-light-0 right-0;
+            }
+            &::after {
+                content: '';
+                @apply w-2 h-2 border-1 border-l-none border-gray-2 border-b-none rotate-45 ml-auto mr-2;
+            }
+        }
+    }
+}

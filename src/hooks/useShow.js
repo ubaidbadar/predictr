@@ -13,7 +13,7 @@ export default function useShow(classN) {
         close,
         className,
         open: () => {
-            setClass("open");
+            setClass("active");
             window.addEventListener('popstate', close)
         },
     }

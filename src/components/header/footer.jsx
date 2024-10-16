@@ -3,8 +3,8 @@ import Home from "../../icons/home";
 import Leaderboard from "../../icons/leaderboard";
 import CrossCircle from "../../icons/cross-circle";
 import Bell from "../../icons/bell";
-import User from "../../icons/user";
 import styles from './footer.module.scss';
+import Profile from "./profile";
 
 export default function Footer() {
     return (
@@ -23,9 +23,7 @@ export default function Footer() {
                 <NavLink to='/notification'>
                     <Bell /> Notification
                 </NavLink>
-                <NavLink to='/profile'>
-                    <User /> Profile
-                </NavLink>
+                <Profile />
             </div>
         </>
     )
