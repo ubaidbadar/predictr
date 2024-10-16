@@ -1,8 +1,8 @@
 #toastr {
-    @apply fixed top-4 right-4 z-[100] w-64 text-sm leading-2 grid gap-4 shadow-1;
+    @apply fixed top-4 right-4 z-[100] w-64 text-sm grid gap-4 shadow-1;
     
     >div {
-        @apply px-4 pt-5 flex rounded-2 bg-surface shadow-0 h-24 gap-3 relative;
+        @apply p-4 pt-4 pb-8 flex rounded-2 bg-surface shadow-0 gap-3 relative;
         grid-template-columns: 1rem 15rem;
         animation: linear 0.3s Toastr forwards;
         animation-delay: 2.5s;
@@ -10,7 +10,7 @@
         &::before {
             @extend .icon;
             color: currentColor;
-            @apply leading-1;
+            // @apply ;
         }
 
         &.primary {
@@ -37,7 +37,8 @@
 
         &::after {
             content: '';
-            @apply absolute h-[0.15rem] bg-current left-0 right-0 bottom-5;
+            @apply absolute border-1 bg-current left-0 right-0;
+            bottom: calc(1rem + var(--border-width-1));
             animation: linear 2.7s Bar-Animation forwards;
         }
     }
