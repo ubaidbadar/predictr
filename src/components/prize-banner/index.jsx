@@ -26,13 +26,13 @@ const PrizeBanner = (props) => {
         <div className='mt-4 cont cont-sm overflow-hidden relative text-surface'>
             <div className={`relative flex ${styles.root}`} style={{ left: active ? '-100%' : '0' }}>
 
-                <div className={`text-center md:text-left p-resp md:gap-y-0 gap-resp grid bg-primary-0 rounded-4 ${styles.banner1}`}>
+                <div className={`text-center md:text-left p-resp p-sm md:gap-y-0 gap-resp grid bg-primary-0 rounded-4 ${styles.banner1}`}>
                     <div>
-                        <p className='text-secondary-0 leading-4 mb-2 font-bold'>Predict to win Monthly prizes</p>
+                        <p className='text-secondary-0 leading-4 mt-4 md:mt-0 mb-2 font-bold'>Predict to win Monthly prizes</p>
                         <h1 className='font-extrabold text-3xl mb-resp'>$500, $300 and $200 for top three predictors.</h1>
                     </div>
                     <Winners />
-                    <div className='flex-col lg:flex-row lg:gap-3 lg:-mt-12 md:-mt-6 [&>button]:min-w-[12.25rem]'>
+                    <div className='flex-col lg:flex-row lg:gap-3 lg:-mt-12 md:-mt-6 [&>button]:mx-auto lg:[&>button]:w-[12.25rem] [&>button]:w-64'>
                         <button className='btn-primary bg-surface'>Monthly Winners</button>
                         <button
                             className='btn-primary bg-opacity-0 lg:bg-opacity-10 text-surface bg-surface'

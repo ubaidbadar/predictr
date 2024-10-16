@@ -2,7 +2,7 @@
     a {
         @apply rounded-4 relative flex flex-col items-center gap-1 mt-auto flex-1 md:min-w-32;
         &:first-child {
-            @apply bg-surface shadow-0 bg-opacity-20 border-2 border-opacity-20 border-surface pt-4 pb-3 xl:min-w-40;
+            @apply bg-surface shadow-0 bg-opacity-20 border-2 border-opacity-20 border-surface pt-3 pb-2 sm:pt-4 sm:pb-3 xl:min-w-40;
             [class *= "UserAvatar"] {
                 @apply text-8xl;
             }
@@ -26,7 +26,7 @@
         }
     }
     [src *= "/cup"] {
-        @apply absolute xl:-top-[15%] top-[-25%];
+        @apply absolute xl:-top-[15%] top-[-30%];
     }
     [class *= "UserAvatar"] {
         @apply -order-1 text-6xl;

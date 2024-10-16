@@ -11,7 +11,7 @@ const month = date.toLocaleString('en-US', { month: 'long' }), prizes = [500, 30
 const Winners = () => {
     const results = useGet("/fetch_leaderboard_winners", { year, month }).data?.results;
     return results && (
-        <div className={`${styles.root} flex text-sm mt-auto pt-4 sm:gap-3 gap-2 text-center`}>
+        <div className={`${styles.root} flex sm:text-sm text-xs mt-auto pt-4 md:gap-3 sm:gap-2 gap-1 text-center`}>
             {results.slice(0, 3).map((user, i) => (
                 <Link to={`/user/${user._id}`} key={i}
                     title={user.name}
