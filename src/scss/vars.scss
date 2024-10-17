@@ -37,3 +37,9 @@
         --cont-v2: 0.5rem;
     }
 }
+
+@media (max-width: 380px) {
+    :root {
+        --font-size: 15px
+    }
+}
