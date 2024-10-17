@@ -12,7 +12,7 @@ const Winners = () => {
     const {Loader, data} = useGet("/fetch_leaderboard_winners", { year, month });
     if(Loader) return <Loader className='text-exs m-auto' />
     return (
-        <div className={`${styles.root} mb-4 md:mb-0 flex sm:text-sm text-xs mt-auto pt-4 md:gap-3 lg:gap-2 gap-1 text-center`}>
+        <div className={`${styles.root} flex sm:text-sm text-xs mt-auto pt-4 md:gap-3 lg:gap-2 gap-1 text-center`}>
             {data.results.slice(0, 3).map((user, i) => (
                 <Link to={`/user/${user._id}`} key={i}
                     title={user.name}
