@@ -1,0 +1,39 @@
+:root {
+    --app-height: 100dvh;
+    --nav-height: 3.25rem;
+    --border-width-1: 2px;
+    --border-width-2: 4px;
+    --font-size: 20px;
+    --cont: calc(50% - 37.5rem);
+    --cont-sm: var(--cont)
+}
+
+
+@media (max-width: 2500px) {
+    :root {
+        --font-size: 18px;
+        --border-width-1: 2px;
+        --border-width-2: 3px;
+    }
+}
+
+@media (max-width: 2000px) {
+    :root {
+        --font-size: 16px;
+        --border-width-1: 1px;
+        --border-width-2: 2px;
+    }
+}
+
+@media (max-width: 1400px) {
+    :root {
+        --cont: clamp(1rem, 4vw, 4rem);
+    }
+}
+
+@media (max-width: 500px) {
+    :root {
+        --nav-height: 2.75rem;
+        --cont-sm: 0.5rem;
+    }
+}
