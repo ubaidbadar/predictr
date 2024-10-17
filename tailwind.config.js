@@ -62,6 +62,7 @@ module.exports = {
       "7xl": "4rem",
       "6xl": "clamp(2rem, 7vw, 3.25rem)",
       "5xl": "3rem",
+      "4xl": "clamp(2rem, 4vw, 2.5rem)",
       "3xl": ["clamp(1.375rem, 3vw, 2rem)", "1.2"],
       "2xl": "1.75rem",
       xl: "clamp(1.375rem, 5vw, 1.5rem)",

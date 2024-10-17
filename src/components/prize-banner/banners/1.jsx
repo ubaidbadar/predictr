@@ -18,7 +18,7 @@ export default function First() {
                 <div className="lg:flex-row md:flex flex-col hidden gap-3 [&>button]:w-[12.25rem]">{btns}</div>
             </div>
             <Winners />
-            <div className="mb-2 md:hidden">
+            <div className="mb-4 md:mb-0 md:hidden">
                 {btns}
             </div>
         </div>
