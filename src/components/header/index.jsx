@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import BookMark from '../../icons/bookmark';
 import NotificationIcon from '../../icons/bell';
-import Avatar from '../avatar';
 import useQuery from '../../hooks/useQuery';
 import Search from './search';
 import Footer from './footer';
