@@ -4,6 +4,7 @@ import Tabs from "../../ui/tabs";
 import UnAuth from "../../components/posts/un-auth";
 import Posts from '../../components/posts';
 import FollowingsTab from "./followings-tab";
+import Filters from "../../icons/filters";
 
 const key = "Leaderboard-Feed", isFeed = localStorage.getItem(key) || true;
 
@@ -12,7 +13,9 @@ function Master(props) {
     const [{ posts, feed }, setState] = useState({ posts: [], feed: isFeed });
     return (
         <>
+            <div className="flex gap-4">
             <Tabs 
+                className="flex-1"
                 value={feed ? "My Feed" : "Explore"}
                 onTabChange={(title) => {
                 const feed = title === 'My Feed';
@@ -21,6 +24,10 @@ function Master(props) {
             }}
                 options={["Explore", "My Feed"]}
             />
+            <button className="border-1 text-md border-light-0 btn-icon">
+                <Filters />
+            </button>
+            </div>
             <CreatePost {...props} create={res => setState({ posts: [res.data, ...posts], title })} />
             {feed ?
                 props.user.followings > 4 ? <Posts {...props} api='/fetch_global_feeds?isFollow=true' /> : <FollowingsTab {...props} />

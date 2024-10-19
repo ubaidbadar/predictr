@@ -2,9 +2,9 @@
 
 
 .btn-icon {
-    width: 2.25em;
-    height: 2.25em;
-    border-radius: 50%;
+    width: 1.9em;
+    height: 1.9em;
+    border-radius: 0.44em;
     @extend .btn, .btn-hover;
     &.no-space {
         margin: -0.625em;
