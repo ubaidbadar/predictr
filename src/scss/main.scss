@@ -25,8 +25,11 @@ button, label {
 }
 
 .leaderboard {
-    @apply grid gap-4 text-sm items-start relative;
+    @apply grid xl:gap-4 gap-3 text-sm items-start relative lg:justify-center;
     grid-template-columns: 16.75rem 33.5rem 16.75rem;
+    @media (max-width: 1200px) {
+        grid-template-columns: 16.75rem 1fr 16.75rem;
+    }
     @media (max-width: 1023px) {
         grid-template-columns: 1fr;
     }
