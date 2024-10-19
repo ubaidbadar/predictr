@@ -32,7 +32,7 @@ export default function Stats({ user, isLoggedIn }) {
                         />
                     </span>
                 </div>
-                <Progress {...user} />
+                <Progress {...user.position} />
             </div>
             <Predictor {...user.premium} />
         </>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function useQuery(size = 991) {
+export default function useQuery(size = 1023) {
     const [isMobile, setMobile] = useState(window.innerWidth <= size);
     useEffect(() => {
         let device = isMobile;

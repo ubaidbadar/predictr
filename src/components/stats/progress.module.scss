@@ -1,13 +1,13 @@
 .root {
-    @apply grid text-gray-0 gap-2 text-right;
-    grid-template-columns: auto 1fr 1fr 1fr;
+    @apply grid gap-1 justify-between text-right;
+    grid-template-columns: repeat(4, auto);
     b {
-        @apply text-dark-0 font-semibold text-left;
+        @apply  font-semibold text-left;
     }
     small:first-child {
         @apply text-left;
     }
     small {
-        @apply text-sm;
+        @apply text-sm text-gray-0;
     }
 }

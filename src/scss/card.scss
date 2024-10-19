@@ -1,5 +1,5 @@
 .card {
-    @apply p-4 bg-light-1 rounded-4;
+    @apply xl:p-4 p-3 bg-light-1 rounded-4;
     h3 {
         @apply text-base text-dark-1 font-bold;
     }
@@ -10,5 +10,5 @@
 }
 
 .card-v3 {
-    @apply bg-surface p-4 border-2 border-light-0 rounded-4;
+    @apply bg-surface xl:p-4 p-3 border-2 border-light-0 rounded-4;
 }
