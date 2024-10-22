@@ -1,6 +1,6 @@
 import Portal from "../../hoc/portal";
 
-export default function ModalBase({ className, close, children, Root = "div", open, title, ...props }) {
+export default function ModalBase({ className, close, children, Root = "div", open, id, title, ...props }) {
     return (
         <Portal id="Modals">
             <div

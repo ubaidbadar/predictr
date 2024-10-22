@@ -23,9 +23,7 @@ const AddStockModal = ({ onFinished, defaultValue }) => {
             title='Add Stock'
             component={tools => <button className='btn btn-text' onClick={tools.open}>try adding it</button>}
             footer={props => (
-                <div className='model-footer mt-2'>
-                    <button className={`btn btn-primary me-auto ${props.className}`} disabled={props.disabled}>Save</button>
-                </div>
+                <button className={`btn btn-primary me-auto ${props.className}`} disabled={props.disabled}>Save</button>
             )}
         >
             <InputField defaultValue={defaultValue} label='Symbol' name='symbol' required={true} errorText="Symbol is required!" />
