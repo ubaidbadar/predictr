@@ -1,4 +1,5 @@
 import PrizeBanner from "../../components/prize-banner";
+import TopLeaderBoard from "../../components/top-leaderboard";
 import useBoard from "../../hooks/useBoard";
 import useQuery from "../../hooks/useQuery";
 import Left from "./left";
@@ -12,6 +13,7 @@ export default function Leaderboard() {
             <div className="cont leaderboard">
                 {!isMobile && <Left {...props} />}
                 <Main {...props} />
+                <TopLeaderBoard {...props} />
             </div>
         </>
     )
