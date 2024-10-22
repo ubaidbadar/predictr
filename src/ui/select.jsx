@@ -1,18 +1,17 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import DropDown from "./drop-down";
 
-export default function Select({ onChange, ...props }) {
-    const [value, setValue] = useState("");
+export default function Select({ onChange, value = "", ...props }) {
+    const [v, setValue] = useState(value);
     return (
-        useMemo(() => (
-            <DropDown {...props}
-                value={value}
-                onClick={e => {
-                    setValue(e.target.value)
-                    onChange && onChange(e);
-                }}
-            />
-        ), [props])
+        <DropDown
+            {...props}
+            value={v}
+            onClick={e => {
+                setValue(e.target.value)
+                onChange && onChange(e);
+            }}
+        />
     )
 }
 

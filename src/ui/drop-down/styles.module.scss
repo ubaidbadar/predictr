@@ -3,8 +3,14 @@
     >* {
         @apply cursor-pointer px-[1em] h-[2.69em] items-center grid text-start gap-[0.5em] w-full;
         grid-template-columns: 1.5em 1fr;
-        &:hover {
+        &:not([class *= "active"]):hover {
             @apply bg-dark-0 bg-opacity-20 active:bg-opacity-15;
+        }
+        &[class *= "active"] {
+            &::before {
+                content: "";
+                @apply w-[0.75em] mb-[0.25em] text-green-0 h-[0.5em] border-1 border-t-none border-r-none -rotate-45;
+            }
         }
         svg {
             @apply max-w-[1.5em] max-h-[1em];
