@@ -37,9 +37,16 @@
         @apply underline cursor-pointer;
     }
     &.btn-select {
-        &::after {
+        @apply relative pr-[1.5em];
+        &::after, &::before {
             content: '';
-            @apply border-1 w-[0.5em] mb-[0.2em] h-[0.5em] rotate-45 border-t-none border-l-none rounded-tl-6;
+            @apply w-[0.5em] h-1px bg-current z-1 rounded-[1em] absolute right-0;
+        }
+        &::before {
+            @apply rotate-45 right-[0.25em] mr-1px;
+        }
+        &::after {
+            @apply -rotate-45;
         }
     }
 }
