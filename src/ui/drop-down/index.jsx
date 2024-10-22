@@ -11,9 +11,8 @@ export default function DropDown({ className, component, onClick, ...props }) {
             {component && component({
                 type: 'button',
                 ref: btnRef,
-                className: status,
-                value: props.value
-            })}
+                className: status
+            }, props.value)}
             {status && (
                 <Portal id="Modals">
                     <div
