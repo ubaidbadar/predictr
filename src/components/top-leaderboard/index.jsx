@@ -1,9 +1,8 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Select, { Item } from "../../ui/select";
 import useGet from "../../hooks/useGet";
 import Avatar from "../avatar";
-import Arrow from "../../icons/arrow";
-import ArrowBack from "../../icons/arrow-back";
+import TopModal from "./modal";
 
 export default function TopLeaderboard(props) {
     const { data, err, Loader, onParamsChange, params } = useGet('/fetch_leaderboard_standings', { limit: 10, show: 'MONTH' })
@@ -41,7 +40,7 @@ export default function TopLeaderboard(props) {
                             </Link>
                         ))}
                     </div>
-                    <button className="btn-text">View all <ArrowBack className="rotate-180" /></button>
+                    <TopModal params={params} />
                 </>
             )}
             {Loader && <Loader className="mx-auto my-4 text-exs" />}

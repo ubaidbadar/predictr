@@ -1,0 +1,10 @@
+.User-Table {
+    @apply grid;
+    grid-template-columns: auto auto auto;
+    >*:nth-child(3n) {
+        @apply text-end;
+    }
+    b {
+        @apply text-gray-1 font-normal px-4 text-sm border-b-1 py-2;
+    }
+}
