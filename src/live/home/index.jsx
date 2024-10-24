@@ -11,7 +11,7 @@ export default function Leaderboard() {
     return (
         <>
             <PrizeBanner {...props} />
-            <div className="cont leaderboard">
+            <div className="leaderboard">
                 {!isMobile && <Left {...props} />}
                 <div className="grid gap-inherit py-4">
                     {props.isLoggedIn ? <Main {...props} /> : <UnAuth />}

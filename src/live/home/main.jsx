@@ -5,7 +5,7 @@ import Posts from '../../components/posts';
 import FollowingsTab from "./followings-tab";
 import Filters from "../../icons/filters";
 
-const key = "Leaderboard-Feed", isFeed = localStorage.getItem(key) || true;
+const key = "Leaderboard-Feed", isFeed = localStorage.getItem(key);
 
 
 export default function Main(props) {
@@ -29,7 +29,9 @@ export default function Main(props) {
             </div>
             <CreatePost {...props} create={res => setState({ posts: [res.data, ...posts], title })} />
             {feed ?
-                props.user.followings > 4 ? <Posts {...props} api='/fetch_global_feeds?isFollow=true' /> : <FollowingsTab {...props} />
+                props.user.followings > 4 ?
+                    <Posts posts={posts} {...props} api='/fetch_global_feeds?isFollow=true' />
+                    : <FollowingsTab {...props} />
                 : <Posts {...props} posts={posts} />
             }
         </>

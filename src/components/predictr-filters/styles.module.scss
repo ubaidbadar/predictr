@@ -1,0 +1,33 @@
+.root {
+    @apply text-gray-1;
+    button, input {
+        @apply block bg-surface border-1 border-light-0 rounded-3 h-9 outline-none px-[1em] text-light-3;
+    }
+    button {
+        @apply flex items-center justify-between;
+        svg {
+            width: .9375rem;
+        }
+    }
+    >* {
+        @apply flex flex-wrap gap-2;
+    }
+}
+
+.tag {
+    @apply relative;
+    svg {
+        width: 1rem;
+        @apply absolute bottom-[0.7em] left-[1em];
+    }
+    input {
+        padding-left: 2.7rem;
+    }
+}
+
+.root {
+    @apply gap-5 flex flex-col;
+    button, input {
+        @apply w-full;
+    }
+}
