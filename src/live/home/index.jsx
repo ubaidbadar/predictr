@@ -1,3 +1,4 @@
+import UnAuth from "../../components/posts/un-auth";
 import PrizeBanner from "../../components/prize-banner";
 import TopLeaderBoard from "../../components/top-leaderboard";
 import useBoard from "../../hooks/useBoard";
@@ -12,7 +13,9 @@ export default function Leaderboard() {
             <PrizeBanner {...props} />
             <div className="cont leaderboard">
                 {!isMobile && <Left {...props} />}
-                <Main {...props} />
+                <div className="grid gap-inherit py-4">
+                    {props.isLoggedIn ? <Main {...props} /> : <UnAuth />}
+                </div>
                 <TopLeaderBoard {...props} />
             </div>
         </>

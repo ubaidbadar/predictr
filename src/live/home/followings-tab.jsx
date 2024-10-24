@@ -10,7 +10,7 @@ export default function FollowingsTab(props) {
                 My Feed shows predictions of the people you follow.
                 <p className="py-2 font-semibold bg-primary-1 rounded-2">Follow at least 5 people to unlock.</p>
                 {Loader && <Loader className="text-exs mt-1 mx-auto" />}
-                {data?.results.slice(0, 1).map(user => (
+                {data?.results.map(user => (
                     <div className="flex-center gap-3" key={user.userId._id}>
                         <User {...user.userId} className="mr-auto" />
                         {user.guess_accuracy.toFixed(2)}%

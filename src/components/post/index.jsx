@@ -1,4 +1,4 @@
-import getProfile from "../../../old/utility/getProfile";
+import getProfile from "../../lib/getProfile";
 import User from "../user";
 import dayjs from "dayjs";
 import plugin from "dayjs/plugin/relativeTime";
