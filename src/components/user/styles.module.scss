@@ -1,8 +1,9 @@
 .root {
     gap: 0 0.5em;
-    grid-template-columns: auto 1fr;
-    @apply leading-3 items-center grid;
+    @apply leading-3 flex items-center;
     &[subtitle] {
+        @apply grid;
+        grid-template-columns: auto 1fr;
         &::after {
             content: attr(subtitle);
             @apply text-xs text-gray-0;
@@ -14,5 +15,6 @@
     }
     [class *= "UserAvatar"] {
         grid-row: 1/3;
+        order: -1;
     }
 }

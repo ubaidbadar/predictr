@@ -18,7 +18,7 @@ button, label {
 }
 
 .UserAvatar {
-    @apply w-[1em] h-[1em] min-w-[1em] text-3xl rounded-[0.25em] bg-light-3 overflow-hidden inline-flex;
+    @apply w-[1em] items-center h-[1em] min-w-[1em] text-3xl rounded-[0.25em] bg-light-3 overflow-hidden inline-flex;
     &.img {
         @apply object-cover;
     }
