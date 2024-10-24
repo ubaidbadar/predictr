@@ -11,7 +11,7 @@ export default function TopLeaderboard(props) {
             <div className="flex-between pb-4 border-b-1 border-light-4">
                 <h3>Leaderboard</h3>
                 <Select
-                    value="ALL"
+                    value="MONTH"
                     onChange={e => onParamsChange({ show: e.target.value })}
                     component={(props, value) => (
                         <button {...props} className="btn-text btn-select capitalize">
