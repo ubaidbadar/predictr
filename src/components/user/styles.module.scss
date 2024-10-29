@@ -11,7 +11,7 @@
     }
     &[name]::before {
         content: attr(name);
-        @apply font-bold;
+        @apply font-semibold;
     }
     [class *= "UserAvatar"] {
         grid-row: 1/3;

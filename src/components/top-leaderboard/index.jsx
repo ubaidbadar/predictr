@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import Select, { Item } from "../../ui/select";
 import useGet from "../../hooks/useGet";
 import Avatar from "../avatar";
 import TopModal from "./modal";
+import DropDown from "./dropdown";
 
 export default function TopLeaderboard(props) {
     const { data, err, Loader, onParamsChange, params } = useGet('/fetch_leaderboard_standings', { limit: 10, show: 'MONTH' })
@@ -10,19 +10,7 @@ export default function TopLeaderboard(props) {
         <div className={`card mt-4 sticky top-nav ${props.className}`}>
             <div className="flex-between pb-4 border-b-1 border-light-4">
                 <h3>Leaderboard</h3>
-                <Select
-                    value="MONTH"
-                    onChange={e => onParamsChange({ show: e.target.value })}
-                    component={(props, value) => (
-                        <button {...props} className="btn-text btn-select capitalize">
-                            {value.toLowerCase()}
-                        </button>
-                    )}
-                >
-                    <Item value="ALL">All</Item>
-                    <Item value="MONTH">Month</Item>
-                    <Item value="WEEK">Week</Item>
-                </Select>
+                <DropDown value="MONTH" onParamsChange={onParamsChange} />
             </div>
             {data && (
                 <>
@@ -40,7 +28,7 @@ export default function TopLeaderboard(props) {
                             </Link>
                         ))}
                     </div>
-                    <TopModal params={params} />
+                    <TopModal data={data} params={params} {...props} />
                 </>
             )}
             {Loader && <Loader className="mx-auto my-4 text-exs" />}

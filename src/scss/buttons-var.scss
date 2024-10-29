@@ -1,9 +1,5 @@
 .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-    text-wrap: nowrap;
+    @apply inline-flex items-center justify-center select-none text-nowrap;
     svg {
         max-width: 1em;
         max-height: 1.125em;

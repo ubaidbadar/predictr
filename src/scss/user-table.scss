@@ -1,10 +1,20 @@
 .User-Table {
-    @apply grid;
+    @apply grid text-sm;
     grid-template-columns: auto auto auto;
-    >*:nth-child(3n) {
+    &:not(.User-Table-4) {
         @apply text-end;
     }
     b {
         @apply text-gray-1 font-normal px-4 text-sm border-b-1 py-2;
+    }
+    >* {
+        @apply px-4 py-2 border-b-1 border-light-0 flex items-center;
+    }
+}
+
+.User-Table-4 {
+    grid-template-columns: repeat(4, auto);
+    >*:nth-child(4n) {
+        @apply text-end;
     }
 }
