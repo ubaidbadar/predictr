@@ -1,9 +1,9 @@
-import React from "react"
+import { useLayoutEffect, useRef } from "react"
 import setPosition from "../lib/setPosition";
 
 const usePosition = (btnRef, isActive = true, deps = []) => {
-    const childRef = React.useRef();
-    React.useEffect(() => {
+    const childRef = useRef();
+    useLayoutEffect(() => {
         if (!isActive || !childRef.current || !btnRef || !btnRef.current) return;
         const unsubscribe = setPosition(btnRef.current, childRef.current)
         return unsubscribe
