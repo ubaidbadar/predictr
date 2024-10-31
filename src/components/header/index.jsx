@@ -10,7 +10,7 @@ export default function Header(props) {
     const isMobile = useQuery(450)
     return (
         <>
-            <header className="cont-p sm:gap-8 gap-6 backdrop-blur-lg bg-white bg-opacity-80 sticky top-0 z-2 h-nav border-light-0 border-b-1 flex-center">
+            <header className="px-cont sm:gap-8 gap-6 backdrop-blur-lg bg-white bg-opacity-80 sticky top-0 z-2 h-nav border-light-0 border-b-1 flex-center">
                 <Link to='/' className="text-primary-0 text-xl font-extrabold mr-auto">Predictr.</Link>
                 <Search {...props} isMobile={isMobile} />
                 {props.isLoggedIn ? (

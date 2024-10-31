@@ -13,7 +13,7 @@ export default function Follow({ userId, is_following, isLoggedIn, setAuth, user
                 setAuth({
                     followings: user.followings + (e.target.classList.contains(styles.active) ? -1 : 1)
                 })
-                // axios.put('/toggle_following', { userId }).catch(getAxiosMessage)
+                axios.put('/toggle_following', { userId }).catch(getAxiosMessage)
                 const els = document.getElementsByClassName(className);
                 for (const el of els) el.classList.toggle(styles.active)
             }}
