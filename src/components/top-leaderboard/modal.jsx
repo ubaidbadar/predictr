@@ -6,10 +6,12 @@ import User from "../user";
 import Follow from "../follow";
 import Select from "../../ui/select";
 import DropDown from "./dropdown";
+import Pagination from "../../ui/pagination";
 
 
 const Main = (props) => {
     const { data = props.data, err, Loader, onParamsChange, params } = useGet('/fetch_leaderboard_standings', props.params, false)
+    console.log(params)
     return (
         <>
             <DropDown value={params.show} onParamsChange={onParamsChange} />
@@ -27,6 +29,7 @@ const Main = (props) => {
                     </Fragment>
                 ))}
             </div>
+            <Pagination length={data.total} />
         </>
     )
 }
