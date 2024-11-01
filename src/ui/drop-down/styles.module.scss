@@ -1,5 +1,5 @@
 .root {
-    @apply fixed bg-surface border-1 overflow-hidden border-light-0 shadow-2 min-w-[11.5625em] text-nowrap rounded-[1em] z-2 transition-opacity;
+    @apply fixed bg-surface border-1 overflow-hidden border-light-0 shadow-2 min-w-[11.5625em] text-nowrap rounded-[1em] z-9 transition-opacity;
     >* {
         @apply cursor-pointer px-[1em] h-[2.69em] items-center grid text-start gap-[0.5em] w-full;
         grid-template-columns: 1.5em 1fr;
