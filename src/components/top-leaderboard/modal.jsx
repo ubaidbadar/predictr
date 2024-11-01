@@ -5,17 +5,14 @@ import { Fragment } from "react";
 import User from "../user";
 import Follow from "../follow";
 import Select from "../../ui/select";
+import DropDown from "./dropdown";
 
 
 const Main = (props) => {
     const { data = props.data, err, Loader, onParamsChange, params } = useGet('/fetch_leaderboard_standings', props.params, false)
     return (
         <>
-            <Select
-                value={params.show}
-            >
-                
-            </Select>
+            <DropDown value={params.show} onParamsChange={onParamsChange} />
             <div className="User-Table User-Table-4">
                 <b>Pos.</b>
                 <b>Predictors</b>

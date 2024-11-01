@@ -10,7 +10,7 @@ export default function TopLeaderboard(props) {
         <div className={`card mt-4 sticky top-nav ${props.className}`}>
             <div className="flex-between pb-4 border-b-1 border-light-4">
                 <h3>Leaderboard</h3>
-                <DropDown value="MONTH" onParamsChange={onParamsChange} />
+                <DropDown onParamsChange={onParamsChange} />
             </div>
             {data && (
                 <>
