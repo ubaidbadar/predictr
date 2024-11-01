@@ -11,7 +11,6 @@ import Pagination from "../../ui/pagination";
 
 const Main = (props) => {
     const { data = props.data, err, Loader, onParamsChange, params } = useGet('/fetch_leaderboard_standings', props.params, false)
-    console.log(params)
     return (
         <>
             <DropDown value={params.show} onParamsChange={onParamsChange} />
