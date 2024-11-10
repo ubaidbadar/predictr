@@ -1,0 +1,24 @@
+.root {
+    @apply grid gap-[0.5em];
+    &[title]::before {
+        content: attr(title);
+        @apply font-semibold;
+    }
+}
+
+.field {
+    @apply min-h-[3rem] px-[1em] flex-1 rounded-inherit gap-[.625em];
+    &:first-child {
+        @apply -ml-[1em];
+    }
+    &:last-child {
+        @apply -mr-[1em];
+    }
+}
+
+.main {
+    @apply border-1 border-light-0 px-[1em] rounded-[0.75em] flex items-center;
+    &:has(:focus) {
+        @apply border-primary-0;
+    }
+}
