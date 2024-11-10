@@ -54,3 +54,11 @@ button, label {
         @apply text-dark-0 !important;
     }
 }
+
+.line-text {
+    @extend .flex-center;
+    &::after, &::before {
+        content: '';
+        @apply border-t-1 border-light-0 flex-1;
+    }
+}
