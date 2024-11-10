@@ -2,7 +2,6 @@ import axios from "../config/axios";
 import { useEffect, useState } from "react"
 import getAxiosMessage from "../lib/getAxiosMessage";
 import { useLocation } from "react-router-dom";
-// import { useLocation } from "react-router-dom";
 
 
 
@@ -10,7 +9,7 @@ const useScrollFetch = (api, posts = []) => {
     const [state, setState] = useState({
         posts,
         exists: posts ? posts.length % 20 === 0 : true,
-        initial: true,
+        initial: true
     })
     const search = useLocation().search;
     useEffect(() => {
@@ -21,10 +20,10 @@ const useScrollFetch = (api, posts = []) => {
             if (exists && (window.innerHeight + window.scrollY + 200) >= document.body.offsetHeight) {
                 exists = false;
                 setState({ posts: p, exists: true });
-                const search = new URLSearchParams(location.search);
-                search.set('page', (p.length / 20) + 1);
+                const s = new URLSearchParams(search);
+                s.set('page', (p.length / 20) + 1);
                 try {
-                    const { posts, ...data } = (await axios.get(`${api}?${search.toString()}`)).data
+                    const { posts, ...data } = (await axios.get(`${api}?${s.toString()}`)).data
                     other = { ...other, ...data };
                     p.push(...posts);
                     exists = posts.length === 20;
@@ -39,11 +38,12 @@ const useScrollFetch = (api, posts = []) => {
 
         }
         window.addEventListener('scroll', cb);
-        if(p.length < 20) cb()
+        cb()
         return () => {
+            setState({ posts: [], exists: true });
             window.removeEventListener('scroll', cb);
         }
-    }, [location.search])
+    }, [search])
     return state;
 }
 
