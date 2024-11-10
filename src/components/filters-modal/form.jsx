@@ -31,11 +31,11 @@ export default function Form() {
                             onFocus={tools.open}
                             readOnly right={<Calendar />}
                             placeholder="From"
-                            value={tools.start_date}
+                            value={values.start_date}
                             name="start_date"
                         />
                         <TextField
-                            value={tools.end_date}
+                            value={values.end_date}
                             onFocus={tools.open}
                             readOnly
                             right={<Calendar />}
@@ -45,7 +45,7 @@ export default function Form() {
                     </div>
                 )}
             />
-            <TextField onChange={onChange} value={values.hashtags} left={<Magnifier />} placeholder="#tags" title="HashTags" />
+            <TextField name="hashtags" onChange={onChange} value={values.hashtags} left={<Magnifier />} placeholder="#tags" title="HashTags" />
             <div className="Modal-Footer gap-5">
                 <button type="button" className="btn-text" onClick={() => setValues(d)}>Reset</button>
                 <button className="btn-primary">Save</button>
