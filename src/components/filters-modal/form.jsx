@@ -3,6 +3,7 @@ import TextField from "../../ui/textfield";
 import Calendar from "../../icons/calendar";
 import Magnifier from "../../icons/magnifier";
 import { useState } from "react";
+import updateSearchParams from "../../lib/updateSearchParams";
 
 
 const d = {
@@ -47,7 +48,10 @@ export default function Form() {
             />
             <TextField name="hashtags" onChange={onChange} value={values.hashtags} left={<Magnifier />} placeholder="#tags" title="HashTags" />
             <div className="Modal-Footer gap-5">
-                <button type="button" className="btn-text" onClick={() => setValues(d)}>Reset</button>
+                <button type="button" className="btn-text" onClick={() => {
+                    setValues(d);
+                    updateSearchParams({})
+                }}>Reset</button>
                 <button className="btn-primary">Save</button>
             </div>
         </>

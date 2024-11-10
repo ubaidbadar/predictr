@@ -1,6 +1,6 @@
 import Modal from "../../ui/modal/modal";
 import Form from "./form";
-import F from '../../hoc/Form'
+import F from '../../hoc/form'
 import updateSearchParams from "../../lib/updateSearchParams";
 
 
