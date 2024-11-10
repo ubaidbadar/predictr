@@ -1,6 +1,7 @@
 import axios from "../config/axios";
 import { useEffect, useState } from "react"
 import getAxiosMessage from "../lib/getAxiosMessage";
+import { useLocation } from "react-router-dom";
 // import { useLocation } from "react-router-dom";
 
 
@@ -11,6 +12,7 @@ const useScrollFetch = (api, posts = []) => {
         exists: posts ? posts.length % 20 === 0 : true,
         initial: true,
     })
+    const search = useLocation().search;
     useEffect(() => {
         if (!state.exists) return;
         const p = state.initial ? [...state.posts] : [];

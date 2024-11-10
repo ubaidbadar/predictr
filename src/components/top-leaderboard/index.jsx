@@ -6,7 +6,6 @@ import DropDown from "./dropdown";
 
 export default function TopLeaderboard(props) {
     const { data, err, Loader, onParamsChange, params } = useGet('/fetch_leaderboard_standings', { limit: 10, show: 'MONTH' })
-    console.log(data)
     return (
         <div className={`card mt-4 sticky top-nav ${props.className}`}>
             <div className="flex-between pb-4 border-b-1 border-light-4">
