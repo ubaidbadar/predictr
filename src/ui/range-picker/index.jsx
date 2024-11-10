@@ -5,25 +5,27 @@ import Model from "../../ui/modal";
 import useShow from "../../hooks/useShow";
 import dayjs from "dayjs";
 import utc from 'dayjs/plugin/utc';
+import 'react-date-range/dist/styles.css';
+import 'react-date-range/dist/theme/default.css';
 
 dayjs.extend(utc);
 
 
 const toLocalDate = (utcDate) => {
-  if(typeof utcDate === 'string') utcDate = new Date(utcDate);
+  if (typeof utcDate === 'string') utcDate = new Date(utcDate);
   return new Date(utcDate.getTime() + utcDate.getTimezoneOffset() * 60000);
 };
 
 const RangePicker = ({ onChange, ranges, component, ...props }) => {
   const tools = useShow()
   const [selectedDate, setSelectedDate] = useState(
-    ranges ? 
-    ranges.map(range => ({...range, startDate: toLocalDate(range.startDate), endDate: toLocalDate(range.endDate)})) : 
-    [{
-      startDate: dayjs().subtract(30, 'days'),
-      endDate: dayjs(),
-      key: "selection",
-    }]
+    ranges ?
+      ranges.map(range => ({ ...range, startDate: toLocalDate(range.startDate), endDate: toLocalDate(range.endDate) })) :
+      [{
+        startDate: dayjs().subtract(30, 'days'),
+        endDate: dayjs(),
+        key: "selection",
+      }]
   );
 
 
@@ -33,22 +35,26 @@ const RangePicker = ({ onChange, ranges, component, ...props }) => {
 
     if (selection.endDate) {
       if (selection.startDate.getTime() !== selection.endDate.getTime()) {
-        hide();
-        const utcStartDate = dayjs(selection.startDate).utc().format();
-        const utcEndDate = dayjs(selection.endDate).utc().format();
-        onChange && onChange({ selection: { ...selection, startDate: utcStartDate, endDate: utcEndDate } });
+        tools.close();
+        onChange && onChange({
+          selection: {
+            ...selection,
+            start: dayjs(selection.startDate).utc().format(),
+            end: dayjs(selection.endDate).utc().format()
+          }
+        });
       }
     }
   };
 
   useEffect(() => {
     if (ranges && JSON.stringify(ranges) !== JSON.stringify(selectedDate)) {
-      setSelectedDate(ranges.map(range => ({...range, startDate: toLocalDate(range.startDate), endDate: toLocalDate(range.endDate)})));
+      setSelectedDate(ranges.map(range => ({ ...range, startDate: toLocalDate(range.startDate), endDate: toLocalDate(range.endDate) })));
     }
   }, [ranges]);
 
-  const values = [moment(selectedDate[0].startDate).format('YYYY/MM/DD'), moment(selectedDate[0].endDate).format('YYYY/MM/DD')];
-
+  const values = [dayjs(selectedDate[0].startDate).format('YYYY/MM/DD'), dayjs(selectedDate[0].endDate).format('YYYY/MM/DD')];
+  console.log(values)
   return (
     <>
       {component && component({
@@ -57,8 +63,7 @@ const RangePicker = ({ onChange, ranges, component, ...props }) => {
         ...tools
       })}
       {tools.className && (
-        <Model {...tools} title='Select Date Range'>
-          <div className="date__range__wrapper border border-radius-8 overflow-hidden" autoFocus={true}>
+        <Model {...tools} className="Modal-Range-Picker" title='Select Date Range'>
             <DateRangePicker
               showSelectionPreview={true}
               moveRangeOnFirstSelection={false}
@@ -67,10 +72,9 @@ const RangePicker = ({ onChange, ranges, component, ...props }) => {
               direction="horizontal"
               showMonthAndYearPickers={false}
               dateDisplayFormat="yyyy/MM/dd"
-              className="m-auto"
+              className="Range-Picker-Calendar"
               {...props}
             />
-          </div>
         </Model>
       )}
     </>

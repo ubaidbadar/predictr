@@ -1,40 +1,27 @@
-.date__range__wrapper{
-    position: relative;
-    .rdrDays{
-        display: block;
-    }
-    @media (max-width: 610px) {
-        .rdrDefinedRangesWrapper{
-            display: none;
-        }
-    }
-    @media (max-width: 480px) {
-        .rdrDateRangePickerWrapper{
-            width: 100%;
-        }
-        .rdrMonth{
-            width: 100%;
-        }
-        .rdrCalendarWrapper{
-            width: 100%;
-        }
-    }
-    @media (max-width: 358px) {
-        .rdrCalendarWrapper{
-            font-size: 11.5px;
-        }
-    }
-    @media (max-width: 330px) {
-        .rdrCalendarWrapper{
-            font-size: 11px;
+@media (min-width: 768px) {
+    .Modal-Range-Picker {
+        >div {
+            width: initial !important;
         }
     }
 }
 
-.date__range__model{
-    width: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
+.Range-Picker-Calendar {
+    @apply border-1 border-light-0 rounded-3 overflow-hidden;
+}
+
+.Range-Picker-Calendar {
+    @media (max-width: 767px) {
+        .rdrCalendarWrapper {
+            @apply flex-1;
+        }
+        .rdrMonth {
+            @apply w-full;
+        }
+    }
+    @media (max-width: 580px) {
+        .rdrDefinedRangesWrapper, .rdrDateDisplayWrapper {
+            @apply hidden;
+        }
+    }
 }

@@ -21,4 +21,7 @@
     &:has(:focus) {
         @apply border-primary-0;
     }
+    >svg {
+        @apply text-light-3;
+    }
 }

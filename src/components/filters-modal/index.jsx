@@ -11,8 +11,16 @@ export default function FiltersModal() {
             <TextField placeholder="Enter manually accuracy" title="Accuracy (%)" />
             <RangePicker
                 component={tools => (
-                    <>
-                    </>
+                    <div className="flex-col gap-3">
+                        <TextField
+                            title="Date Range" 
+                            onFocus={tools.open} 
+                            readOnly right={<Calendar />} 
+                            placeholder="From"
+                            value={tools.values[0]}
+                         />
+                        <TextField value={tools.values[1]} onFocus={tools.open} readOnly right={<Calendar />} placeholder="To" />
+                    </div>
                 )}
             />
         </Modal>
