@@ -40,7 +40,7 @@ export default function Register(props) {
                 )}
             >
                 <div className="-mt-3">
-                    or <a href="#register" className="btn-text text-sm">sign in</a>
+                    or <a href="#login" className="btn-text text-sm">sign in</a>
                 </div>
                 <Input
                     name='name'

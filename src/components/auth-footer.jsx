@@ -1,6 +1,6 @@
 import Google from "./google";
 
-export default function AuthFooter(props) {
+export default function AuthFooter() {
     return (
         <>
             <p className="line-text gap-2">
