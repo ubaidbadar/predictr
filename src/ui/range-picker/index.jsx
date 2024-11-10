@@ -1,20 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { DateRangePicker } from "react-date-range";
 import "./styles.scss";
 import Model from "../../ui/modal";
 import useShow from "../../hooks/useShow";
 import dayjs from "dayjs";
-import utc from 'dayjs/plugin/utc';
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 
-dayjs.extend(utc);
 
-
-const toLocalDate = (utcDate) => {
-  if (typeof utcDate === 'string') utcDate = new Date(utcDate);
-  return new Date(utcDate.getTime() + utcDate.getTimezoneOffset() * 60000);
-};
 
 const RangePicker = ({
   component,
@@ -38,8 +31,8 @@ const RangePicker = ({
       if (selection.startDate.getTime() !== selection.endDate.getTime()) {
         tools.close();
         onChange && onChange({
-          start: dayjs(selection.startDate).utc().format(),
-          end: dayjs(selection.endDate).utc().format()
+          start: dayjs(selection.startDate).format('YYYY/MM/DD'),
+          end: dayjs(selection.endDate).format('YYYY/MM/DD')
         });
       }
     }

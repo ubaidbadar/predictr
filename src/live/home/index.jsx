@@ -1,3 +1,4 @@
+import FiltersModal from "../../components/filters-modal";
 import UnAuth from "../../components/posts/un-auth";
 import PrizeBanner from "../../components/prize-banner";
 import TopLeaderBoard from "../../components/top-leaderboard";
@@ -14,7 +15,12 @@ export default function Leaderboard() {
             <div className="leaderboard">
                 {!isMobile && <Left {...props} />}
                 <div className="grid gap-inherit py-4">
-                    {props.isLoggedIn ? <Main {...props} /> : <UnAuth />}
+                    {props.isLoggedIn ? (
+                        <>
+                            <Main {...props} />
+                            <FiltersModal />
+                        </>
+                    ) : <UnAuth />}
                 </div>
                 {!isMobile && <TopLeaderBoard {...props} />}
             </div>

@@ -23,9 +23,9 @@ export default function Main(props) {
                     }}
                     options={["Explore", "My Feed"]}
                 />
-                <button className="border-1 text-md border-light-0 btn-icon">
+                <label htmlFor="Predictions-Filter-Modal" className="border-1 text-md border-light-0 btn-icon">
                     <Filters />
-                </button>
+                </label>
             </div>
             <CreatePost {...props} create={res => setState({ posts: [res.data, ...posts], title })} />
             {feed ?

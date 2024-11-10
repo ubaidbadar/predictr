@@ -9,7 +9,7 @@ export default function FiltersModal() {
             Root={F}
             onSubmit={e => {
             }}
-            component={tools => <button id="Predictions-Filter" onClick={() => tools.open} className="hidden"></button>}
+            component={tools => <button id="Predictions-Filter-Modal" onClick={tools.open} className="hidden"></button>}
         >
             <Form />
         </Modal>

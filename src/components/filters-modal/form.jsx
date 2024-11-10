@@ -20,7 +20,10 @@ export default function Form() {
         <>
             <TextField name="accuracy" onChange={onChange} placeholder="Enter manually accuracy" title="Accuracy (%)" />
             <RangePicker
-                onChange={e => setValues({ ...values, start_date: e.start, end_date: e.end })}
+                onChange={e => {
+                    console.log(e)
+                    setValues({ ...values, start_date: e.start, end_date: e.end })
+                }}
                 component={tools => (
                     <div className="flex-col gap-3">
                         <TextField
