@@ -1,5 +1,5 @@
 import { useState } from "react";
-import updateSearchParams from "../../lib/updateSearchParams";
+import getSearchParams from "../../lib/getSearchParams";
 
 const useMain = () => {
     const search = new URLSearchParams(window.location.search);
@@ -22,7 +22,7 @@ export default function useFilter() {
         onRangeChange: e => setValues({ ...values, start_date: e.start, end_date: e.end }),
         reset: () => {
             setValues(tools.d);
-            updateSearchParams(tools.d);
+            getSearchParams(tools.d);
         }
     }
 }

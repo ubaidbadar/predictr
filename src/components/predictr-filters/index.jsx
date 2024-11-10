@@ -3,7 +3,7 @@ import Magnifier from '../../icons/magnifier';
 import styles from './styles.module.scss';
 import getValues from '../../hoc/form/getValues';
 import useFilter from '../filters-modal/useFilter';
-import updateSearchParams from '../../lib/updateSearchParams';
+import getSearchParams from '../../lib/getSearchParams';
 import RangePicker from '../../ui/range-picker';
 
 export default function PredictrFilters() {
@@ -14,7 +14,7 @@ export default function PredictrFilters() {
                 onSubmit={e => {
                     e.preventDefault();
                     const values = getValues(e.target).values;
-                    updateSearchParams(values);
+                    getSearchParams(values);
                 }}
             >
                 <label>
