@@ -8,17 +8,23 @@ import { useNavigate } from "react-router-dom";
 export default function Login(props) {
     const navigate = useNavigate();
     return (
-        <Modal title="Sign In" close={() => navigate(-1)}>
-            <Form className="grid gap-3"
+        <Modal title="Sign In" className="Modal-Medium" close={() => navigate(-1)}>
+            <Form className="grid gap-4"
                 onSubmit={data => {
                     axios.post("/sign_in", data.values)
                         .then(res => props.setAuth(res.data))
                         .catch(data.onFailure)
                 }}
                 footer={props => (
-                    <button className={`btn-primary ${props.className}`} disabled={props.disabled}>Login</button>
+                    <div className="flex-between">
+                        <a className="btn-text" href="#forgot-password">Forgot Password?</a>
+                        <button className={`btn-primary ${props.className}`} disabled={props.disabled}>Login</button>
+                    </div>
                 )}
             >
+                <div className="-mt-3">
+                    or <a href="#register" className="btn-text text-sm">Create an account</a>
+                </div>
                 <Email required label="Email" errorText="Email is not valid!" name="username" />
                 <Password required label="Password" errorText="Please must be minimum 6 characters long!" name="password" />
             </Form>

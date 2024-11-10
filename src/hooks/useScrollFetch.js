@@ -42,7 +42,6 @@ const useScrollFetch = (api, posts = []) => {
             window.removeEventListener('scroll', cb);
         }
     }, [search])
-    console.log(state)
     return state;
 }
 
