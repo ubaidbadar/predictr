@@ -6,8 +6,8 @@ const Main = ({api = '/fetch_global_feeds', posts = [], ...props}) => {
     const state = useScrollFetch(api, posts)
     return (
         <>
-            {/* {state.posts.map(post => <Post {...props} {...post} key={post._id} />)} */}
-            {state.posts[0] && <Post {...state.posts[0]} {...props} />}
+            {state.posts.map(post => <Post {...props} {...post} key={post._id} />)}
+            {/* {state.posts[0] && <Post {...state.posts[0]} {...props} />} */}
             {state.exists && <Spinner className="mx-auto text-exs" />}
         </>
     )
