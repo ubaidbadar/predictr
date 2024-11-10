@@ -35,7 +35,7 @@ const useScrollFetch = (api, posts = []) => {
 
         }
         window.addEventListener('scroll', cb);
-        cb();
+        if(p.length < 20) cb()
         return () => {
             window.removeEventListener('scroll', cb);
         }
