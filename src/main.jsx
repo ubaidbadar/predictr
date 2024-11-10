@@ -5,9 +5,9 @@ import './scss/index.scss';
 import GlobalContext from './contexts/index.jsx';
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <>
     <GlobalContext>
       <App />
     </GlobalContext>
-  </StrictMode>,
+  </>,
 )

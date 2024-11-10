@@ -8,16 +8,14 @@ import { useLocation } from "react-router-dom";
 const useScrollFetch = (api, posts = []) => {
     const [state, setState] = useState({
         posts,
-        exists: posts ? posts.length % 20 === 0 : true,
-        initial: true
+        exists: posts ? posts.length % 20 === 0 : true
     })
     const search = useLocation().search;
     useEffect(() => {
-        if (!state.exists) return;
-        const p = state.initial ? [...state.posts] : [];
+        const p = [...state.posts];
         let exists = true, other = {};
-        const cb = async () => {
-            if (exists && (window.innerHeight + window.scrollY + 200) >= document.body.offsetHeight) {
+        const cb = async (active) => {
+            if (typeof active === 'boolean' || (exists && (window.innerHeight + window.scrollY + 200) >= document.body.offsetHeight)) {
                 exists = false;
                 setState({ posts: p, exists: true });
                 const s = new URLSearchParams(search);
@@ -38,12 +36,13 @@ const useScrollFetch = (api, posts = []) => {
 
         }
         window.addEventListener('scroll', cb);
-        cb()
+        cb(true)
         return () => {
             setState({ posts: [], exists: true });
             window.removeEventListener('scroll', cb);
         }
     }, [search])
+    console.log(state)
     return state;
 }
 
