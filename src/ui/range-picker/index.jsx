@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import moment from "moment";
 import { DateRangePicker } from "react-date-range";
 import "./styles.scss";
 import Model from "../../ui/modal";
 import useShow from "../../hooks/useShow";
+import dayjs from "dayjs";
+import utc from 'dayjs/plugin/utc';
 
-const toUTCDate = (localDate) => {
-  return new Date(localDate.getTime() - localDate.getTimezoneOffset() * 60000);
-};
+dayjs.extend(utc);
+
 
 const toLocalDate = (utcDate) => {
   if(typeof utcDate === 'string') utcDate = new Date(utcDate);
@@ -20,8 +20,8 @@ const RangePicker = ({ onChange, ranges, component, ...props }) => {
     ranges ? 
     ranges.map(range => ({...range, startDate: toLocalDate(range.startDate), endDate: toLocalDate(range.endDate)})) : 
     [{
-      startDate: new Date(moment().subtract(30, "days")),
-      endDate: new Date(moment()),
+      startDate: dayjs().subtract(30, 'days'),
+      endDate: dayjs(),
       key: "selection",
     }]
   );
@@ -29,14 +29,13 @@ const RangePicker = ({ onChange, ranges, component, ...props }) => {
 
   const onRangeChange = (e) => {
     const selection = e[Object.keys(e)[0]];
-    setSelectedDate([{ ...selection }]); // Keep selection in local time
+    setSelectedDate([{ ...selection }]);
 
     if (selection.endDate) {
       if (selection.startDate.getTime() !== selection.endDate.getTime()) {
         hide();
-        // Convert to UTC before calling onChange
-        const utcStartDate = toUTCDate(selection.startDate);
-        const utcEndDate = toUTCDate(selection.endDate);
+        const utcStartDate = dayjs(selection.startDate).utc().format();
+        const utcEndDate = dayjs(selection.endDate).utc().format();
         onChange && onChange({ selection: { ...selection, startDate: utcStartDate, endDate: utcEndDate } });
       }
     }
