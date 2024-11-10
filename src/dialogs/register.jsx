@@ -7,22 +7,36 @@ import { useNavigate } from "react-router-dom";
 import AuthFooter from "../components/auth-footer";
 import Input from "../ui/input";
 import BoxField from "../ui/boxfield";
+import ActivateEmailResend from "../components/ActivateEmailResend";
 
 export default function Register(props) {
     const navigate = useNavigate();
     return (
         <Modal title="Sign Up" className="Modal-Medium" close={() => navigate(-1)}>
             <Form className="grid gap-5"
-                onSubmit={data => {
-                    axios.post("/sign_in", data.values)
-                        .then(res => props.setAuth(res.data))
-                        .catch(data.onFailure)
+                onSubmit={formData => {
+                    const { values, onFailure, onSuccess } = formData;
+
+                    // Check if passwords match
+                    if (values.password !== values.confirmPassword) return onFailure("Your passwords don't match.");
+                    axios.post("/create_user", credentials)
+                        .then(res => {
+                            if (res.data.status === "success") {
+                                onSuccess(
+                                    <>Thank you for registering. An activation email has been sent to verify your email address. Check your junk folder. <ActivateEmailResend {...values} /></>
+                                );
+                            }
+                            else if (res.data.status === "User already exists") throw Error(`User with this "${credentials.email}" email already exists!`)
+
+                        })
+                        .catch(onFailure)
+
                 }}
                 footer={props => (
-                    <div className="flex-between">
-                        <a className="btn-text" href="#forgot-password">Forgot Password?</a>
-                        <button className={`btn-primary ${props.className}`} disabled={props.disabled}>Login</button>
-                    </div>
+                    <button
+                        className={`btn-primary ${props.className}`}
+                        disabled={props.disabled}
+                    >Create an account</button>
                 )}
             >
                 <div className="-mt-3">
