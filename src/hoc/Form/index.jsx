@@ -39,6 +39,7 @@ const Form = ({ footer, onSubmit, children, other, ...props }) => {
                 ...data,
                 onSuccess: message => setState({ message }),
                 onFailure: err => setState({ err: typeof err === 'string' ? err : getAxiosMessage(err) }),
+                other
             };
             onSubmit(p)
         }

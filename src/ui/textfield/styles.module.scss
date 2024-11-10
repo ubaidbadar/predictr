@@ -7,7 +7,7 @@
 }
 
 .field {
-    @apply min-h-[3rem] px-[1em] flex-1 rounded-inherit gap-[.625em];
+    @apply min-h-[3rem] px-[1em] flex-1 rounded-inherit;
     &:first-child {
         @apply -ml-[1em];
     }
