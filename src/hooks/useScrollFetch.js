@@ -1,19 +1,21 @@
 import axios from "../config/axios";
 import { useEffect, useState } from "react"
 import getAxiosMessage from "../lib/getAxiosMessage";
+// import { useLocation } from "react-router-dom";
 
 
 
 const useScrollFetch = (api, posts = []) => {
     const [state, setState] = useState({
         posts,
-        exists: posts ? posts.length % 20 === 0 : true
+        exists: posts ? posts.length % 20 === 0 : true,
+        initial: true,
     })
     useEffect(() => {
         if (!state.exists) return;
-        const p = [...state.posts];
+        const p = state.initial ? [...state.posts] : [];
         let exists = true, other = {};
-        const cb = async (e) => {
+        const cb = async () => {
             if (exists && (window.innerHeight + window.scrollY + 200) >= document.body.offsetHeight) {
                 exists = false;
                 setState({ posts: p, exists: true });
