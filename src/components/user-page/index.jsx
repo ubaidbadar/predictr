@@ -22,18 +22,20 @@ const UserPage = props => {
                     userId={user}
                 />
             </div>
-            <Stats isLoggedIn={props.isLoggedIn} {...data} data={data}
-                user={{
-                    ...user,
-                    followers: data.followers,
-                    followings: data.followings,
-                    is_following: data.is_following,
-                    position: data.position,
-                }}
-                isCurrentUser={isCurrentUser}
-            >
-                <Follow {...props} className="btn-primary w-full mt-4" userId={user._id} is_following={data.is_following} />
-            </Stats>
+            <div className='order-1 lg:order-initial flex flex-col gap-inherit sticky'>
+                <Stats isLoggedIn={props.isLoggedIn} {...data} data={data}
+                    user={{
+                        ...user,
+                        followers: data.followers,
+                        followings: data.followings,
+                        is_following: data.is_following,
+                        position: data.position,
+                    }}
+                    isCurrentUser={isCurrentUser}
+                >
+                    <Follow {...props} className="btn-primary w-full mt-4" userId={user._id} is_following={data.is_following} />
+                </Stats>
+            </div>
         </>
     )
 }

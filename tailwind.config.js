@@ -12,6 +12,9 @@ module.exports = {
         '2px': 'var(--border-width-2)',
         cont: 'var(--cont)',
         nav: 'var(--nav-height)',
+      },
+      order: {
+        initial: 'initial'
       }
     },
     borderWidth: {
