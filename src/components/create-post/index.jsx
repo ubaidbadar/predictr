@@ -12,7 +12,7 @@ export default function CreatePost(props) {
                 <span className="bg-light-1 rounded-2 flex-center text-gray-0 px-4 py-2 flex-1">Make a prediction, Trevor</span>
             </button>
             {tools.state && (
-                <Modal className={`Modal-0 ${tools.state}`}>
+                <Modal {...tools}>
                     <Create {...props} close={tools.close} />
                 </Modal>
             )}
