@@ -6,6 +6,12 @@
     &::after {
         content: 'ing';
     }
+    &[class *= "btn-primary"] {
+        &::after {
+            @apply -ml-[1em]
+        }
+        @apply bg-none text-primary-0 border-1;
+    }
 }
 
 .root {

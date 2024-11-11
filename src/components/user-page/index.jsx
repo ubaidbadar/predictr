@@ -4,6 +4,7 @@ import getProfile from '../../lib/getProfile';
 import withBoard from '../../hoc/withBoard';
 import Posts from '../posts';
 import Stats from '../stats';
+import Follow from '../follow';
 
 const UserPage = props => {
     const { data, err, Loader } = useGet(props.api + (props.search || ''));
@@ -30,7 +31,9 @@ const UserPage = props => {
                     position: data.position,
                 }}
                 isCurrentUser={isCurrentUser}
-            />
+            >
+                <Follow {...props} className="btn-primary w-full mt-4" userId={user._id} is_following={data.is_following} />
+            </Stats>
         </>
     )
 }
