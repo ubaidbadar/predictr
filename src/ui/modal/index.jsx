@@ -1,9 +1,9 @@
 import ModalBase from "../modal_base";
 import ModalHeader from "./header";
 
-export default function Modal({ children, design = 0, footer, className, ...props }) {
+export default function Modal({ children, footer, ...props }) {
     return (
-        <ModalBase {...props} className={`Modal-${design} ${className}`}>
+        <ModalBase {...props}>
             <ModalHeader {...props} />
             {children}
             {footer && (

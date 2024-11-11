@@ -19,5 +19,6 @@ export default function useShow(className) {
             setState("active");
             window.addEventListener('popstate', close)
         },
+        close
     }
 }
