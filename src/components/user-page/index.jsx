@@ -10,7 +10,7 @@ const UserPage = props => {
     const { data, err, Loader } = useGet(props.api + (props.search || ''));
     if (Loader) return <Loader className='mx-auto' />
     if (err) return <h3 className='absolute-middle text-center text-accent-2'>{err}</h3>
-    const isCurrentUser = props.userId === props.user?._id, user = getProfile(isCurrentUser ? props.user : data);
+    const isUser = props.userId === props.user?._id, user = getProfile(isUser ? props.user : data);
     return (
         <>
             <div className='d-grid gap-2'>
@@ -23,7 +23,10 @@ const UserPage = props => {
                 />
             </div>
             <div className='order-1 lg:order-initial flex flex-col gap-inherit sticky'>
-                <Stats isLoggedIn={props.isLoggedIn} {...data} data={data}
+                <Stats {...data}
+                    data={data}
+                    isUser={isUser}
+                    isLoggedIn={props.isLoggedIn}
                     user={{
                         ...user,
                         followers: data.followers,
@@ -31,7 +34,6 @@ const UserPage = props => {
                         is_following: data.is_following,
                         position: data.position,
                     }}
-                    isCurrentUser={isCurrentUser}
                 >
                     <Follow {...props} className="btn-primary w-full mt-4" userId={user._id} is_following={data.is_following} />
                 </Stats>

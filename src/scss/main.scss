@@ -34,7 +34,7 @@ button, label {
         grid-template-columns: 1fr;
     }
     > .sticky {
-        top: var(calc(var(--header-height) + 1rem));
+        @apply lg:top-nav-space;
     }
 }
 

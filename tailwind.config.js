@@ -12,6 +12,7 @@ module.exports = {
         '2px': 'var(--border-width-2)',
         cont: 'var(--cont)',
         nav: 'var(--nav-height)',
+        "nav-space": 'calc(var(--nav-height) + 1rem)'
       },
       order: {
         initial: 'initial'

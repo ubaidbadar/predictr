@@ -4,7 +4,7 @@ import Avatar from "../avatar";
 import Predictor from "./predictor-card";
 import Progress from './progress';
 
-export default function Stats({ user, isLoggedIn, children }) {
+export default function Stats({ user, isLoggedIn, children, isUser = true }) {
     return (
         <>
             <div className="card">
@@ -35,7 +35,7 @@ export default function Stats({ user, isLoggedIn, children }) {
                 <Progress {...user.position} />
                 {children}
             </div>
-            <Predictor {...user.premium} />
+            {isUser && <Predictor {...user.premium} />}
         </>
     )
 }
