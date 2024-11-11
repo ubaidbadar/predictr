@@ -10,12 +10,11 @@ export default function MakePrediction(props) {
         <>
             <ModalHeader title="Make a Prediction" close={props.close} />
             <div className={styles.root}>
-                I think
-                <button type="button" className={stock_symbol ? styles.active : ""} onClick={() => setPage(1)}>{stock_symbol || 'stock'}</button>
-                will go
-                <button type="button" className={estimated_change_percent ? styles.active : ""} onClick={() => setPage(2)}>{estimated_change_percent ? `${estimated_direction} ${estimated_change_percent}%` : "movement"}</button>
-                by
-                <button type="button" className={guess_date ? styles.active : ""} onClick={() => setPage(3)}>{guess_date ? guess_date.format("MMMM DD, YYYY") : "date"}</button>
+                <button aria-label='🤔 I think' type="button" className={stock_symbol ? styles.active : ""} onClick={() => setPage(1)}>
+                    {stock_symbol}
+                </button>
+                <button aria-label='📈 will go' type="button" className={estimated_change_percent ? styles.active : ""} onClick={() => setPage(2)}>{estimated_change_percent ? `${estimated_direction} ${estimated_change_percent}%` : "movement"}</button>
+                <button aria-label='🗓 by' type="button" className={guess_date ? styles.active : ""} onClick={() => setPage(3)}>{guess_date ? guess_date.format("MMMM DD, YYYY") : "date"}</button>
             </div>
             <Textarea value={props.description} name='description' onChange={props.onChange} label="Why do you think this?" />
             <ImageSelect {...props} />
