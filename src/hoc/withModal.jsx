@@ -6,7 +6,7 @@ export default function withModal(Component) {
         return (
             <>
                 {component(tools)}
-                {tools.className && <Component {...props} {...tools} />}
+                {tools.state && <Component {...props} {...tools} />}
             </>
         )
     }

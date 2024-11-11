@@ -8,7 +8,7 @@ export default function CalendarPicker({ component, ...props }) {
     return (
         <>
             {component && component(tools.open, date)}
-            {tools.className && (
+            {tools.state && (
                 <Portal>
                     <div className="Dialog" onClick={e => e.currentTarget === e.target && tools.close()}>
                         <DateCalendar

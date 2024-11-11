@@ -13,7 +13,7 @@ import useShow from '../../hooks/useShow';
 export default function SetUpSubscription({ user, ...props }) {
     const premium = user.premium || {}, tools = useShow();
 
-    if (tools.className) {
+    if (tools.state) {
         const link = `https://stockalgos.com/#subscribe=${user._id}`;
         return (
             <ModalV2 title='Your Subscription is Live!' {...tools}>

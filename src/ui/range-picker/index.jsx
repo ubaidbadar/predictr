@@ -47,7 +47,7 @@ const RangePicker = ({
         values,
         ...tools
       })}
-      {tools.className && (
+      {tools.state && (
         <Model {...tools} className="Modal-Range-Picker" title='Select Date Range'>
           <DateRangePicker
             showSelectionPreview={true}
