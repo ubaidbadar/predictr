@@ -29,7 +29,8 @@ module.exports = {
       none: "transparent",
       primary: {
         "0": "#024BAC",
-        "1": "#CCDFF7"
+        "1": "#CCDFF7",
+        "2": "#E9F1FC"
       },
       dark: {
         0: "#000000",

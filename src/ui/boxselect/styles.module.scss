@@ -1,0 +1,20 @@
+.root {
+    @apply border-1 border-light-0 px-[1em] rounded-[0.75em] justify-center flex items-center min-h-[3em];
+    input {
+        @apply hidden;
+    }
+    &[title]::before {
+        content: attr(title);
+    }
+    &:not(:disabled) {
+        &:hover, &:has(:checked) {
+            @apply border-primary-0 cursor-pointer;
+        }
+        &:has(:checked) {
+            @apply bg-primary-2;
+            &:has([type = "radio"]) {
+                @apply cursor-none;
+            }
+        }
+    }
+}

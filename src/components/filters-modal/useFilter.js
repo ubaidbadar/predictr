@@ -18,6 +18,7 @@ export default function useFilter() {
     const tools = useMain(), [values, setValues] = useState(tools.values);
     return {
         ...values,
+        onUpdate: (update) => setValues({ ...values, ...update }),
         onChange: e => setValues({ ...values, [e.target.name]: e.target.value }),
         onRangeChange: e => setValues({ ...values, start_date: e.start, end_date: e.end }),
         reset: () => {
