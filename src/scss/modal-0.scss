@@ -1,9 +1,9 @@
 .Modal-0 {
     .Dialog-Main {
         @apply flex flex-col lg:gap-5 gap-4 md:w-[35rem] md:h-[initial] h-full w-full lg:p-7 md:p-6 p-4 md:rounded-4 lg:rounded-6;
-    }
-    &.Modal-Medium .Dialog-Main{
-        @apply md:w-[28rem];
+        &.Modal-Medium {
+            @apply md:w-[27rem]
+        }
     }
     .Modal-Header {
         @extend .flex-between;
