@@ -18,3 +18,8 @@
         }
     }  
 }
+
+
+.reason {
+    @apply bg-surface rounded-3 shadow-5 outline-none resize-none p-4;
+}

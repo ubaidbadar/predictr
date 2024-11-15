@@ -1,6 +1,6 @@
 import ModalHeader from '../../ui/modal/header';
 import Switch from '../../ui/switch';
-import Textarea from '../../ui/textarea';
+import Textarea from '../../ui/textarea-normal';
 import ImageSelect from './image-select';
 import styles from './make.module.scss';
 import Button from './components/button';
@@ -28,7 +28,7 @@ export default function MakePrediction(props) {
                     onClick={() => setPage(3)}
                 />
             </div>
-            <Textarea value={props.description} name='description' onChange={props.onChange} label="Why do you think this?" />
+            <Textarea className={styles.reason} placeholder="Reason..." rows={1} value={props.description} name='description' onChange={props.onChange} label="Why do you think this?" />
             <ImageSelect {...props} />
             {props.onlyForSubscribers !== undefined && (
                 <Switch title="Only for Subscribers?"
