@@ -5,6 +5,7 @@ import useQuery from '../../hooks/useQuery';
 import Search from './search';
 import Footer from './footer';
 import User from './user';
+import Notifications from './notifications';
 
 export default function Header(props) {
     const isMobile = useQuery(450)
@@ -19,9 +20,7 @@ export default function Header(props) {
                             <button className='text-gray-0 btn-icon no-space'>
                                 <BookMark />
                             </button>
-                            <button className='text-gray-0 btn-icon no-space'>
-                                <NotificationIcon />
-                            </button>
+                            <Notifications />
                             <User {...props} />
                         </>
                     )
