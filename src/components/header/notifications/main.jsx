@@ -5,6 +5,9 @@ export default function Main() {
                 <b className="text-sm">Notifications</b>
                 <button className="text-xs btn-text">Read All</button>
             </div>
+            <div>
+                
+            </div>
         </>
     )
 }

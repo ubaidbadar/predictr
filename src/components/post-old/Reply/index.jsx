@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import useSocket from '../../../hooks/useSocket';
 import AddComment from '../AddComment';
 import Comments from '../Comments';
 import LoadMore from '../Load';
