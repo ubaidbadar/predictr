@@ -14,7 +14,7 @@ export default function Notifications() {
                         <Bell />
                     </button>
                 )}
-                className="p-4 shadow-3 mt-1 absolute rounded-4 z-3 w-80 bg-surface"
+                className="p-4 animation-opacity shadow-3 mt-1 absolute rounded-4 z-3 w-80 bg-surface"
             >
                 <Main />
             </DropDown>
