@@ -1,4 +1,7 @@
+import useNotifications from "../../../hooks/useNotifications"
+
 export default function Main() {
+    const notifications = useNotifications();
     return (
         <>
             <div className="flex-between">
@@ -6,7 +9,7 @@ export default function Main() {
                 <button className="text-xs btn-text">Read All</button>
             </div>
             <div>
-                
+
             </div>
         </>
     )

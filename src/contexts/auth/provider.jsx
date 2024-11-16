@@ -7,6 +7,9 @@ import Header from "../../components/header";
 import Pickers from "../pickers";
 import Global from "../../dialogs/global";
 import LogoutModal from "../../dialogs/logout";
+import io from 'socket.io-client';
+
+const socket = io.connect();
 
 export default function AuthProvider({ children }) {
     const [state, setState] = useState(user), setAuth = auth => setState({ ...state, ...auth });
@@ -32,6 +35,7 @@ export default function AuthProvider({ children }) {
         setAuth,
         isLoggedIn: state._id ? true : false,
         loading: state.loading,
+        socket,
     }
     const Root = value.isLoggedIn ? Fragment : Pickers
     return (

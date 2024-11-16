@@ -1,15 +1,17 @@
 import React from 'react';
-import { useApp } from '../App';
-import moment from 'moment/moment';
-import axios from 'axios';
+import axios from '../config/axios';
+import dayjs from 'dayjs';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
+import useAuth from '../contexts/auth';
+
+dayjs.extend(localizedFormat);
 
 const useNotifications = () => {
-    const { socket, isLoggedIn, user } = useApp();
+    const { socket, user } = useAuth();
     const [notifications, setNots] = React.useState(user.notifications ? [...user.notifications] : [])
     let updateNotifications = React.useMemo(() => [...notifications], [])
 
     React.useEffect(async () => {
-        if (!isLoggedIn) return;
         if (!user.notifications) {
             const notifications = (await axios.get('/fetch_notifications')).data.results;
             updateNotifications = notifications;
@@ -18,7 +20,7 @@ const useNotifications = () => {
         try {
             socket.on('New_Notification', notification => {
                 notification.isSocket = true;
-                const date = moment(notification.createdOn).format('LL')
+                const date = dayjs(notification.createdOn).format('LL')
                 const group = updateNotifications.find(noti => noti.date === date);
                 if (group) {
                     const notifs = group.notifs;
@@ -34,7 +36,7 @@ const useNotifications = () => {
 
         }
 
-    }, [isLoggedIn])
+    }, [])
 
     const setNotifications = notifs => {
         updateNotifications = notifs;
