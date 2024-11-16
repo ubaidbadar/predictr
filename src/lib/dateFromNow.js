@@ -4,7 +4,7 @@ import calendar from 'dayjs/plugin/calendar';
 dayjs.extend(calendar);
 
 
-export default function dateFromNowOn(date) {
+export default function dateFromNow(date) {
     const fromNow = dayjs(date).fromNow();
     return dayjs(date).calendar(null, {
         lastWeek: '[Last] dddd',

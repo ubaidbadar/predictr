@@ -8,42 +8,40 @@ dayjs.extend(localizedFormat);
 
 const useNotifications = () => {
     const { socket, user } = useAuth();
-    const [notifications, setNots] = React.useState(user.notifications ? [...user.notifications] : [])
-    let updateNotifications = React.useMemo(() => [...notifications], [])
+    const [notifications, setNots] = React.useState(user.notifications)
+    
+    React.useEffect(() => {
+        let newNotifications = user.notifications ? [...notifications] : [];
+        const cb = async () => {
+            if (!user.notifications) {
+                const notifications = (await axios.get('/fetch_notifications')).data.results;
+                newNotifications = notifications;
+                setNots([...newNotifications]);
+            }
+            try {
+                socket.on('New_Notification', notification => {
+                    notification.isSocket = true;
+                    const date = dayjs(notification.createdOn).format('LL')
+                    const group = newNotifications.find(noti => noti.date === date);
+                    if (group) {
+                        const notifs = group.notifs;
+                        const existingNotificationIndex = notifs.findIndex(not => notification._id === not._id);
+                        if (existingNotificationIndex > -1) notifs.splice(existingNotificationIndex, 1);
+                        else notifs.unshift(notification);
+                    }
+                    else newNotifications.unshift({ date, notifs: [notification] });
+                    setNots([...newNotifications])
+                })
+                return () => socket.off('New_Notification')
+            } catch (e) {
 
-    React.useEffect(async () => {
-        if (!user.notifications) {
-            const notifications = (await axios.get('/fetch_notifications')).data.results;
-            updateNotifications = notifications;
-            setNotifications([...updateNotifications]);
+            }
+
         }
-        try {
-            socket.on('New_Notification', notification => {
-                notification.isSocket = true;
-                const date = dayjs(notification.createdOn).format('LL')
-                const group = updateNotifications.find(noti => noti.date === date);
-                if (group) {
-                    const notifs = group.notifs;
-                    const existingNotificationIndex = notifs.findIndex(not => notification._id === not._id);
-                    if (existingNotificationIndex > -1) notifs.splice(existingNotificationIndex, 1);
-                    else notifs.unshift(notification);
-                }
-                else updateNotifications.unshift({ date, notifs: [notification] });
-                setNotifications([...updateNotifications])
-            })
-            return () => socket.off('New_Notification')
-        } catch (e) {
-
-        }
-
+        cb();
     }, [])
 
-    const setNotifications = notifs => {
-        updateNotifications = notifs;
-        setNots([...updateNotifications]);
-    }
-
-    return { notifications, setNotifications }
+    return notifications
 }
 
 
