@@ -11,11 +11,10 @@ const useNotifications = () => {
     const [notifications, setNots] = React.useState(user.notifications)
     
     React.useEffect(() => {
-        let newNotifications = user.notifications ? [...notifications] : [];
+        let newNotifications;
         const cb = async () => {
             if (!user.notifications) {
-                const notifications = (await axios.get('/fetch_notifications')).data.results;
-                newNotifications = notifications;
+                newNotifications = (await axios.get('/fetch_notifications')).data.results;
                 setNots([...newNotifications]);
             }
             try {
