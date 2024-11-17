@@ -13,16 +13,19 @@ export default function MakePrediction(props) {
             <ModalHeader title="Make a Prediction" close={props.close} />
             <div className={styles.root}>
                 <Button
-                    value={stock_symbol || "Select Stock"}
+                    label="Select Stock"
+                    value={stock_symbol}
                     title="🤔 I think"
                     onClick={() => setPage(1)}
                 />
                 <Button
+                    label="Set Movement"
                     value={estimated_change_percent ? `${estimated_direction} ${estimated_change_percent}%` : ""}
                     title="📈 will go"
                     onClick={() => setPage(2)}
                 />
-               <Button
+                <Button
+                    label="Pick a Date"
                     value={guess_date ? guess_date.format("MMMM DD, YYYY") : ""}
                     title="🗓 by"
                     onClick={() => setPage(3)}

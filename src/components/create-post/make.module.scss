@@ -1,22 +1,27 @@
 .root {
     @apply bg-surface rounded-3 shadow-5;
+
     >button {
         @apply flex sm:px-5 p-4 w-full text-left text-gray-1;
+
         &::before {
             content: attr(aria-label);
             @apply -order-1 text-dark-0;
         }
+
         &:not(:first-child) {
             @apply border-t-1 border-light-0;
         }
+
         &::after {
             content: attr(aria-details);
-           @apply -order-1 ml-auto w-32;
+            @apply -order-1 ml-auto w-32;
         }
+
         &:hover {
             @apply text-primary-0;
         }
-    }  
+    }
 }
 
 
