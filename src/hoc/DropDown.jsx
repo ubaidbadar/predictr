@@ -10,7 +10,7 @@ export default function DropDown({ component, className, ...props }) {
                 type: 'button',
                 ref: btnRef,
                 className: status
-            })}
+            }, props.value)}
             {status && (
                 <Portal id="Modals">
                     <div
