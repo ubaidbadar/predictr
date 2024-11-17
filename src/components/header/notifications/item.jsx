@@ -36,14 +36,6 @@ const Item = ({
         case 'New Leaderboard Subscriber':
             title = <>You have a new subscriber to your premium leaderboard.</ >
             break;
-        case 'Trial':
-            {/* console.log(algoId) */ }
-            title = <> Your trial has started for
-                for <b> {
-                    algoId.stockAlgoName
-                } </b></>
-            to = `/algo_page?algo=${algoId.url_link}&algo_id=${algoId._id}`;
-            break;
         case 'Leaderboard Agreement':
             title = <>Someone has an opinion on your post</>
             to = `/post/${postId._id}`
@@ -114,7 +106,7 @@ const Item = ({
     }
 
     return (
-        <Link to={to} className='flex-center hover:underline gap-2 leading-4 py-1'>
+        <Link to={to || '/'} className='flex-center hover:underline gap-2 leading-4 py-1'>
             <img className='UserAvatar' src={notifiedBy?.profile_img || props.avatar} />
             <span>
                 {title}
