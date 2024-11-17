@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DropDown from "./drop-down";
+import Check from "../icons/check";
 
 export default function Select({ onChange, value = "", ...props }) {
     const [v, setValue] = useState(value);
@@ -15,4 +16,8 @@ export default function Select({ onChange, value = "", ...props }) {
     )
 }
 
-export const Item = (props) => <button {...props} />
+export const Item = ({ children, ...props }) => (
+    <button {...props}>
+        {props.className === 'active' && <Check /> } {children}
+    </button>
+)

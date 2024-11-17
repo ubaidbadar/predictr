@@ -1,22 +1,37 @@
 .root {
-    @apply fixed bg-surface border-1 overflow-hidden border-light-0 shadow-2 min-w-[11.5625em] text-nowrap rounded-[1em] z-9 transition-opacity;
+    @apply fixed z-9 rounded-[1em] min-w-[11em] transition-opacity overflow-hidden text-nowrap;
     >* {
-        @apply cursor-pointer px-[1em] h-[2.69em] items-center grid text-start gap-[0.5em] w-full;
-        grid-template-columns: 1.5em 1fr;
-        &:not([class *= "active"]):hover {
-            @apply bg-dark-0 bg-opacity-20 active:bg-opacity-15;
-        }
-        &[class *= "active"] {
-            &::before {
-                content: "";
-                @apply w-[0.75em] mb-[0.25em] text-green-0 h-[0.5em] border-1 border-t-none border-r-none -rotate-45;
-            }
-        }
+        @apply cursor-pointer h-[2.69em] items-center flex text-start gap-[0.5em] w-full;   
         svg {
             @apply max-w-[1.5em] max-h-[1em];
+            &:first-child {
+                @apply absolute left-[1em];
+            }
+        }
+    }
+}
+
+.root[class*="light"] {
+    @apply fixed bg-surface border-1 border-light-0 shadow-2;
+
+    >* {
+        @apply cursor-pointer text-start gap-[0.5em] w-full px-[1em];
+        
+        &:not([class *="active"]):hover {
+            @apply bg-dark-0 bg-opacity-20 active:bg-opacity-15;
         }
         &:not(:last-child) {
             @apply border-b-1 border-light-0;
+        }
+    }
+}
+
+.root[class *= "dark"] {
+    @apply fixed w-[11em] bg-dark-2 text-surface py-[0.5em];
+    >* {
+        @apply pl-[2.5em] pr-[1em];
+        &:not([class *="active"]):hover {
+            @apply bg-surface bg-opacity-20 active:bg-opacity-15;
         }
     }
 }

@@ -4,7 +4,7 @@ import usePosition from '../../hooks/usePosition';
 import Menu from './menu';
 import styles from './styles.module.scss';
 
-export default function DropDown({ className, component, onClick, ...props }) {
+export default function DropDown({ className, component, onClick, mode = "dark", ...props }) {
     const { status, btnRef } = useActive(), ref = usePosition(btnRef, status);
     return (
         <>
@@ -18,7 +18,7 @@ export default function DropDown({ className, component, onClick, ...props }) {
                     <div
                         onClick={onClick}
                         ref={ref}
-                        className={`${className} ${status == "active" ? "animation-opacity" : "opacity-0"} ${styles.root}`}
+                        className={`${className} ${status == "active" ? "animation-opacity" : "opacity-0"} ${styles.root} ${mode}`}
                     >
                         <Menu {...props} />
                     </div>

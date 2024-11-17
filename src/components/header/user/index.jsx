@@ -5,6 +5,7 @@ import Avatar from "../../avatar";
 export default function User(props) {
     return (
         <DropDown
+            mode="light"
             className="mt-2"
             component={nProps => (
                 <button {...nProps} 
