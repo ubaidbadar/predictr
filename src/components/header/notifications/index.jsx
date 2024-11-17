@@ -23,10 +23,10 @@ export default function Notifications() {
                     <b>Notifications</b>
                     <button className="text-xs btn-text">Read All</button>
                 </div>
-                <div className="h-48 overflow-auto text-sm flex-col gap-2 mt-1">
+                <div className="h-48 overflow-auto text-sm mt-4 flex-col">
                     {notifications ? notifications.map(group => (
                         <Fragment key={group.date}>
-                            <b className="text-gray-1 font-normal">{dateFromNow(group.date)}</b>
+                            <b className="text-gray-1 font-normal my-1">{dateFromNow(group.date)}</b>
                             {group.notifs.map(item => <Item {...item} key={item._id} />)}
                         </Fragment>
                     )) : <Spinner className="m-auto" />}

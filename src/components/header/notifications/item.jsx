@@ -31,7 +31,7 @@ const Item = ({
             break;
         case 'Leaderboard Purchase':
             title = <> You have succesfully subscribed to < b >{leaderboardId.title}</b> .</ >
-            to = `/leaderboard/user/${leaderboardId.userId}`;
+            to = `/user/${leaderboardId.userId}`;
             break;
         case 'New Leaderboard Subscriber':
             title = <>You have a new subscriber to your premium leaderboard.</ >
@@ -46,65 +46,51 @@ const Item = ({
             break;
         case 'Leaderboard Agreement':
             title = <>Someone has an opinion on your post</>
-            to = `/leaderboard/post/${postId._id}`
+            to = `/post/${postId._id}`
             break;
 
         case 'Leaderboard Post Like':
             title = <> <b> {
                 notifiedBy?.name
             } </b> liked your prediction on {postId.stock_symbol} </ >
-            to = `/leaderboard/post/${postId._id}`
+            to = `/post/${postId._id}`
             break;
         case 'Leaderboard Comment Like':
             title = <> <b> {
                 notifiedBy?.name
             } </b> liked your comment {commentId.message} </ >
-            to = `/leaderboard/post?commentId=${commentId._id}`
-            break;
-        case 'Leaderboard Reply Like':
-            // title = <> < b > {
-            //     notifiedBy?.name
-            //   } < /b> liked your comment {commentId.message} </ >
-            //   to = `/leaderboard/post?commentId=${commentId._id}`
+            to = `/post?commentId=${commentId._id}`
             break;
         case 'Leaderboard Comment':
             title = <> <b> {
                 notifiedBy?.name
             } </b> commented on your prediction "{commentId.message}"</>
-            to = `/leaderboard/post?commentId=${commentId._id}`;
+            to = `/post?commentId=${commentId._id}`;
             break;
         case 'Leaderboard Reply':
             title = <> < b > {
                 notifiedBy?.name
             } </b> replied to your comment "{commentId.message}"</ >
-            to = `/leaderboard/post?commentId=${commentId._id}`
+            to = `/post?commentId=${commentId._id}`
             break;
         case 'Leaderboard Follow':
             title = <> <b> {
                 notifiedBy?.name
             }</b> has started following you! </>
-            to = `/leaderboard/user/${notifiedBy?._id}`
-            // title = < > < b > {
-            //     notifiedBy?.name
-            //   } < /b> replied to your comment "{commentId.message}" </ >
-            //   to = `/leaderboard/post?commentId=${commentId._id}`
+            to = `/user/${notifiedBy?._id}`
             break;
         case 'Leaderboard Profile View':
             title = <> <b> {
                 notifiedBy?.name
             }
                 viewed your profile </b></>
-            to = `/leaderboard/user/${notifiedBy?._id}`
-            // title = < > < b > {
-            //     notifiedBy?.name
-            //   } < /b> replied to your comment "{commentId.message}" </ >
-            //   to = `/leaderboard/post?commentId=${commentId._id}`
+            to = `/user/${notifiedBy?._id}`
             break;
         case 'Leaderboard Prediction Result':
             title = <> Your results from your prediction on {
                 postId.stock_symbol
             } are in. </>
-            to = `/leaderboard/post/${postId._id}`
+            to = `/post/${postId._id}`
             break;
         case 'Leaderboard Following Posted':
             title = <> <b> {
@@ -113,22 +99,22 @@ const Item = ({
             </b> just made a new prediction on <b>{
                 postId.stock_symbol
             }</b></ >
-            to = `/leaderboard/post/${postId._id}`
+            to = `/post/${postId._id}`
             break;
         case 'Leaderboard Podium Result':
-            title = <> The Leaderboard Contest for the month of {moment(createdOn).subtract(7, 'days').format('MMMM')} has concluded. Come see how you did! </>
-            to = `/leaderboard`
+            title = <> The Leaderboard Contest for the month of {dayjs(createdOn).subtract(7, 'days').format('MMMM')} has concluded. Come see how you did! </>
+            to = `/`
             break;
         case 'Monthly Contest Start':
             title = <> The {get_month(createdOn)} contest has started. Start making your predictions. </>
-            to = `/leaderboard`
+            to = `/`
             break;
         default:
             title = ""
     }
 
     return (
-        <Link to={to} className='flex-center gap-2 leading-4'>
+        <Link to={to} className='flex-center hover:underline gap-2 leading-4 py-1'>
             <img className='UserAvatar' src={notifiedBy?.profile_img || props.avatar} />
             <span>
                 {title}
