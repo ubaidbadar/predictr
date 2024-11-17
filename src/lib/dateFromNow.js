@@ -12,6 +12,6 @@ export default function dateFromNow(date) {
         sameDay: '[Today]',
         nextDay: '[Tomorrow]',
         nextWeek: 'dddd',
-        sameElse: () => `[${fromNow}]`,
+        sameElse: () => fromNow,
     });
 }
