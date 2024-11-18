@@ -22,7 +22,7 @@ function Main(props) {
 export default function Submit(props) {
     const form = props.form;
     return (
-        <div className="Modal-Footer">
+        <div className="Modal-Footer relative">
             {form.stock_symbol && form.guess_date && form.estimated_change_percent ?
                 <Main {...props} /> :
                 <button className="btn-primary" disabled>Submit</button>}
