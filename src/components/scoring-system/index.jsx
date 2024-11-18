@@ -20,7 +20,6 @@ const Item = (props) => (
 const ScoringSystemModal = props => (
     <Modal title="Scoring system"
         id="Scoring System Modal"
-        state="active"
         component={tools => <button onClick={tools.open} className='hidden' id='Scoring System Modal Open'></button>}
         {...props}
         className="text-gray-1"
