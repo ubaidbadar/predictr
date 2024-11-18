@@ -53,7 +53,8 @@ module.exports = {
         "3": "#B8B8B8",
         "4": "#D9D9D9",
         5: "#F7F7F7",
-        6: "#EFF0F1"
+        6: "#EFF0F1",
+        7: "#F6F8F9"
       },
       surface: '#fff',
       gray: {

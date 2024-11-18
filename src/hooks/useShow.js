@@ -14,7 +14,6 @@ export default function useShow(className) {
     }, [])
     return {
         state,
-        className,
         open: () => {
             setState("active");
             window.addEventListener('popstate', close)

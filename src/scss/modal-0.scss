@@ -7,7 +7,7 @@
     }
     .Modal-Header {
         @extend .flex-between;
-        @apply gap-inherit;
+        @apply gap-inherit text-dark-0;
         >.btn-close {
             @extend .btn-icon, .no-space;
             >svg {
