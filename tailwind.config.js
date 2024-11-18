@@ -103,6 +103,7 @@ module.exports = {
       4: "1rem",
       5: "1.25rem",
       6: "1.5rem",
+      full: '9999px'
     },
     lineHeight: {
       0: 0,
