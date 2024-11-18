@@ -18,7 +18,7 @@
             @apply -order-1 ml-auto w-32;
         }
 
-        &:hover {
+        &:hover, &[class *= "active"] {
             @apply text-primary-0;
         }
     }

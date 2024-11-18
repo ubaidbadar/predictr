@@ -9,7 +9,7 @@ function Main(props) {
     const { results, onAdd, ...sProps } = useStockSearch({ value: props.stock_symbol, api: "fetch_stock" });
     return (
         <div className={styles.main}>
-            <Search placeholder="Search" className="mb-6" {...sProps} />
+            <Search placeholder="Search" className="mb-3" {...sProps} />
             {results.map(item => (
                 <ToggleText
                     key={item._id}

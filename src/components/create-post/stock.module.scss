@@ -1,20 +1,14 @@
 .main {
-    @apply flex flex-col min-h-[30rem] text-nowrap;
+    @apply flex flex-col min-h-[30rem] text-nowrap text-gray-1;
     >label:not(:first-child) {
-        @apply flex items-center py-2 border-t-1;
-        &:hover  {
-            @apply no-underline;
-            + label {
-                @apply border-t-primary-0 !important;
-            }
-        }
+        @apply flex items-center py-3 border-b-1 border-light-0;
         &::before {
-            width: 5.5rem;
+            width: 4.25rem;
+            @apply text-dark-0 font-semibold;
         }
         &:hover {
-            &, & + label {
-                border-color: var(--primary-lighten-2);
-            }
+            @apply no-underline;
+            border-color: var(--primary-lighten-2);
             span[ticker]::before {
                 color: inherit;
             }

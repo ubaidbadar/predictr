@@ -3,6 +3,7 @@ import InputField from '../ui/input';
 import Modal from '../ui/modal/modal';
 import Form from '../hoc/form';
 import axios from '../config/axios';
+import Info from '../icons/info';
 
 const AddStockModal = ({ onFinished, defaultValue }) => {
     const onSubmit = data => {
@@ -21,12 +22,13 @@ const AddStockModal = ({ onFinished, defaultValue }) => {
             Root={Form}
             onSubmit={onSubmit}
             title='Add Stock'
-            component={tools => <button className='btn btn-text' onClick={tools.open}>try adding it</button>}
+            component={tools => <button className='btn btn-text font-bold' onClick={tools.open}>Add...</button>}
             footer={props => (
-                <button className={`btn btn-primary me-auto ${props.className}`} disabled={props.disabled}>Save</button>
+                <button className={`btn btn-primary ${props.className}`} disabled={props.disabled}>Save</button>
             )}
         >
-            <InputField defaultValue={defaultValue} label='Symbol' name='symbol' required={true} errorText="Symbol is required!" />
+            <InputField defaultValue={defaultValue} label='Enter symbol' name='symbol' required={true} errorText="Symbol is required!" />
+            <small className='flex gap-2 text-gray-1 -mt-2'><Info /> We will fetch the stock data based on the symbol you enter.</small>
         </Modal>
     )
 }
