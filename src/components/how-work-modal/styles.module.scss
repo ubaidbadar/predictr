@@ -1,0 +1,19 @@
+.item {
+    >div {
+        @apply bg-light-1 flex items-center p-4 rounded-3;
+        &::after {
+            content: attr(aria-label);
+            @apply -order-1 ml-auto w-36 text-gray-1;
+        }
+        &::before {
+            content: attr(aria-details);
+            @apply -order-1 font-semibold;
+        }
+        svg {
+            @apply text-gray-1;
+        }
+    }
+    small {
+        @apply text-sm text-dark-1 mb-1 block;
+    }
+}

@@ -1,4 +1,5 @@
 import Modal from "../ui/modal/modal";
+import HowWorkModal from "./how-work-modal";
 
 const faqs = [
     {
@@ -23,11 +24,7 @@ const faqs = [
     },
     {
         title: "How it Works?",
-        children: (
-            <>
-                <b>Make Predictions</b>
-            </>
-        )
+        children: <HowWorkModal />
     }
 ]
 
