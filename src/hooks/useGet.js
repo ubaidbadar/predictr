@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "../config/axios";
 import Spinner from "../ui/spinner";
+import getAxiosMessage from "../lib/getAxiosMessage";
 
 const useGet = (api, params = {}, boolean = true, cb) => {
     const [state, setStatus] = useState({ Loader: boolean ? Spinner : undefined, params });
@@ -14,7 +15,7 @@ const useGet = (api, params = {}, boolean = true, cb) => {
                 cb && cb(data);
                 setStatus({ data, params: uParams })
             })
-            .catch(err => setStatus({ err: axiosErrorHandler(err) }))
+            .catch(err => setStatus({ err: getAxiosMessage(err) }))
     }
     useEffect(() => {
         if (boolean) onParamsChange(params);
