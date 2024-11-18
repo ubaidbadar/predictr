@@ -41,7 +41,7 @@ const UserPage = props => {
                 >
                     <Follow {...props} className="btn-primary w-full mt-4" userId={user._id} is_following={data.is_following} />
                 </Stats>
-                <div className='flex-between border-b-1 pb-3 pt-1 border-light-0'>
+                <div className='flex-between border-b-1 pb-3 pt-1 lg:hidden border-light-0'>
                     <b className='text-base'>Predictions</b>
                     <FiltersModal />
                     <label htmlFor="Predictions-Filter-Modal" className="text-md btn-icon no-space">
