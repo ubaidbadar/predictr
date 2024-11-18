@@ -1,22 +1,17 @@
-.root {
-    li {
-        display: grid;
-        grid-template-columns: 40% 40% 1fr; 
-        padding: .625rem .5rem;
-        &:not(:last-child) {
-            border-bottom: 1px solid var(--accent-5);
-        }
-        &::after {
-            content: attr(accuracy);
-            text-align: right;
-        }
+.footer {
+    @apply text-sm;
+    >p {
+        @apply flex px-3 py-2;
         &::before {
-            content: attr(movement);
+            content: attr(aria-label);
+            @apply min-w-32;
         }
         &:not(:first-child) {
-            &::before {
-                font-weight: 600;
-            }
+            @apply text-dark-1 border-t-1 border-t-light-0;
+        }
+        &::after {
+            content: attr(aria-details);
+            @apply ml-auto;
         }
     }
 }

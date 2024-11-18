@@ -30,7 +30,7 @@ export default function HowWorkModal() {
                 details="🗓 By"
             />
             <p className='flex text-sm'>
-                4. See results <label className='btn-text underline font-bold ml-1 hover:no-underline'>View scoring system</label>
+                4. See results <label htmlFor='Scoring System Modal Open' className='btn-text underline font-bold ml-1 hover:no-underline'>View scoring system</label>
             </p>
             <label htmlFor='Create-Post-Modal' className='btn-primary ml-auto mt-auto'>Make Prediction</label>
         </>
