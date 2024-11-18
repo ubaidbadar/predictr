@@ -1,5 +1,5 @@
 .root {
-    @apply border-2 border-light-0 px-[1em] rounded-[0.75em] justify-center flex items-center min-h-[3em] gap-[0.8em];
+    @apply border-1 border-light-0 px-[1em] rounded-[0.75em] justify-center flex items-center min-h-[3em] gap-[0.8em];
     input {
         @apply hidden;
     }
@@ -11,6 +11,7 @@
             @apply border-primary-0 cursor-pointer;
         }
         &:has(:checked) {
+            @apply border-2;
             &::after {
                 @apply border-primary-0;
                 background: radial-gradient(circle, #024BAC 50%, #00000000 50%);
